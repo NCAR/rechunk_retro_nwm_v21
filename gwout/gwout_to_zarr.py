@@ -27,7 +27,11 @@ n_workers = 18
 n_cores = 1
 queue = "casper"
 
-n_chunks_job = 1 # 12  # how many to do before exiting
+n_chunks_job = 12  # how many to do before exiting, 12 is approx yearly
+# end_date = '2018-12-31 23:00' # full time
+end_date = '1981-04-30 23:00' # pilot 2 years
+# this end_date tests all parts of the execution for chunk size 672
+# end_date = "1979-04-17 00:00"  
 
 # files
 ## output_path is a global, user-defined variable defined above.
@@ -42,8 +46,6 @@ file_log_loop_time = output_path / "gwout_loop_time.txt"
 # JLM to do: centralize this info?
 input_dir = "/glade/scratch/zhangyx/WRF-Hydro/model.data.v2.1"
 start_date = "1979-02-10 00:00"
-# end_date = '2018-12-31 23:00'
-end_date = "1979-04-17 00:00"  # this tests all parts of the execution
 freq = "1h"
 
 

@@ -19,7 +19,7 @@ for jj in range(n_jobs):
     if jj == 0:
         qsub_str += f"job_{jj}=`qsub -h {pbs_script}`;"
     else:
-        qsub_str += f"job_{jj}=`qsub -W depend=afterok:$job_{jj-1} {pbs_script}`;"
+        qsub_str += f"job_{jj}=`qsub -W depend=afterany:$job_{jj-1} {pbs_script}`;"
 
 qsub_str += "qrls $job_0;"
 qsub_str += "'"
