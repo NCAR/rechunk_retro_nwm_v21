@@ -43,7 +43,7 @@ file_temp = output_path / "temp.zarr"
 file_log_loop_time = output_path / "gwout_loop_time.txt"
 
 # static information
-# JLM to do: centralize this info?
+# todo JLM: centralize this info?
 input_dir = "/glade/scratch/zhangyx/WRF-Hydro/model.data.v2.1"
 start_date = "1979-02-10 00:00"
 freq = "1h"
@@ -61,11 +61,6 @@ def del_zarr_file(the_file: pathlib.Path):
     return None
 
 
-def drop_coords_0(ds):
-    ds = ds.drop(["reference_time"])
-    return ds.reset_coords(drop=True)
-
-
 def drop_coords(ds):
     ds = ds.drop(["reference_time", "feature_id"])
     return ds.reset_coords(drop=True)
@@ -80,12 +75,14 @@ def main():
         ds.close()
         del ds
         dates = pd.date_range(
-            start=last_time, periods=n_chunks_job * time_chunk_size + 1, freq=freq
-        )[1:]
+            start=last_time,
+            periods=n_chunks_job * time_chunk_size + 1,
+            freq=freq)[1:]
     else:
         dates = pd.date_range(
-            start=start_date, periods=n_chunks_job * time_chunk_size, freq=freq
-        )
+            start=start_date,
+            periods=n_chunks_job * time_chunk_size,
+            freq=freq)
 
     dates = dates[dates <= end_date]
     files = [
@@ -128,19 +125,13 @@ def main():
     print(f"in local browser: ")
     print(f"http://localhost:{port}/status")
     numcodecs.blosc.use_threads = False
-    chunk_mem_factor = (
-        0.8  # fraction of worker memory for each chunk (seems to be the max possible)
-    )
+    # fraction of worker memory for each chunk (seems to be the max possible)
+    chunk_mem_factor = 0.8  
     # print(cluster.worker_spec[0]['options']['memory_limit'])
     worker_mem = 20  # cluster.worker_spec[0]['options']['memory_limit']/1e9
     print(f"worker_mem: {worker_mem}")
     max_mem = "{:.2f}GB".format(chunk_mem_factor * worker_mem)
     print(f"max_mem: {max_mem}")
-
-    # What is the chunk size....
-    print((time_chunk_size * feature_chunk_size) * 8 / 1e6)
-    # might be more appropriate after the array plan.
-    # we have to know the ?type in zarr? or the type in xarray (i believe the former)
 
     indt = "    "
     for ii in range(n_chunks_job_actual):
