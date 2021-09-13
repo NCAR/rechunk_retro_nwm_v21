@@ -1,8 +1,18 @@
 # nwm_v21_retro_rechunk
 Rechunking retrospective runs to more approachable chunks in Zarr output.
 
+## Data Access
+The data are accessible via globus. They are located at 
+```
+/glade/p/datashare/jamesmcc/gwout.zarr
+/glade/p/datashare/jamesmcc/lakeout.zarr
+```
+Please see
+https://www2.cisl.ucar.edu/resources/storage-and-file-systems/using-the-ncar-data-sharing-service#retrieve
+for accessing the data and let us know if permission errors arise. 
 
-## Overview
+
+## Reposiroty Overview
 There is (or will be) a directory for each file type
 
 ```
@@ -24,7 +34,8 @@ type_submit_pbs.py
 type_to_zarr.py
 ```
 
-These files are explained below.
+These files are explained below in detail. The log files contain all (most?) of the relevant 
+information for understanding the data from both zarr and xarray perspectives.
 
 
 ## `type_report.log`
