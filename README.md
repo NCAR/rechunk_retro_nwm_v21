@@ -12,7 +12,7 @@ https://www2.cisl.ucar.edu/resources/storage-and-file-systems/using-the-ncar-dat
 for accessing the data and let us know if permission errors arise. 
 
 
-## Reposiroty Overview
+## Repository Overview
 There is (or will be) a directory for each file type
 
 ```
