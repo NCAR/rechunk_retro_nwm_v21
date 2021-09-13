@@ -17,11 +17,11 @@ import xarray as xr
 import zarr
 
 # User config
-output_path = pathlib.Path("/glade/scratch/jamesmcc/retro_collect/gwout")
+output_path = pathlib.Path("/glade/scratch/jamesmcc/retro_collect/lakeout")
 
 # Chunk config
-time_chunk_size = 672
-feature_chunk_size = 30000
+time_chunk_size = 672 * 12
+feature_chunk_size = 500
 
 n_workers = 18
 n_cores = 1
@@ -38,11 +38,11 @@ end_date = "1981-04-30 23:00"  # pilot 2 years
 # files
 ## output_path is a global, user-defined variable defined above.
 os.chdir(output_path)
-file_chunked = output_path / "gwout.zarr"
+file_chunked = output_path / "lakeout.zarr"
 file_step = output_path / "step.zarr"
 file_last_step = output_path / "last_step.zarr"
 file_temp = output_path / "temp.zarr"
-file_log_loop_time = output_path / "gwout_loop_time.txt"
+file_log_loop_time = output_path / "lakeout_loop_time.txt"
 
 # static information
 # todo JLM: centralize this info?
@@ -63,8 +63,16 @@ def del_zarr_file(the_file: pathlib.Path):
     return None
 
 
-def preprocess_gwout(ds):
-    ds = ds.drop(["reference_time", "feature_id"])
+def preprocess_lakeout(ds):
+    ds = ds.drop(
+        [
+            "reference_time",
+            "feature_id",
+            "crs",
+            "reservoir_type",
+            "reservoir_assimilated_value",
+        ]
+    )
     return ds.reset_coords(drop=True)
 
 
@@ -89,7 +97,7 @@ def main():
         pathlib.Path(
             f"{input_dir}/"
             f'{date.strftime("%Y")}/'
-            f'{date.strftime("%Y%m%d%H%M")}.GWOUT_DOMAIN1.comp'
+            f'{date.strftime("%Y%m%d%H%M")}.LAKEOUT_DOMAIN1.comp'
         )
         for date in dates
     ]
@@ -147,7 +155,7 @@ def main():
         ds = xr.open_mfdataset(
             files_chunk,
             parallel=True,
-            preprocess=preprocess_gwout,
+            preprocess=preprocess_lakeout,
             combine="by_coords",
             concat_dim="time",
             join="override",
@@ -156,6 +164,10 @@ def main():
 
         # add back in the 'feature_id' coordinate removed by preprocessing
         ds.coords["feature_id"] = dset.coords["feature_id"]
+        # in the first chunk, add back the static/invariant variables
+        if not file_chunked.exists():
+            for vv in ["crs", "reservoir_type", "reservoir_assimilated_value"]:
+                ds[vv] = dset[vv]
 
         # remove the temp and step zarr datasets
         # moving these and deleting asynchornously might help speed?
