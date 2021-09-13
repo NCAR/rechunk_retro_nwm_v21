@@ -1,0 +1,204 @@
+['./report_output.py', '/glade/scratch/jamesmcc/retro_collect/gwout/gwout.zarr']
+
+-------------------------------------------------------
+Output file report: /glade/scratch/jamesmcc/retro_collect/gwout/gwout.zarr
+Total file size: 90G
+Dataset overviews:
+zarr ds.info:
+Name        : /
+Type        : zarr.hierarchy.Group
+Read-only   : False
+Store type  : zarr.storage.DirectoryStore
+No. members : 5
+No. arrays  : 5
+No. groups  : 0
+Arrays      : depth, feature_id, inflow, outflow, time
+
+
+xarray ds.info:
+<xarray.Dataset>
+Dimensions:     (time: 19464, feature_id: 2776738)
+Coordinates:
+  * feature_id  (feature_id) int32 6635572 6635590 6635598 ... 25293410 15450136
+  * time        (time) datetime64[ns] 1979-02-10 ... 1981-04-30T23:00:00
+Data variables:
+    depth       (time, feature_id) float64 dask.array<chunksize=(672, 30000), meta=np.ndarray>
+    inflow      (time, feature_id) float64 dask.array<chunksize=(672, 30000), meta=np.ndarray>
+    outflow     (time, feature_id) float64 dask.array<chunksize=(672, 30000), meta=np.ndarray>
+Attributes:
+    Conventions:                CF-1.6
+    TITLE:                      OUTPUT FROM WRF-Hydro v5.2.0-beta2
+    code_version:               v5.2.0-beta2
+    featureType:                timeSeries
+    model_configuration:        retrospective
+    model_initialization_time:  1981-04-01_00:00:00
+    model_output_type:          groundwater_rt
+    model_output_valid_time:    1981-04-04_00:00:00
+    model_total_valid_times:    2184
+    station_dimension:          gw_id
+
+-----------------------------------
+Variable comparison xarray and zarr
+
+--------
+
+depth
+
+xarray ds[depth]:
+<xarray.DataArray 'depth' (time: 19464, feature_id: 2776738)>
+dask.array<open_dataset-d8de6d87096638599573d6155d16ad4adepth, shape=(19464, 2776738), dtype=float64, chunksize=(672, 30000), chunktype=numpy.ndarray>
+Coordinates:
+  * feature_id  (feature_id) int32 6635572 6635590 6635598 ... 25293410 15450136
+  * time        (time) datetime64[ns] 1979-02-10 ... 1981-04-30T23:00:00
+Attributes:
+    long_name:    Bucket Depth
+    units:        mm
+    valid_range:  [0, 100000]
+
+zarr dz[depth].info:
+Name               : /depth
+Type               : zarr.core.Array
+Data type          : int32
+Shape              : (19464, 2776738)
+Chunk shape        : (672, 30000)
+Order              : C
+Read-only          : False
+Compressor         : Blosc(cname='lz4', clevel=5, shuffle=SHUFFLE, blocksize=0)
+Store type         : zarr.storage.DirectoryStore
+No. bytes          : 216185713728 (201.3G)
+No. bytes stored   : 42402861486 (39.5G)
+Storage ratio      : 5.1
+Chunks initialized : 2697/2697
+
+Chunk size in MB: 76.904296875
+
+--------
+
+feature_id
+
+xarray ds[feature_id]:
+<xarray.DataArray 'feature_id' (feature_id: 2776738)>
+array([ 6635572,  6635590,  6635598, ..., 15448486, 25293410, 15450136],
+      dtype=int32)
+Coordinates:
+  * feature_id  (feature_id) int32 6635572 6635590 6635598 ... 25293410 15450136
+Attributes:
+    cf_role:    timeseries_id
+    comment:    Groundwater Bucket ID
+    long_name:  Groundwater Bucket ID
+
+zarr dz[feature_id].info:
+Name               : /feature_id
+Type               : zarr.core.Array
+Data type          : int32
+Shape              : (2776738,)
+Chunk shape        : (2776738,)
+Order              : C
+Read-only          : False
+Compressor         : Blosc(cname='lz4', clevel=5, shuffle=SHUFFLE, blocksize=0)
+Store type         : zarr.storage.DirectoryStore
+No. bytes          : 11106952 (10.6M)
+No. bytes stored   : 4649079 (4.4M)
+Storage ratio      : 2.4
+Chunks initialized : 1/1
+
+Chunk size in MB: 10.592414855957031
+
+--------
+
+inflow
+
+xarray ds[inflow]:
+<xarray.DataArray 'inflow' (time: 19464, feature_id: 2776738)>
+dask.array<open_dataset-d8de6d87096638599573d6155d16ad4ainflow, shape=(19464, 2776738), dtype=float64, chunksize=(672, 30000), chunktype=numpy.ndarray>
+Coordinates:
+  * feature_id  (feature_id) int32 6635572 6635590 6635598 ... 25293410 15450136
+  * time        (time) datetime64[ns] 1979-02-10 ... 1981-04-30T23:00:00
+Attributes:
+    long_name:    Bucket Inflow
+    units:        m3 s-1
+    valid_range:  [0, 50000000]
+
+zarr dz[inflow].info:
+Name               : /inflow
+Type               : zarr.core.Array
+Data type          : int32
+Shape              : (19464, 2776738)
+Chunk shape        : (672, 30000)
+Order              : C
+Read-only          : False
+Compressor         : Blosc(cname='lz4', clevel=5, shuffle=SHUFFLE, blocksize=0)
+Store type         : zarr.storage.DirectoryStore
+No. bytes          : 216185713728 (201.3G)
+No. bytes stored   : 29426535406 (27.4G)
+Storage ratio      : 7.3
+Chunks initialized : 2697/2697
+
+Chunk size in MB: 76.904296875
+
+--------
+
+outflow
+
+xarray ds[outflow]:
+<xarray.DataArray 'outflow' (time: 19464, feature_id: 2776738)>
+dask.array<open_dataset-d8de6d87096638599573d6155d16ad4aoutflow, shape=(19464, 2776738), dtype=float64, chunksize=(672, 30000), chunktype=numpy.ndarray>
+Coordinates:
+  * feature_id  (feature_id) int32 6635572 6635590 6635598 ... 25293410 15450136
+  * time        (time) datetime64[ns] 1979-02-10 ... 1981-04-30T23:00:00
+Attributes:
+    long_name:    Bucket Outflow
+    units:        m3 s-1
+    valid_range:  [0, 50000000]
+
+zarr dz[outflow].info:
+Name               : /outflow
+Type               : zarr.core.Array
+Data type          : int32
+Shape              : (19464, 2776738)
+Chunk shape        : (672, 30000)
+Order              : C
+Read-only          : False
+Compressor         : Blosc(cname='lz4', clevel=5, shuffle=SHUFFLE, blocksize=0)
+Store type         : zarr.storage.DirectoryStore
+No. bytes          : 216185713728 (201.3G)
+No. bytes stored   : 23996059549 (22.3G)
+Storage ratio      : 9.0
+Chunks initialized : 2697/2697
+
+Chunk size in MB: 76.904296875
+
+--------
+
+time
+
+xarray ds[time]:
+<xarray.DataArray 'time' (time: 19464)>
+array(['1979-02-10T00:00:00.000000000', '1979-02-10T01:00:00.000000000',
+       '1979-02-10T02:00:00.000000000', ..., '1981-04-30T21:00:00.000000000',
+       '1981-04-30T22:00:00.000000000', '1981-04-30T23:00:00.000000000'],
+      dtype='datetime64[ns]')
+Coordinates:
+  * time     (time) datetime64[ns] 1979-02-10 ... 1981-04-30T23:00:00
+Attributes:
+    long_name:      valid output time
+    standard_name:  time
+    valid_max:      4862880
+    valid_min:      4777980
+
+zarr dz[time].info:
+Name               : /time
+Type               : zarr.core.Array
+Data type          : int64
+Shape              : (19464,)
+Chunk shape        : (672,)
+Order              : C
+Read-only          : False
+Compressor         : Blosc(cname='lz4', clevel=5, shuffle=SHUFFLE, blocksize=0)
+Store type         : zarr.storage.DirectoryStore
+No. bytes          : 155712 (152.1K)
+No. bytes stored   : 12799 (12.5K)
+Storage ratio      : 12.2
+Chunks initialized : 29/29
+
+Chunk size in MB: 0.005126953125
