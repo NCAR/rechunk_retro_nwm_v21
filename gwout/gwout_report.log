@@ -1,4 +1,3 @@
-['./report_output.py', '/glade/scratch/jamesmcc/retro_collect/gwout/gwout.zarr']
 
 -------------------------------------------------------
 Output file report: /glade/scratch/jamesmcc/retro_collect/gwout/gwout.zarr
@@ -46,7 +45,7 @@ depth
 
 xarray ds[depth]:
 <xarray.DataArray 'depth' (time: 19464, feature_id: 2776738)>
-dask.array<open_dataset-d8de6d87096638599573d6155d16ad4adepth, shape=(19464, 2776738), dtype=float64, chunksize=(672, 30000), chunktype=numpy.ndarray>
+dask.array<open_dataset-efa142dff50312b6eabfe61ea3fbd08edepth, shape=(19464, 2776738), dtype=float64, chunksize=(672, 30000), chunktype=numpy.ndarray>
 Coordinates:
   * feature_id  (feature_id) int32 6635572 6635590 6635598 ... 25293410 15450136
   * time        (time) datetime64[ns] 1979-02-10 ... 1981-04-30T23:00:00
@@ -110,7 +109,7 @@ inflow
 
 xarray ds[inflow]:
 <xarray.DataArray 'inflow' (time: 19464, feature_id: 2776738)>
-dask.array<open_dataset-d8de6d87096638599573d6155d16ad4ainflow, shape=(19464, 2776738), dtype=float64, chunksize=(672, 30000), chunktype=numpy.ndarray>
+dask.array<open_dataset-efa142dff50312b6eabfe61ea3fbd08einflow, shape=(19464, 2776738), dtype=float64, chunksize=(672, 30000), chunktype=numpy.ndarray>
 Coordinates:
   * feature_id  (feature_id) int32 6635572 6635590 6635598 ... 25293410 15450136
   * time        (time) datetime64[ns] 1979-02-10 ... 1981-04-30T23:00:00
@@ -142,7 +141,7 @@ outflow
 
 xarray ds[outflow]:
 <xarray.DataArray 'outflow' (time: 19464, feature_id: 2776738)>
-dask.array<open_dataset-d8de6d87096638599573d6155d16ad4aoutflow, shape=(19464, 2776738), dtype=float64, chunksize=(672, 30000), chunktype=numpy.ndarray>
+dask.array<open_dataset-efa142dff50312b6eabfe61ea3fbd08eoutflow, shape=(19464, 2776738), dtype=float64, chunksize=(672, 30000), chunktype=numpy.ndarray>
 Coordinates:
   * feature_id  (feature_id) int32 6635572 6635590 6635598 ... 25293410 15450136
   * time        (time) datetime64[ns] 1979-02-10 ... 1981-04-30T23:00:00

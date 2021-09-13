@@ -47,7 +47,7 @@ def main(file_rechunked):
 
 if __name__ == "__main__":
     args = sys.argv
-    print(args)
+    # print(args)
     if len(args) != 2:
         raise ValueError("output_report.py takes a single arg for a valid file")
     file_rechunked = pathlib.Path(args[1])
