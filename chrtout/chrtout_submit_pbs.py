@@ -1,15 +1,15 @@
-from gwout_to_zarr import *
+from chrtout_to_zarr import *
 
 pbs_script = (
-    "/glade/u/home/jamesmcc/WRF_Hydro/"  # configure this
-    "rechunk_retro_nwm_v21/gwout/gwout_script_pbs.sh")
+    "/glade/work/ishitas/zarr_retrospective/"  # configure this
+    "rechunk_retro_nwm_v21/chrtout/chrtout_script_pbs.sh")
 
 dates = pd.date_range(start=start_date, end=end_date, freq=freq)
 files = [
     pathlib.Path(
         f"{input_dir}/"
         f'{date.strftime("%Y")}/'
-        f'{date.strftime("%Y%m%d%H%M")}.GWOUT_DOMAIN1.comp')
+        f'{date.strftime("%Y%m%d%H%M")}.CHRTOUT_DOMAIN1.comp')
     for date in dates]
 n_chunks = ceil(len(files) / time_chunk_size)
 n_jobs = ceil(n_chunks / n_chunks_job)

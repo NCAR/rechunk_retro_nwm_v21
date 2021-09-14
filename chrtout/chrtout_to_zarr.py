@@ -17,7 +17,7 @@ import xarray as xr
 import zarr
 
 # User config
-output_path = pathlib.Path("/glade/scratch/jamesmcc/retro_collect/gwout")
+output_path = pathlib.Path("/glade/p/cisl/nwc/ishitas/zarr_new/chrtout")
 
 # Chunk config
 time_chunk_size = 672
@@ -38,11 +38,11 @@ end_date = "1981-04-30 23:00"  # pilot 2 years
 # files
 ## output_path is a global, user-defined variable defined above.
 os.chdir(output_path)
-file_chunked = output_path / "gwout.zarr"
+file_chunked = output_path / "chrtout.zarr"
 file_step = output_path / "step.zarr"
 file_last_step = output_path / "last_step.zarr"
 file_temp = output_path / "temp.zarr"
-file_log_loop_time = output_path / "gwout_loop_time.txt"
+file_log_loop_time = output_path / "chrtout_loop_time.txt"
 
 # static information
 # todo JLM: centralize this info?
@@ -63,9 +63,55 @@ def del_zarr_file(the_file: pathlib.Path):
     return None
 
 
-def preprocess_gwout(ds):
-    ds = ds.drop(["reference_time", "feature_id"])
+def preprocess_chrtout(ds):
+    ds = ds.drop(["reference_time", "feature_id", "crs"])
     return ds.reset_coords(drop=True)
+
+def process_chrtout(ds):
+    rl_file = ('/glade/work/jamesmcc/domains/private/CONUS_v2.1_final/NWM/DOMAIN/RouteLink_NWMv2.1.nc')
+    rl = xr.open_dataset(rl_file)
+    for vv in rl.variables:
+        if vv in ['link', 'gages']:
+            continue
+        rl = rl.drop(vv)
+    rl = rl.set_coords('link')
+    rl = rl.rename({'link':'feature_id', 'gages': 'gage_id'})
+    rl = rl.sortby('feature_id')
+    print("Resetting coordinates")
+    ds = ds.reset_coords(['longitude', 'latitude'])
+    print("Asserting")
+    assert rl.feature_id.equals(ds.feature_id)
+    print("Merging")
+    ds2 = ds.merge(rl)
+    # check the join
+    print("Checking join")
+    gages_unique = np.unique(ds2.gage_id.values)
+    gage_random = gages_unique[1]
+    wh_random_ds = np.where(ds2.gage_id.isin([gage_random]).values)
+    feature_random_ds = ds2.feature_id[wh_random_ds]
+    wh_random_rl = np.where(rl.gage_id.isin([gage_random]).values)
+    feature_random_rl = rl.feature_id[wh_random_rl]
+    assert feature_random_rl.equals(feature_random_ds)
+    # global meta data
+    print("global meta data")
+    attrs_keep = ['code_version', 'featureType', 'model_configuration', 'proj4']
+    attrs_new = {key: value for key, value in ds2.attrs.items() if key in attrs_keep}
+    ds2.attrs = attrs_new
+    ds2['elevation'] = ds2.elevation[0,:]
+    ds2['order'] = ds2.order[0,:]
+    print("dropping vars")
+    drop_vars = ['qBtmVertRunoff', 'qBucket', 'qSfcLatRunoff', 'q_lateral']
+    ds2 = ds2.drop_vars(drop_vars)
+    ds2 = ds2.set_coords(['longitude', 'latitude', 'elevation'])
+    ds2.elevation.attrs['long_name'] = 'feature elevation'
+    del ds2.elevation.attrs['standard_name']
+    ds2.latitude.attrs['long_name'] = 'feature latitude'
+    ds2.longitude.attrs['long_name'] = 'feature longitude'
+    ds2.order.attrs['long_name'] = 'stream order'
+    del ds2.order.attrs['standard_name']
+    del ds2.time.attrs['valid_max']
+    del ds2.time.attrs['valid_min']
+    return ds2
 
 
 def main():
@@ -89,7 +135,7 @@ def main():
         pathlib.Path(
             f"{input_dir}/"
             f'{date.strftime("%Y")}/'
-            f'{date.strftime("%Y%m%d%H%M")}.GWOUT_DOMAIN1.comp'
+            f'{date.strftime("%Y%m%d%H%M")}.CHRTOUT_DOMAIN1.comp'
         )
         for date in dates
     ]
@@ -147,7 +193,7 @@ def main():
         ds = xr.open_mfdataset(
             files_chunk,
             parallel=True,
-            preprocess=preprocess_gwout,
+            preprocess=preprocess_chrtout,
             combine="by_coords",
             concat_dim="time",
             join="override",
@@ -156,6 +202,7 @@ def main():
 
         # add back in the 'feature_id' coordinate removed by preprocessing
         ds.coords["feature_id"] = dset.coords["feature_id"]
+        ds = process_chrtout(ds)
 
         # remove the temp and step zarr datasets
         # moving these and deleting asynchornously might help speed?
@@ -200,6 +247,8 @@ def main():
             if not file_chunked.exists():
                 ds.to_zarr(str(file_chunked), consolidated=True, mode="w")
             else:
+                drop_vars = ['gage_id', 'order']
+                ds = ds.drop_vars(drop_vars)
                 ds.to_zarr(str(file_chunked), consolidated=True, append_dim="time")
 
             print(f"{indt}Close zarr chunked file")
@@ -219,6 +268,8 @@ def main():
             ds1 = ds.chunk({"feature_id": feature_chunk_size, "time": time_chunk_size})
             _ = ds1.to_zarr(str(file_last_step), consolidated=True, mode="w")
             ds2 = xr.open_zarr(str(file_last_step), consolidated=True)
+            drop_vars = ['gage_id', 'order']
+            ds2 = ds2.drop_vars(drop_vars)
             ds2.to_zarr(file_chunked, consolidated=True, append_dim="time")
 
             print(f"{indt}Final file clean up")
