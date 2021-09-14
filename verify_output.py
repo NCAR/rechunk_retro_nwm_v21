@@ -50,6 +50,10 @@ def main(file_rechunked):
             for vv in ds.variables:
                 if vv == "time":
                     continue
+                if file_rechunked.name == 'chrtout.zarr':
+                    if vv in ['gage_id']:
+                        print(f'Not checking gage_id')
+                        continue
 
                 print(f"Checking variable: {vv}")
                 if vv == "crs":
@@ -70,8 +74,10 @@ def main(file_rechunked):
                 print(f"Checking variable: {vv}")
                 diffs = ds_random[vv].values - ds[vv].isel(time=rr).values
                 if np.isnan(diffs).any():
-                    print(f"nans present")
-                    assert np.isnan(diff).sum() == np.isnan(ds_random[vv].values).sum()
+                    n_nans_diff = np.isnan(diffs).sum()
+                    print(f"{n_nans_diff} nans present")
+                    assert n_nans_diff == np.isnan(ds_random[vv].values).sum()
+                    assert n_nans_diff == np.isnan(ds[vv].isel(time=rr).values).sum()
                     assert np.nanmin(np.abs(diffs)) < 1e-8
                 else:
                     assert np.min(np.abs(diffs)) < 1e-8

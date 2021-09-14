@@ -102,7 +102,7 @@ def process_chrtout(ds):
     print("dropping vars")
     drop_vars = ['qBtmVertRunoff', 'qBucket', 'qSfcLatRunoff', 'q_lateral']
     ds2 = ds2.drop_vars(drop_vars)
-    ds2 = ds2.set_coords(['longitude', 'latitude', 'elevation'])
+    ds2 = ds2.set_coords(['longitude', 'latitude', 'elevation', 'gage_id', 'order'])
     ds2.elevation.attrs['long_name'] = 'feature elevation'
     del ds2.elevation.attrs['standard_name']
     ds2.latitude.attrs['long_name'] = 'feature latitude'
