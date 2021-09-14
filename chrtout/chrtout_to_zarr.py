@@ -67,18 +67,19 @@ def preprocess_chrtout(ds):
     ds = ds.drop(["reference_time", "feature_id", "crs"])
     return ds.reset_coords(drop=True)
 
+
 def process_chrtout(ds):
-    rl_file = ('/glade/work/jamesmcc/domains/private/CONUS_v2.1_final/NWM/DOMAIN/RouteLink_NWMv2.1.nc')
+    rl_file = "/glade/work/jamesmcc/domains/private/CONUS_v2.1_final/NWM/DOMAIN/RouteLink_NWMv2.1.nc"
     rl = xr.open_dataset(rl_file)
     for vv in rl.variables:
-        if vv in ['link', 'gages']:
+        if vv in ["link", "gages"]:
             continue
         rl = rl.drop(vv)
-    rl = rl.set_coords('link')
-    rl = rl.rename({'link':'feature_id', 'gages': 'gage_id'})
-    rl = rl.sortby('feature_id')
+    rl = rl.set_coords("link")
+    rl = rl.rename({"link": "feature_id", "gages": "gage_id"})
+    rl = rl.sortby("feature_id")
     print("Resetting coordinates")
-    ds = ds.reset_coords(['longitude', 'latitude'])
+    ds = ds.reset_coords(["longitude", "latitude"])
     print("Asserting")
     assert rl.feature_id.equals(ds.feature_id)
     print("Merging")
@@ -94,23 +95,23 @@ def process_chrtout(ds):
     assert feature_random_rl.equals(feature_random_ds)
     # global meta data
     print("global meta data")
-    attrs_keep = ['code_version', 'featureType', 'model_configuration', 'proj4']
+    attrs_keep = ["code_version", "featureType", "model_configuration", "proj4"]
     attrs_new = {key: value for key, value in ds2.attrs.items() if key in attrs_keep}
     ds2.attrs = attrs_new
-    ds2['elevation'] = ds2.elevation[0,:]
-    ds2['order'] = ds2.order[0,:]
+    ds2["elevation"] = ds2.elevation[0, :]
+    ds2["order"] = ds2.order[0, :]
     print("dropping vars")
-    drop_vars = ['qBtmVertRunoff', 'qBucket', 'qSfcLatRunoff', 'q_lateral']
+    drop_vars = ["qBtmVertRunoff", "qBucket", "qSfcLatRunoff", "q_lateral"]
     ds2 = ds2.drop_vars(drop_vars)
-    ds2 = ds2.set_coords(['longitude', 'latitude', 'elevation', 'gage_id', 'order'])
-    ds2.elevation.attrs['long_name'] = 'feature elevation'
-    del ds2.elevation.attrs['standard_name']
-    ds2.latitude.attrs['long_name'] = 'feature latitude'
-    ds2.longitude.attrs['long_name'] = 'feature longitude'
-    ds2.order.attrs['long_name'] = 'stream order'
-    del ds2.order.attrs['standard_name']
-    del ds2.time.attrs['valid_max']
-    del ds2.time.attrs['valid_min']
+    ds2 = ds2.set_coords(["longitude", "latitude", "elevation", "gage_id", "order"])
+    ds2.elevation.attrs["long_name"] = "feature elevation"
+    del ds2.elevation.attrs["standard_name"]
+    ds2.latitude.attrs["long_name"] = "feature latitude"
+    ds2.longitude.attrs["long_name"] = "feature longitude"
+    ds2.order.attrs["long_name"] = "stream order"
+    del ds2.order.attrs["standard_name"]
+    del ds2.time.attrs["valid_max"]
+    del ds2.time.attrs["valid_min"]
     return ds2
 
 
@@ -247,7 +248,7 @@ def main():
             if not file_chunked.exists():
                 ds.to_zarr(str(file_chunked), consolidated=True, mode="w")
             else:
-                drop_vars = ['gage_id', 'order']
+                drop_vars = ["gage_id", "order"]
                 ds = ds.drop_vars(drop_vars)
                 ds.to_zarr(str(file_chunked), consolidated=True, append_dim="time")
 
@@ -268,7 +269,7 @@ def main():
             ds1 = ds.chunk({"feature_id": feature_chunk_size, "time": time_chunk_size})
             _ = ds1.to_zarr(str(file_last_step), consolidated=True, mode="w")
             ds2 = xr.open_zarr(str(file_last_step), consolidated=True)
-            drop_vars = ['gage_id', 'order']
+            drop_vars = ["gage_id", "order"]
             ds2 = ds2.drop_vars(drop_vars)
             ds2.to_zarr(file_chunked, consolidated=True, append_dim="time")
 
