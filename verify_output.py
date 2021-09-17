@@ -16,6 +16,7 @@ type_pattern_dict = {
     "chrtout.zarr": "CHRTOUT_DOMAIN1.comp",
     "gwout.zarr": "GWOUT_DOMAIN1.comp",
     "lakeout.zarr": "LAKEOUT_DOMAIN1.comp",
+    "ldasout.zarr" : "LDASOUT_DOMAIN1.comp"
 }
 
 
@@ -71,7 +72,7 @@ def main(file_rechunked):
                 diffs = ds_random[vv].values - ds[vv].isel(time=rr).values
                 if np.isnan(diffs).any():
                     print(f"nans present")
-                    assert np.isnan(diff).sum() == np.isnan(ds_random[vv].values).sum()
+                    assert np.isnan(diffs).sum() == np.isnan(ds_random[vv].values).sum()
                     assert np.nanmin(np.abs(diffs)) < 1e-8
                 else:
                     assert np.min(np.abs(diffs)) < 1e-8
