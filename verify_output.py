@@ -16,6 +16,7 @@ type_pattern_dict = {
     "chrtout.zarr": "CHRTOUT_DOMAIN1.comp",
     "gwout.zarr": "GWOUT_DOMAIN1.comp",
     "lakeout.zarr": "LAKEOUT_DOMAIN1.comp",
+    "rtout.zarr": "RTOUT_DOMAIN1.comp",
 }
 
 

@@ -1,0 +1,251 @@
+
+-------------------------------------------------------
+Output file report: /glade/scratch/jamesmcc/retro_collect/rtout/rtout.zarr
+Total file size: 350G
+Dataset overviews:
+zarr ds.info:
+Name        : /
+Type        : zarr.hierarchy.Group
+Read-only   : False
+Store type  : zarr.storage.DirectoryStore
+No. members : 6
+No. arrays  : 6
+No. groups  : 0
+Arrays      : crs, sfcheadsubrt, time, x, y, zwattablrt
+
+
+xarray ds.info:
+<xarray.Dataset>
+Dimensions:       (time: 6496, y: 15360, x: 18432)
+Coordinates:
+  * time          (time) datetime64[ns] 1979-02-01T03:00:00 ... 1981-04-23
+  * x             (x) float64 -2.304e+06 -2.304e+06 ... 2.304e+06 2.304e+06
+  * y             (y) float64 -1.92e+06 -1.92e+06 ... 1.92e+06 1.92e+06
+Data variables:
+    crs           |S1 ...
+    sfcheadsubrt  (time, y, x) float64 dask.array<chunksize=(224, 350, 350), meta=np.ndarray>
+    zwattablrt    (time, y, x) float64 dask.array<chunksize=(224, 350, 350), meta=np.ndarray>
+Attributes:
+    Conventions:                CF-1.6
+    GDAL_DataType:              Generic
+    TITLE:                      OUTPUT FROM WRF-Hydro v5.2.0-beta2
+    code_version:               v5.2.0-beta2
+    model_configuration:        retrospective
+    model_initialization_time:  1981-01-01_00:00:00
+    model_output_type:          terrain_rt
+    model_output_valid_time:    1981-03-26_03:00:00
+    model_total_valid_times:    720
+    proj4:                      +proj=lcc +units=m +a=6370000.0 +b=6370000.0 ...
+
+-----------------------------------
+Variable comparison xarray and zarr
+
+--------
+
+crs
+
+xarray ds[crs]:
+<xarray.DataArray 'crs' ()>
+array(b'', dtype='|S1')
+Attributes: (12/17)
+    GeoTransform:                   -2303999.17655 250.0 0 1919999.66329 0 -2...
+    _CoordinateAxes:                y x
+    _CoordinateTransformType:       Projection
+    earth_radius:                   6370000.0
+    esri_pe_string:                 PROJCS["Lambert_Conformal_Conic",GEOGCS["...
+    false_easting:                  0.0
+    ...                             ...
+    longitude_of_central_meridian:  -97.0
+    longitude_of_prime_meridian:    0.0
+    semi_major_axis:                6370000.0
+    spatial_ref:                    PROJCS["Lambert_Conformal_Conic",GEOGCS["...
+    standard_parallel:              [30.0, 60.0]
+    transform_name:                 lambert_conformal_conic
+
+zarr dz[crs].info:
+Name               : /crs
+Type               : zarr.core.Array
+Data type          : |S1
+Shape              : ()
+Chunk shape        : ()
+Order              : C
+Read-only          : False
+Compressor         : None
+Store type         : zarr.storage.DirectoryStore
+No. bytes          : 1
+No. bytes stored   : 1967 (1.9K)
+Storage ratio      : 0.0
+Chunks initialized : 3/1
+
+Chunk size in MB: 9.5367431640625e-07
+
+--------
+
+sfcheadsubrt
+
+xarray ds[sfcheadsubrt]:
+<xarray.DataArray 'sfcheadsubrt' (time: 6496, y: 15360, x: 18432)>
+dask.array<open_dataset-f7a057b268bb359b2e1db2876a8c5c5csfcheadsubrt, shape=(6496, 15360, 18432), dtype=float64, chunksize=(224, 350, 350), chunktype=numpy.ndarray>
+Coordinates:
+  * time     (time) datetime64[ns] 1979-02-01T03:00:00 ... 1981-04-23
+  * x        (x) float64 -2.304e+06 -2.304e+06 ... 2.304e+06 2.304e+06
+  * y        (y) float64 -1.92e+06 -1.92e+06 -1.919e+06 ... 1.92e+06 1.92e+06
+Attributes:
+    esri_pe_string:  PROJCS["Lambert_Conformal_Conic",GEOGCS["GCS_Sphere",DAT...
+    grid_mapping:    crs
+    long_name:       surface head
+    units:           mm
+    valid_range:     [0, 1000000]
+
+zarr dz[sfcheadsubrt].info:
+Name               : /sfcheadsubrt
+Type               : zarr.core.Array
+Data type          : int32
+Shape              : (6496, 15360, 18432)
+Chunk shape        : (224, 350, 350)
+Order              : C
+Read-only          : False
+Compressor         : Blosc(cname='lz4', clevel=5, shuffle=SHUFFLE, blocksize=0)
+Store type         : zarr.storage.DirectoryStore
+No. bytes          : 7356473671680 (6.7T)
+No. bytes stored   : 74639530821 (69.5G)
+Storage ratio      : 98.6
+Chunks initialized : 67628/67628
+
+Chunk size in MB: 104.67529296875
+
+--------
+
+time
+
+xarray ds[time]:
+<xarray.DataArray 'time' (time: 6496)>
+array(['1979-02-01T03:00:00.000000000', '1979-02-01T06:00:00.000000000',
+       '1979-02-01T09:00:00.000000000', ..., '1981-04-22T18:00:00.000000000',
+       '1981-04-22T21:00:00.000000000', '1981-04-23T00:00:00.000000000'],
+      dtype='datetime64[ns]')
+Coordinates:
+  * time     (time) datetime64[ns] 1979-02-01T03:00:00 ... 1981-04-23
+Attributes:
+    long_name:      valid output time
+    standard_name:  time
+    valid_max:      4862880
+    valid_min:      4777980
+
+zarr dz[time].info:
+Name               : /time
+Type               : zarr.core.Array
+Data type          : int64
+Shape              : (6496,)
+Chunk shape        : (224,)
+Order              : C
+Read-only          : False
+Compressor         : Blosc(cname='lz4', clevel=5, shuffle=SHUFFLE, blocksize=0)
+Store type         : zarr.storage.DirectoryStore
+No. bytes          : 51968 (50.8K)
+No. bytes stored   : 11168 (10.9K)
+Storage ratio      : 4.7
+Chunks initialized : 29/29
+
+Chunk size in MB: 0.001708984375
+
+--------
+
+x
+
+xarray ds[x]:
+<xarray.DataArray 'x' (x: 18432)>
+array([-2303875., -2303625., -2303375., ...,  2303375.,  2303625.,  2303875.])
+Coordinates:
+  * x        (x) float64 -2.304e+06 -2.304e+06 ... 2.304e+06 2.304e+06
+Attributes:
+    _CoordinateAxisType:  GeoX
+    long_name:            x coordinate of projection
+    resolution:           250.0
+    standard_name:        projection_x_coordinate
+    units:                m
+
+zarr dz[x].info:
+Name               : /x
+Type               : zarr.core.Array
+Data type          : float64
+Shape              : (18432,)
+Chunk shape        : (18432,)
+Order              : C
+Read-only          : False
+Compressor         : Blosc(cname='lz4', clevel=5, shuffle=SHUFFLE, blocksize=0)
+Store type         : zarr.storage.DirectoryStore
+No. bytes          : 147456 (144.0K)
+No. bytes stored   : 13386 (13.1K)
+Storage ratio      : 11.0
+Chunks initialized : 1/1
+
+Chunk size in MB: 0.140625
+
+--------
+
+y
+
+xarray ds[y]:
+<xarray.DataArray 'y' (y: 15360)>
+array([-1919875., -1919625., -1919375., ...,  1919375.,  1919625.,  1919875.])
+Coordinates:
+  * y        (y) float64 -1.92e+06 -1.92e+06 -1.919e+06 ... 1.92e+06 1.92e+06
+Attributes:
+    _CoordinateAxisType:  GeoY
+    long_name:            y coordinate of projection
+    resolution:           250.0
+    standard_name:        projection_y_coordinate
+    units:                m
+
+zarr dz[y].info:
+Name               : /y
+Type               : zarr.core.Array
+Data type          : float64
+Shape              : (15360,)
+Chunk shape        : (15360,)
+Order              : C
+Read-only          : False
+Compressor         : Blosc(cname='lz4', clevel=5, shuffle=SHUFFLE, blocksize=0)
+Store type         : zarr.storage.DirectoryStore
+No. bytes          : 122880 (120.0K)
+No. bytes stored   : 11299 (11.0K)
+Storage ratio      : 10.9
+Chunks initialized : 1/1
+
+Chunk size in MB: 0.1171875
+
+--------
+
+zwattablrt
+
+xarray ds[zwattablrt]:
+<xarray.DataArray 'zwattablrt' (time: 6496, y: 15360, x: 18432)>
+dask.array<open_dataset-f7a057b268bb359b2e1db2876a8c5c5czwattablrt, shape=(6496, 15360, 18432), dtype=float64, chunksize=(224, 350, 350), chunktype=numpy.ndarray>
+Coordinates:
+  * time     (time) datetime64[ns] 1979-02-01T03:00:00 ... 1981-04-23
+  * x        (x) float64 -2.304e+06 -2.304e+06 ... 2.304e+06 2.304e+06
+  * y        (y) float64 -1.92e+06 -1.92e+06 -1.919e+06 ... 1.92e+06 1.92e+06
+Attributes:
+    esri_pe_string:  PROJCS["Lambert_Conformal_Conic",GEOGCS["GCS_Sphere",DAT...
+    grid_mapping:    crs
+    long_name:       depth to saturation, rounded to highest saturated layer
+    units:           m
+    valid_range:     [0, 1000]
+
+zarr dz[zwattablrt].info:
+Name               : /zwattablrt
+Type               : zarr.core.Array
+Data type          : int32
+Shape              : (6496, 15360, 18432)
+Chunk shape        : (224, 350, 350)
+Order              : C
+Read-only          : False
+Compressor         : Blosc(cname='lz4', clevel=5, shuffle=SHUFFLE, blocksize=0)
+Store type         : zarr.storage.DirectoryStore
+No. bytes          : 7356473671680 (6.7T)
+No. bytes stored   : 299462195307 (278.9G)
+Storage ratio      : 24.6
+Chunks initialized : 67628/67628
+
+Chunk size in MB: 104.67529296875
