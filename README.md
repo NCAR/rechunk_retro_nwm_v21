@@ -6,7 +6,7 @@ The data are accessible via globus. They are located at
 ```
 /glade/p/datashare/jamesmcc/gwout.zarr
 /glade/p/datashare/jamesmcc/lakeout.zarr
-/glade/p/datashare/jamesmcc/precip.zarr
+/glade/p/datashare/jamesmcc/nwm_retro_v2.1/precip.zarr
 ```
 Please see
 https://www2.cisl.ucar.edu/resources/storage-and-file-systems/using-the-ncar-data-sharing-service#retrieve
