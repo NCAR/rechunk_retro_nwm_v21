@@ -17,20 +17,20 @@ import xarray as xr
 import zarr
 
 # User config
-output_path = pathlib.Path("/glade/p/cisl/nwc/ishitas/zarr_new/ldasout")
+output_path = pathlib.Path("/glade/p/cisl/nwc/ishitas/zarr_new/ldasout_test")
 
 # Chunk config
-time_chunk_size = 112
-x_chunk_size = 288
-y_chunk_size = 320
+time_chunk_size = 224
+x_chunk_size = 350
+y_chunk_size = 350
 soil_chunk_size = 1
 vis_chunk_size = 1
-n_workers = 18
+n_workers = 10
 n_cores = 1
 queue = "casper"
-cluster_mem_gb = 15
+cluster_mem_gb = 25
 
-n_chunks_job = 12  # how many to do before exiting, 12 is approx yearly
+n_chunks_job = 6  # how many to do before exiting, 12 is approx yearly
 # end_date = '2018-12-31 23:00' # full time
 end_date = "1981-02-10 23:00"  # pilot 2 years
 # this end_date tests all parts of the execution for
@@ -97,10 +97,9 @@ def main():
     ]
 
     n_chunks_job_actual = ceil(len(files) / time_chunk_size)
-
     print(f"Get single file data and metadata")
     dset = xr.open_dataset(files[0])
-
+    
     print("Set cluster")
     cluster = PBSCluster(
         cores=n_cores,
