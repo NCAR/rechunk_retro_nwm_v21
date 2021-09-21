@@ -16,10 +16,15 @@ type_pattern_dict = {
     "chrtout.zarr": "CHRTOUT_DOMAIN1.comp",
     "gwout.zarr": "GWOUT_DOMAIN1.comp",
     "lakeout.zarr": "LAKEOUT_DOMAIN1.comp",
+    "precip.zarr": "LDASIN_DOMAIN1",
 }
 
 
 def main(file_rechunked):
+    if file_rechunked.name == 'precip.zarr':
+        orig_dir = pathlib.Path(
+            "/glade/campaign/ral/hap/zhangyx/AORC.Forcing")
+
     pattern = type_pattern_dict[file_rechunked.name]
 
     # Open the rechunked zarr output
@@ -53,7 +58,12 @@ def main(file_rechunked):
 
                 print(f"Checking variable: {vv}")
                 if vv == "crs":
-                    assert ds_random[vv].equals(ds[vv])
+                    if file_rechunked.name == 'precip.zarr':
+                        assert ds_random[vv].values == ds[vv].values
+                        for key, val in ds[vv].attrs.items():
+                            assert np.all(val == ds_random[vv].attrs[key])
+                    else:
+                        assert ds_random[vv].equals(ds[vv])
                 elif not "time" in ds[vv].dims:
                     diffs = ds_random[vv].values - ds[vv].values
                     assert np.nanmin(np.abs(diffs)) < 1e-8

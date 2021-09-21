@@ -24,7 +24,7 @@ time_chunk_size = 672
 x_chunk_size = 350
 y_chunk_size = 350
 
-n_workers = 3
+n_workers = 6
 n_cores = 1
 queue = "casper"
 cluster_mem_gb = 20
