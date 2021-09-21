@@ -4,13 +4,16 @@ Rechunking retrospective runs to more approachable chunks in Zarr output.
 ## Data Access
 The data are accessible via globus. They are located at 
 ```
-/glade/p/datashare/jamesmcc/gwout.zarr
-/glade/p/datashare/jamesmcc/lakeout.zarr
+/glade/p/datashare/jamesmcc/nwm_retro_v2.1/gwout.zarr
+/glade/p/datashare/jamesmcc/nwm_retro_v2.1/lakeout.zarr
 ```
 Please see
 https://www2.cisl.ucar.edu/resources/storage-and-file-systems/using-the-ncar-data-sharing-service#retrieve
 for accessing the data and let us know if permission errors arise. 
 
+[James' globus end point "nwm_retro_v2.1" (lakeout, gwout, rtout, and precip)](https://app.globus.org/file-manager?origin_id=a70eef1a-a2d3-11eb-92d2-6b08dd67ff48&origin_path=%2F). 
+
+[Ishita's globus end point "nwm_retro_v2.1-ishita" (chrtout and ldasout)](https://app.globus.org/file-manager?origin_id=2e6141ce-1b11-11ec-a477-a50ad076c282&origin_path=%2F). 
 
 ## Repository Overview
 There is (or will be) a directory for each file type
