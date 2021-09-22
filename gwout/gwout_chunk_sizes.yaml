@@ -1,0 +1,47 @@
+type_tag: &type_tag 'gwout'
+
+dirs:
+  output: &out_dir !join [/glade/scratch/jamesmcc/retro_collect/, *type_tag, /]
+  input: &input_dir /glade/scratch/zhangyx/WRF-Hydro/model.data.v2.1
+
+files:
+  chunked: !join [*out_dir, *type_tag, .zarr]
+  step: !join [*out_dir, step.zarr]
+  last_step: !join [*out_dir, last_step.zarr]
+  temp: !join [*out_dir, temp.zarr]
+  loop_time_log: !join [*out_dir, *type_tag, _loop_time.txt]
+  input_fstring: !join [*input_dir, '/{date.strftime("%Y")}/{date.strftime("%Y%m%d%H%M")}.GWOUT_DOMAIN1.comp']
+
+datetime:
+  start: 1979-02-01 01:00
+
+  # end: 1981-04-30 23:00  # 2 year pilot
+  end: 1979-02-03 11:00  # 
+  # this below end tests all parts of the execution for
+  # chunk size 672 and n_chunks_job=1
+  # end: 1979-04-17 00:00
+
+  freq: 1h
+  
+chunk_sizes:
+  time: &time_chunk_size 24  # 672
+  feature_id: &feature_chunk_size 30000
+  variables:
+    inflow:
+      time: *time_chunk_size
+      feature_id: *feature_chunk_size
+    outflow:
+      time: *time_chunk_size
+      feature_id: *feature_chunk_size
+    depth:
+      time: *time_chunk_size
+      feature_id: *feature_chunk_size
+
+job:
+  n_chunks_process: 3  # 12
+    
+dask:
+  n_workers: 8
+  n_cores: 1
+  queue: 'casper'
+  cluster_mem_gb: 15

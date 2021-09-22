@@ -1,3 +1,6 @@
+import sys
+sys.path.append("..")
+
 import dask
 from dask.distributed import Client, progress, LocalCluster, performance_report
 from dask_jobqueue import PBSCluster
@@ -7,48 +10,57 @@ import numcodecs
 import os
 import pandas as pd
 import pathlib
+from pprint import pprint
+from read_yaml_config import read_yaml_config
 from rechunker import rechunk
 import shutil
 import socket
 import subprocess
-import sys
 import time
 import xarray as xr
 import zarr
 
-# User config
-output_path = pathlib.Path("/glade/scratch/jamesmcc/retro_collect/gwout")
+config_file = (
+    '/glade/u/home/jamesmcc/WRF_Hydro/rechunk_retro_nwm_v21/'
+    'gwout/gwout_chunk_sizes.yaml')
 
-# Chunk config
-time_chunk_size = 672
-feature_chunk_size = 30000
+config = read_yaml_config(config_file)
 
-n_workers = 18
-n_cores = 1
-queue = "casper"
-cluster_mem_gb = 15
+dirs_cfg = config['dirs']
+output_path = pathlib.Path(dirs_cfg['output'])
+input_dir = pathlib.Path(dirs_cfg['input'])
 
-n_chunks_job = 12  # how many to do before exiting, 12 is approx yearly
-# end_date = '2018-12-31 23:00' # full time
-end_date = "1981-04-30 23:00"  # pilot 2 years
-# this end_date tests all parts of the execution for
-# chunk size 672 and n_chunks_job=1
-# end_date = "1979-04-17 00:00"
+files_cfg = config['files']
+file_chunked = pathlib.Path(files_cfg['chunked'])
+file_step = pathlib.Path(files_cfg['step'])
+file_last_step = pathlib.Path(files_cfg['last_step'])
+file_temp = pathlib.Path(files_cfg['temp'])
+file_log_loop_time = pathlib.Path(files_cfg['loop_time_log'])
+input_fstring = files_cfg['input_fstring']
 
-# files
-## output_path is a global, user-defined variable defined above.
+chunks_cfg = config['chunk_sizes']
+time_chunk_size = chunks_cfg['time']
+var_chunk_sizes = chunks_cfg['variables']
+global_chunk_sizes = config['chunk_sizes']
+_ = global_chunk_sizes.pop('variables')
+
+
+dask_cfg = config['dask']
+n_workers = dask_cfg['n_workers']
+n_cores = dask_cfg['n_cores']
+queue = dask_cfg['queue']
+cluster_mem_gb = dask_cfg['cluster_mem_gb']
+
+n_chunks_job = config['job']['n_chunks_process']
+
+datetime_cfg = config['datetime']
+end_date = datetime_cfg['end']
+start_date = datetime_cfg['start']
+freq = datetime_cfg['freq']
+
+if not output_path.exists():
+    output_path.mkdir()
 os.chdir(output_path)
-file_chunked = output_path / "gwout.zarr"
-file_step = output_path / "step.zarr"
-file_last_step = output_path / "last_step.zarr"
-file_temp = output_path / "temp.zarr"
-file_log_loop_time = output_path / "gwout_loop_time.txt"
-
-# static information
-# todo JLM: centralize this info?
-input_dir = "/glade/scratch/zhangyx/WRF-Hydro/model.data.v2.1"
-start_date = "1979-02-10 00:00"
-freq = "1h"
 
 
 def del_zarr_file(the_file: pathlib.Path):
@@ -66,6 +78,10 @@ def del_zarr_file(the_file: pathlib.Path):
 def preprocess_gwout(ds):
     ds = ds.drop(["reference_time", "feature_id"])
     return ds.reset_coords(drop=True)
+
+
+def eval_fstring(template, **kwargs):
+    return eval(f"f'{template}'", kwargs)            
 
 
 def main():
@@ -87,9 +103,10 @@ def main():
     dates = dates[dates <= end_date]
     files = [
         pathlib.Path(
-            f"{input_dir}/"
-            f'{date.strftime("%Y")}/'
-            f'{date.strftime("%Y%m%d%H%M")}.GWOUT_DOMAIN1.comp'
+            eval_fstring(input_fstring, date=date)
+            # f"{input_dir}/"
+            # f'{date.strftime("%Y")}/'
+            # f'{date.strftime("%Y%m%d%H%M")}.GWOUT_DOMAIN1.comp'
         )
         for date in dates
     ]
@@ -170,8 +187,8 @@ def main():
         if len(files_chunk) == time_chunk_size:
             chunk_plan = {}
             for var in ds.data_vars:
-                if len(ds[var].dims) == 2:
-                    var_chunk = (time_chunk_size, feature_chunk_size)
+                if var in var_chunk_sizes.keys():
+                    var_chunk = var_chunk_sizes[var]
                     chunk_plan[var] = var_chunk
 
             print(f"{indt}chunk_plan: {chunk_plan}")
@@ -216,7 +233,7 @@ def main():
             end_del_timer = time.time()
 
             print(f"{indt}Rehunking final chunk")
-            ds1 = ds.chunk({"feature_id": feature_chunk_size, "time": time_chunk_size})
+            ds1 = ds.chunk(global_chunk_sizes)
             _ = ds1.to_zarr(str(file_last_step), consolidated=True, mode="w")
             ds2 = xr.open_zarr(str(file_last_step), consolidated=True)
             ds2.to_zarr(file_chunked, consolidated=True, append_dim="time")
@@ -234,8 +251,7 @@ def main():
         print(f"{indt}del_time_take: {del_time_taken}")
         cmd = (
             f"echo completed core: {n_workers*n_cores} "
-            f"time_chunk_size: {time_chunk_size} "
-            f"feature_chunk_size: {feature_chunk_size} "
+            # f"variable chunk sizes: {pprint(var_chunk_sizes)} "
             f"first_file: {files_chunk[0].name} "
             f"last_file: {files_chunk[-1].name} "
             f"loop_time_taken: {time_taken} "
