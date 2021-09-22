@@ -20,17 +20,18 @@ import zarr
 output_path = pathlib.Path("/glade/scratch/jamesmcc/retro_collect/gwout")
 
 # Chunk config
-time_chunk_size = 672
+time_chunk_size = 24 # 672
 feature_chunk_size = 30000
 
-n_workers = 18
+n_workers = 2
 n_cores = 1
 queue = "casper"
 cluster_mem_gb = 15
 
-n_chunks_job = 12  # how many to do before exiting, 12 is approx yearly
+n_chunks_job = 3 #12  # how many to do before exiting, 12 is approx yearly
 # end_date = '2018-12-31 23:00' # full time
-end_date = "1981-04-30 23:00"  # pilot 2 years
+end_date = "1979-02-03 12:00"  # pilot 2 years
+# end_date = "1981-04-30 23:00"  # pilot 2 years
 # this end_date tests all parts of the execution for
 # chunk size 672 and n_chunks_job=1
 # end_date = "1979-04-17 00:00"
@@ -47,7 +48,7 @@ file_log_loop_time = output_path / "gwout_loop_time.txt"
 # static information
 # todo JLM: centralize this info?
 input_dir = "/glade/scratch/zhangyx/WRF-Hydro/model.data.v2.1"
-start_date = "1979-02-10 00:00"
+start_date = "1979-02-01 01:00"
 freq = "1h"
 
 metadata_global_rm = [
