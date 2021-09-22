@@ -29,7 +29,7 @@ def main(file_rechunked):
     print(ds)
 
     # randomly sample some times, but always check first and last
-    n_samples = 30
+    n_samples = 15
     random_samp = random.sample(range(len(ds.time)), n_samples - 2)
     random_samp = [0, len(ds.time) - 1] + random_samp
     print(f"Checking data for {len(random_samp)} times")

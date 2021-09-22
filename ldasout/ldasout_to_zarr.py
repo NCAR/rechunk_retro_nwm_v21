@@ -17,7 +17,7 @@ import xarray as xr
 import zarr
 
 # User config
-output_path = pathlib.Path("/glade/p/cisl/nwc/ishitas/zarr_new/ldasout_test")
+output_path = pathlib.Path("/glade/p/cisl/nwc/ishitas/zarr_new/ldasout")
 
 # Chunk config
 time_chunk_size = 224
@@ -32,7 +32,7 @@ cluster_mem_gb = 25
 
 n_chunks_job = 6  # how many to do before exiting, 12 is approx yearly
 # end_date = '2018-12-31 23:00' # full time
-end_date = "1981-02-10 23:00"  # pilot 2 years
+end_date = "1981-02-07 23:00"  # pilot 2 years
 # this end_date tests all parts of the execution for
 # chunk size 672 and n_chunks_job=1
 # end_date = "1979-04-17 00:00"
@@ -49,7 +49,7 @@ file_log_loop_time = output_path / "ldasout_loop_time.txt"
 # static information
 # todo JLM: centralize this info?
 input_dir = "/glade/scratch/zhangyx/WRF-Hydro/model.data.v2.1"
-start_date = "1979-02-10 00:00"
+start_date = "1979-02-07 00:00"
 freq = "3h"
 
 
