@@ -50,6 +50,14 @@ input_dir = "/glade/scratch/zhangyx/WRF-Hydro/model.data.v2.1"
 start_date = "1979-02-10 00:00"
 freq = "1h"
 
+metadata_global_rm = [
+    'model_initialization_time',
+    'model_output_valid_time',
+    'model_total_valid_times']
+
+metadata_variable_rm = {
+    'depth': ['valid_range']}
+
 
 def del_zarr_file(the_file: pathlib.Path):
     if the_file.exists():
@@ -65,6 +73,11 @@ def del_zarr_file(the_file: pathlib.Path):
 
 def preprocess_gwout(ds):
     ds = ds.drop(["reference_time", "feature_id"])
+    for mm in metadata_global_rm:
+        del ds.attrs[mm]
+    for vv, ll in metadata_variable_rm.items():
+        for mm in ll:
+            del ds[vv].attrs[mm]
     return ds.reset_coords(drop=True)
 
 
