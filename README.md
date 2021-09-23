@@ -1,6 +1,8 @@
 # nwm_v21_retro_rechunk
 Rechunking retrospective runs to more approachable chunks in Zarr output.
 
+[Notes on the NWM v2.1 retrospective data set](https://drive.google.com/file/d/1zUtBZ_SM7uHqNDHLdOwGvfasVFMHfH6a/view)
+
 ## Data Access
 The data are accessible via globus. They are located at 
 ```
