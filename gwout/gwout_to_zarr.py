@@ -28,10 +28,11 @@ n_cores = 1
 queue = "casper"
 cluster_mem_gb = 15
 
-n_chunks_job = 3  # how many to do before exiting, 12 is approx yearly
+n_chunks_job = 3 #12  # how many to do before exiting, 12 is approx yearly
 # end_date = '2018-12-31 23:00' # full time
+end_date = "1979-02-03 12:00"  
 # end_date = "1981-04-30 23:00"  # pilot 2 years
-end_date = "1979-02-03 11:00"  # pilot 2 years
+
 # this end_date tests all parts of the execution for
 # chunk size 672 and n_chunks_job=1
 # end_date = "1979-04-17 00:00"
@@ -51,6 +52,14 @@ file_lock = output_path / "gwout_write_in_progress.lock"
 input_dir = "/glade/scratch/zhangyx/WRF-Hydro/model.data.v2.1"
 start_date = "1979-02-01 01:00"
 freq = "1h"
+
+metadata_global_rm = [
+    'model_initialization_time',
+    'model_output_valid_time',
+    'model_total_valid_times']
+
+metadata_variable_rm = {
+    'depth': ['valid_range']}
 
 
 def write_lock_file(file_lock, file_chunked, dates_chunk, freq):
@@ -85,6 +94,11 @@ def del_zarr_file(the_file: pathlib.Path):
 
 def preprocess_gwout(ds):
     ds = ds.drop(["reference_time", "feature_id"])
+    for mm in metadata_global_rm:
+        del ds.attrs[mm]
+    for vv, ll in metadata_variable_rm.items():
+        for mm in ll:
+            del ds[vv].attrs[mm]
     return ds.reset_coords(drop=True)
 
 
