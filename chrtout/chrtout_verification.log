@@ -1,0 +1,240 @@
+Checking chrtout.zarr against its source files
+<xarray.Dataset>
+Dimensions:     (feature_id: 2776738, time: 9408)
+Coordinates:
+    elevation   (feature_id) float32 dask.array<chunksize=(2776738,), meta=np.ndarray>
+  * feature_id  (feature_id) int32 101 179 181 ... 1180001803 1180001804
+    latitude    (feature_id) float32 dask.array<chunksize=(2776738,), meta=np.ndarray>
+    longitude   (feature_id) float32 dask.array<chunksize=(2776738,), meta=np.ndarray>
+  * time        (time) datetime64[ns] 1979-02-10 ... 1980-03-07T23:00:00
+Data variables:
+    gage_id     (feature_id) |S15 dask.array<chunksize=(2776738,), meta=np.ndarray>
+    order       (feature_id) int32 dask.array<chunksize=(2776738,), meta=np.ndarray>
+    streamflow  (time, feature_id) float64 dask.array<chunksize=(672, 30000), meta=np.ndarray>
+    velocity    (time, feature_id) float64 dask.array<chunksize=(672, 30000), meta=np.ndarray>
+Attributes:
+    code_version:         v5.2.0-beta2
+    featureType:          timeSeries
+    model_configuration:  retrospective
+    proj4:                +proj=lcc +units=m +a=6370000.0 +b=6370000.0 +lat_1...
+Checking data for 30 times
+
+Check (non-time) static variables once
+Checking variable: elevation
+Checking variable: feature_id
+Not checking gage_id
+Checking variable: latitude
+Checking variable: longitude
+Checking variable: order
+Checking variable: streamflow
+Checking variable: velocity
+
+1/30
+Checking time: 1979-02-10T00:00:00.000000000
+Checking variable: streamflow
+67189 nans present
+Checking variable: velocity
+67189 nans present
+
+2/30
+Checking time: 1980-03-07T23:00:00.000000000
+Checking variable: streamflow
+67189 nans present
+Checking variable: velocity
+67189 nans present
+
+3/30
+Checking time: 1979-10-11T03:00:00.000000000
+Checking variable: streamflow
+67189 nans present
+Checking variable: velocity
+67189 nans present
+
+4/30
+Checking time: 1979-02-22T04:00:00.000000000
+Checking variable: streamflow
+67189 nans present
+Checking variable: velocity
+67189 nans present
+
+5/30
+Checking time: 1979-11-01T20:00:00.000000000
+Checking variable: streamflow
+67189 nans present
+Checking variable: velocity
+67189 nans present
+
+6/30
+Checking time: 1979-08-21T09:00:00.000000000
+Checking variable: streamflow
+67189 nans present
+Checking variable: velocity
+67189 nans present
+
+7/30
+Checking time: 1980-02-14T20:00:00.000000000
+Checking variable: streamflow
+67189 nans present
+Checking variable: velocity
+67189 nans present
+
+8/30
+Checking time: 1979-10-18T12:00:00.000000000
+Checking variable: streamflow
+67189 nans present
+Checking variable: velocity
+67189 nans present
+
+9/30
+Checking time: 1979-02-22T01:00:00.000000000
+Checking variable: streamflow
+67189 nans present
+Checking variable: velocity
+67189 nans present
+
+10/30
+Checking time: 1980-02-19T14:00:00.000000000
+Checking variable: streamflow
+67189 nans present
+Checking variable: velocity
+67189 nans present
+
+11/30
+Checking time: 1979-07-16T10:00:00.000000000
+Checking variable: streamflow
+67189 nans present
+Checking variable: velocity
+67189 nans present
+
+12/30
+Checking time: 1979-05-26T16:00:00.000000000
+Checking variable: streamflow
+67189 nans present
+Checking variable: velocity
+67189 nans present
+
+13/30
+Checking time: 1979-09-25T19:00:00.000000000
+Checking variable: streamflow
+67189 nans present
+Checking variable: velocity
+67189 nans present
+
+14/30
+Checking time: 1979-07-10T06:00:00.000000000
+Checking variable: streamflow
+67189 nans present
+Checking variable: velocity
+67189 nans present
+
+15/30
+Checking time: 1979-07-22T07:00:00.000000000
+Checking variable: streamflow
+67189 nans present
+Checking variable: velocity
+67189 nans present
+
+16/30
+Checking time: 1979-07-14T10:00:00.000000000
+Checking variable: streamflow
+67189 nans present
+Checking variable: velocity
+67189 nans present
+
+17/30
+Checking time: 1979-12-14T01:00:00.000000000
+Checking variable: streamflow
+67189 nans present
+Checking variable: velocity
+67189 nans present
+
+18/30
+Checking time: 1979-09-18T01:00:00.000000000
+Checking variable: streamflow
+67189 nans present
+Checking variable: velocity
+67189 nans present
+
+19/30
+Checking time: 1979-03-19T00:00:00.000000000
+Checking variable: streamflow
+67189 nans present
+Checking variable: velocity
+67189 nans present
+
+20/30
+Checking time: 1980-02-28T05:00:00.000000000
+Checking variable: streamflow
+67189 nans present
+Checking variable: velocity
+67189 nans present
+
+21/30
+Checking time: 1979-11-16T09:00:00.000000000
+Checking variable: streamflow
+67189 nans present
+Checking variable: velocity
+67189 nans present
+
+22/30
+Checking time: 1979-06-04T22:00:00.000000000
+Checking variable: streamflow
+67189 nans present
+Checking variable: velocity
+67189 nans present
+
+23/30
+Checking time: 1979-05-10T10:00:00.000000000
+Checking variable: streamflow
+67189 nans present
+Checking variable: velocity
+67189 nans present
+
+24/30
+Checking time: 1979-02-14T00:00:00.000000000
+Checking variable: streamflow
+67189 nans present
+Checking variable: velocity
+67189 nans present
+
+25/30
+Checking time: 1979-12-08T00:00:00.000000000
+Checking variable: streamflow
+67189 nans present
+Checking variable: velocity
+67189 nans present
+
+26/30
+Checking time: 1979-05-10T06:00:00.000000000
+Checking variable: streamflow
+67189 nans present
+Checking variable: velocity
+67189 nans present
+
+27/30
+Checking time: 1980-02-09T23:00:00.000000000
+Checking variable: streamflow
+67189 nans present
+Checking variable: velocity
+67189 nans present
+
+28/30
+Checking time: 1979-06-02T11:00:00.000000000
+Checking variable: streamflow
+67189 nans present
+Checking variable: velocity
+67189 nans present
+
+29/30
+Checking time: 1979-06-23T17:00:00.000000000
+Checking variable: streamflow
+67189 nans present
+Checking variable: velocity
+67189 nans present
+
+30/30
+Checking time: 1979-05-26T02:00:00.000000000
+Checking variable: streamflow
+67189 nans present
+Checking variable: velocity
+67189 nans present
