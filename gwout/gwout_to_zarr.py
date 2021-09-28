@@ -59,7 +59,9 @@ metadata_global_rm = [
     'model_total_valid_times']
 
 metadata_variable_rm = {
-    'depth': ['valid_range']}
+    'depth': ['valid_range'],
+    'inflow': ['valid_range'],
+    'outflow': ['valid_range']}
 
 
 def write_lock_file(file_lock, file_chunked, dates_chunk, freq):
