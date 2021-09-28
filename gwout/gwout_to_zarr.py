@@ -254,7 +254,6 @@ def main():
             # Remove the lock file after successful write
             _ = rm_lock_file(file_lock)
 
-            
         else:
             print(f"{indt}Processing the final time chunk!")
 
