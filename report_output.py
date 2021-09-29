@@ -40,7 +40,9 @@ def main(file_rechunked):
         info = dz[vv].info
         print(f"zarr dz[{vv}].info:{nl}{info}")
         chunk_bytes = np.prod(info.obj.chunks) * info.obj.dtype.itemsize
-        print(f"Chunk size in MB: {chunk_bytes / 1048576}")
+        storage_ratio = float(str(info.obj._info_reporter).split(':')[-2].split('\n')[0].split(' ')[1])
+        print(f"Un-Compressed Chunk size in MB: {chunk_bytes / 1048576}")
+        print(f"   Compressed Chunk size in MB: {chunk_bytes / 1048576 / storage_ratio}")        
 
     return 0
 
