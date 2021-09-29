@@ -282,10 +282,15 @@ def main():
 
             print(f"{indt}Rehunking final chunk")
             ds1 = ds.chunk({"feature_id": feature_chunk_size, "time": time_chunk_size})
+            print(f"{indt}Writing last step file")
             _ = ds1.to_zarr(str(file_last_step), consolidated=True, mode="w")
+            _ = ds1.close()
+
+            print(f'{indt}Open last step file')
             ds2 = xr.open_zarr(str(file_last_step), consolidated=True)
 
             _ = write_lock_file(file_lock, file_chunked, dates_chunk, freq)
+            print(f'{indt}Append last chunk to full zarr file')
             _ = ds2.to_zarr(file_chunked, consolidated=True, append_dim="time")
             _ = ds2.close()
             _ = rm_lock_file(file_lock)
