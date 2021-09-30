@@ -1,0 +1,144 @@
+[22;0t]0;IPython: rechunk_retro_nwm_v21/precipChecking precip.zarr against its source files
+<xarray.Dataset>
+Dimensions:   (time: 19489, y: 3840, x: 4608)
+Coordinates:
+    crs       |S1 ...
+  * time      (time) datetime64[ns] 1979-02-01 ... 1981-04-23
+  * x         (x) float64 -2.303e+06 -2.302e+06 ... 2.303e+06 2.304e+06
+  * y         (y) float64 -1.92e+06 -1.919e+06 ... 1.918e+06 1.919e+06
+Data variables:
+    RAINRATE  (time, y, x) float32 dask.array<chunksize=(672, 350, 350), meta=np.ndarray>
+Attributes:
+    NWM_version_number:         v2.1
+    model_configuration:        AORC
+    model_initialization_time:  1981-04-01_00:00:00
+    model_output_type:          forcing
+    model_output_valid_time:    1981-04-23_00:00:00
+    model_total_valid_times:    720.0
+Checking data for 30 times
+
+Check (non-time) static variables once
+Checking variable: RAINRATE
+Checking variable: crs
+Checking variable: x
+Checking variable: y
+
+1/30
+Checking time: 1979-02-01T00:00:00.000000000
+Checking variable: RAINRATE
+
+2/30
+Checking time: 1981-04-23T00:00:00.000000000
+Checking variable: RAINRATE
+
+3/30
+Checking time: 1980-03-05T03:00:00.000000000
+Checking variable: RAINRATE
+
+4/30
+Checking time: 1979-02-19T19:00:00.000000000
+Checking variable: RAINRATE
+
+5/30
+Checking time: 1979-07-21T04:00:00.000000000
+Checking variable: RAINRATE
+
+6/30
+Checking time: 1979-12-19T01:00:00.000000000
+Checking variable: RAINRATE
+
+7/30
+Checking time: 1980-01-15T02:00:00.000000000
+Checking variable: RAINRATE
+
+8/30
+Checking time: 1980-10-18T22:00:00.000000000
+Checking variable: RAINRATE
+
+9/30
+Checking time: 1980-04-27T09:00:00.000000000
+Checking variable: RAINRATE
+
+10/30
+Checking time: 1980-04-22T21:00:00.000000000
+Checking variable: RAINRATE
+
+11/30
+Checking time: 1980-09-18T11:00:00.000000000
+Checking variable: RAINRATE
+
+12/30
+Checking time: 1980-02-24T19:00:00.000000000
+Checking variable: RAINRATE
+
+13/30
+Checking time: 1979-09-23T08:00:00.000000000
+Checking variable: RAINRATE
+
+14/30
+Checking time: 1980-03-10T07:00:00.000000000
+Checking variable: RAINRATE
+
+15/30
+Checking time: 1980-05-16T18:00:00.000000000
+Checking variable: RAINRATE
+
+16/30
+Checking time: 1979-10-01T11:00:00.000000000
+Checking variable: RAINRATE
+
+17/30
+Checking time: 1981-01-01T13:00:00.000000000
+Checking variable: RAINRATE
+
+18/30
+Checking time: 1980-01-27T07:00:00.000000000
+Checking variable: RAINRATE
+
+19/30
+Checking time: 1980-07-31T15:00:00.000000000
+Checking variable: RAINRATE
+
+20/30
+Checking time: 1981-03-27T08:00:00.000000000
+Checking variable: RAINRATE
+
+21/30
+Checking time: 1979-02-28T01:00:00.000000000
+Checking variable: RAINRATE
+
+22/30
+Checking time: 1979-06-20T06:00:00.000000000
+Checking variable: RAINRATE
+
+23/30
+Checking time: 1980-01-28T09:00:00.000000000
+Checking variable: RAINRATE
+
+24/30
+Checking time: 1979-09-12T12:00:00.000000000
+Checking variable: RAINRATE
+
+25/30
+Checking time: 1979-05-19T01:00:00.000000000
+Checking variable: RAINRATE
+
+26/30
+Checking time: 1980-10-29T03:00:00.000000000
+Checking variable: RAINRATE
+
+27/30
+Checking time: 1979-08-11T08:00:00.000000000
+Checking variable: RAINRATE
+
+28/30
+Checking time: 1980-07-10T15:00:00.000000000
+Checking variable: RAINRATE
+
+29/30
+Checking time: 1979-06-15T10:00:00.000000000
+Checking variable: RAINRATE
+
+30/30
+Checking time: 1980-09-02T18:00:00.000000000
+Checking variable: RAINRATE

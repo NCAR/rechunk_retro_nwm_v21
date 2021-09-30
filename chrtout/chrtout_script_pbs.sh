@@ -9,7 +9,8 @@
 export TMPDIR=/glade/scratch/$USER/temp
 mkdir -p $TMPDIR
 
-module load ncarenv python/3.7.9
+# module load ncarenv python/3.7.9
+# unset DASK_ROOT_CONFIG
 source /glade/work/ishitas/python_envs/379_demo/bin/activate
 
 python /glade/work/ishitas/zarr_retrospective/rechunk_retro_nwm_v21/chrtout/chrtout_to_zarr.py

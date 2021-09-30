@@ -16,11 +16,16 @@ type_pattern_dict = {
     "chrtout.zarr": "CHRTOUT_DOMAIN1.comp",
     "gwout.zarr": "GWOUT_DOMAIN1.comp",
     "lakeout.zarr": "LAKEOUT_DOMAIN1.comp",
-    "ldasout.zarr" : "LDASOUT_DOMAIN1.comp"
+    "ldasout.zarr" : "LDASOUT_DOMAIN1.comp",
+    "precip.zarr": "LDASIN_DOMAIN1",
 }
 
 
 def main(file_rechunked):
+    if file_rechunked.name == 'precip.zarr':
+        orig_dir = pathlib.Path(
+            "/glade/campaign/ral/hap/zhangyx/AORC.Forcing")
+
     pattern = type_pattern_dict[file_rechunked.name]
 
     # Open the rechunked zarr output
@@ -51,10 +56,19 @@ def main(file_rechunked):
             for vv in ds.variables:
                 if vv == "time":
                     continue
+                if file_rechunked.name == 'chrtout.zarr':
+                    if vv in ['gage_id']:
+                        print(f'Not checking gage_id')
+                        continue
 
                 print(f"Checking variable: {vv}")
                 if vv == "crs":
-                    assert ds_random[vv].equals(ds[vv])
+                    if file_rechunked.name == 'precip.zarr':
+                        assert ds_random[vv].values == ds[vv].values
+                        for key, val in ds[vv].attrs.items():
+                            assert np.all(val == ds_random[vv].attrs[key])
+                    else:
+                        assert ds_random[vv].equals(ds[vv])
                 elif not "time" in ds[vv].dims:
                     diffs = ds_random[vv].values - ds[vv].values
                     assert np.nanmin(np.abs(diffs)) < 1e-8
@@ -71,12 +85,13 @@ def main(file_rechunked):
                 print(f"Checking variable: {vv}")
                 diffs = ds_random[vv].values - ds[vv].isel(time=rr).values
                 if np.isnan(diffs).any():
-                    print(f"nans present")
-                    assert np.isnan(diffs).sum() == np.isnan(ds_random[vv].values).sum()
+                    n_nans_diff = np.isnan(diffs).sum()
+                    print(f"{n_nans_diff} nans present")
+                    assert n_nans_diff == np.isnan(ds_random[vv].values).sum()
+                    assert n_nans_diff == np.isnan(ds[vv].isel(time=rr).values).sum()
                     assert np.nanmin(np.abs(diffs)) < 1e-8
                 else:
                     assert np.min(np.abs(diffs)) < 1e-8
-                    ### THIS EQUATIONS NEEDS SCRUTINIZED
 
 
 if __name__ == "__main__":
