@@ -1,47 +1,44 @@
 
 -------------------------------------------------------
-Output file report: /glade/scratch/jamesmcc/retro_collect/lakeout/lakeout.zarr
-Total file size: 287M
+Output file report: /glade/p/datashare/jamesmcc/nwm_retro_v2.1/lakeout.zarr
+Total file size: 5.5G
 Dataset overviews:
 zarr ds.info:
 Name        : /
 Type        : zarr.hierarchy.Group
 Read-only   : False
 Store type  : zarr.storage.DirectoryStore
-No. members : 10
-No. arrays  : 10
+No. members : 8
+No. arrays  : 8
 No. groups  : 0
-Arrays      : crs, feature_id, inflow, latitude, longitude, outflow,
-            : reservoir_assimilated_value, reservoir_type, time, water_sfc_elev
+Arrays      : crs, feature_id, inflow, latitude, longitude, outflow, time,
+            : water_sfc_elev
 
 
 xarray ds.info:
 <xarray.Dataset>
-Dimensions:                      (feature_id: 5783, time: 19464)
+Dimensions:         (feature_id: 5783, time: 367439)
 Coordinates:
-  * feature_id                   (feature_id) int32 491 531 ... 1021092845
-    latitude                     (feature_id) float32 dask.array<chunksize=(5783,), meta=np.ndarray>
-    longitude                    (feature_id) float32 dask.array<chunksize=(5783,), meta=np.ndarray>
-  * time                         (time) datetime64[ns] 1979-02-10 ... 1981-04...
+  * feature_id      (feature_id) int32 491 531 747 ... 947070204 1021092845
+    latitude        (feature_id) float32 dask.array<chunksize=(5783,), meta=np.ndarray>
+    longitude       (feature_id) float32 dask.array<chunksize=(5783,), meta=np.ndarray>
+  * time            (time) datetime64[ns] 1979-02-01T01:00:00 ... 2020-12-31T...
 Data variables:
-    crs                          |S1 ...
-    inflow                       (time, feature_id) float64 dask.array<chunksize=(8064, 500), meta=np.ndarray>
-    outflow                      (time, feature_id) float64 dask.array<chunksize=(8064, 500), meta=np.ndarray>
-    reservoir_assimilated_value  (feature_id) float32 dask.array<chunksize=(5783,), meta=np.ndarray>
-    reservoir_type               (feature_id) int32 dask.array<chunksize=(5783,), meta=np.ndarray>
-    water_sfc_elev               (time, feature_id) float32 dask.array<chunksize=(8064, 500), meta=np.ndarray>
+    crs             |S1 ...
+    inflow          (time, feature_id) float64 dask.array<chunksize=(8064, 500), meta=np.ndarray>
+    outflow         (time, feature_id) float64 dask.array<chunksize=(8064, 500), meta=np.ndarray>
+    water_sfc_elev  (time, feature_id) float32 dask.array<chunksize=(8064, 500), meta=np.ndarray>
 Attributes:
-    Conventions:                CF-1.6
-    TITLE:                      OUTPUT FROM WRF-Hydro v5.2.0-beta2
-    code_version:               v5.2.0-beta2
-    featureType:                timeSeries
-    model_configuration:        retrospective
-    model_initialization_time:  1980-10-01_00:00:00
-    model_output_type:          reservoir
-    model_output_valid_time:    1980-12-13_00:00:00
-    model_total_valid_times:    2208
-    proj4:                      +proj=lcc +units=m +a=6370000.0 +b=6370000.0 ...
-    station_dimension:          lake_id
+    Conventions:                  CF-1.6
+    TITLE:                        OUTPUT FROM WRF-Hydro v5.2.0-beta2
+    code_version:                 v5.2.0-beta2
+    featureType:                  timeSeries
+    model_configuration:          retrospective
+    model_output_type:            reservoir
+    proj4:                        +proj=lcc +units=m +a=6370000.0 +b=6370000....
+    reservoir_assimilated_value:  Assimilation not performed
+    reservoir_type:               1 = level pool everywhere
+    station_dimension:            lake_id
 
 -----------------------------------
 Variable comparison xarray and zarr
@@ -80,7 +77,8 @@ No. bytes stored   : 1077 (1.1K)
 Storage ratio      : 0.0
 Chunks initialized : 3/1
 
-Chunk size in MB: 9.5367431640625e-07
+Un-Compressed Chunk size in MB: 9.5367431640625e-07
+   Compressed Chunk size in MB: inf
 
 --------
 
@@ -114,42 +112,43 @@ No. bytes stored   : 13227 (12.9K)
 Storage ratio      : 1.7
 Chunks initialized : 1/1
 
-Chunk size in MB: 0.022060394287109375
+Un-Compressed Chunk size in MB: 0.022060394287109375
+   Compressed Chunk size in MB: 0.012976702521829045
 
 --------
 
 inflow
 
 xarray ds[inflow]:
-<xarray.DataArray 'inflow' (time: 19464, feature_id: 5783)>
-dask.array<open_dataset-1b1ad3a32df681d1cf075d9b78b34151inflow, shape=(19464, 5783), dtype=float64, chunksize=(8064, 500), chunktype=numpy.ndarray>
+<xarray.DataArray 'inflow' (time: 367439, feature_id: 5783)>
+dask.array<open_dataset-4611f0dadf26e2839d3521c8af37a85ainflow, shape=(367439, 5783), dtype=float64, chunksize=(8064, 500), chunktype=numpy.ndarray>
 Coordinates:
   * feature_id  (feature_id) int32 491 531 747 ... 947070204 1021092845
     latitude    (feature_id) float32 dask.array<chunksize=(5783,), meta=np.ndarray>
     longitude   (feature_id) float32 dask.array<chunksize=(5783,), meta=np.ndarray>
-  * time        (time) datetime64[ns] 1979-02-10 ... 1981-04-30T23:00:00
+  * time        (time) datetime64[ns] 1979-02-01T01:00:00 ... 2020-12-31T23:0...
 Attributes:
     grid_mapping:  crs
     long_name:     Lake Inflow
     units:         m3 s-1
-    valid_range:   [-1000000, 1000000]
 
 zarr dz[inflow].info:
 Name               : /inflow
 Type               : zarr.core.Array
 Data type          : int32
-Shape              : (19464, 5783)
+Shape              : (367439, 5783)
 Chunk shape        : (8064, 500)
 Order              : C
 Read-only          : False
 Compressor         : Blosc(cname='lz4', clevel=5, shuffle=SHUFFLE, blocksize=0)
 Store type         : zarr.storage.DirectoryStore
-No. bytes          : 450241248 (429.4M)
-No. bytes stored   : 89251962 (85.1M)
-Storage ratio      : 5.0
-Chunks initialized : 36/36
+No. bytes          : 8499598948 (7.9G)
+No. bytes stored   : 1748449461 (1.6G)
+Storage ratio      : 4.9
+Chunks initialized : 552/552
 
-Chunk size in MB: 15.380859375
+Un-Compressed Chunk size in MB: 15.380859375
+   Compressed Chunk size in MB: 3.138950892857143
 
 --------
 
@@ -157,7 +156,7 @@ latitude
 
 xarray ds[latitude]:
 <xarray.DataArray 'latitude' (feature_id: 5783)>
-dask.array<open_dataset-1b1ad3a32df681d1cf075d9b78b34151latitude, shape=(5783,), dtype=float32, chunksize=(5783,), chunktype=numpy.ndarray>
+dask.array<open_dataset-4611f0dadf26e2839d3521c8af37a85alatitude, shape=(5783,), dtype=float32, chunksize=(5783,), chunktype=numpy.ndarray>
 Coordinates:
   * feature_id  (feature_id) int32 491 531 747 ... 947070204 1021092845
     latitude    (feature_id) float32 dask.array<chunksize=(5783,), meta=np.ndarray>
@@ -182,7 +181,8 @@ No. bytes stored   : 17498 (17.1K)
 Storage ratio      : 1.3
 Chunks initialized : 1/1
 
-Chunk size in MB: 0.022060394287109375
+Un-Compressed Chunk size in MB: 0.022060394287109375
+   Compressed Chunk size in MB: 0.01696953406700721
 
 --------
 
@@ -190,7 +190,7 @@ longitude
 
 xarray ds[longitude]:
 <xarray.DataArray 'longitude' (feature_id: 5783)>
-dask.array<open_dataset-1b1ad3a32df681d1cf075d9b78b34151longitude, shape=(5783,), dtype=float32, chunksize=(5783,), chunktype=numpy.ndarray>
+dask.array<open_dataset-4611f0dadf26e2839d3521c8af37a85alongitude, shape=(5783,), dtype=float32, chunksize=(5783,), chunktype=numpy.ndarray>
 Coordinates:
   * feature_id  (feature_id) int32 491 531 747 ... 947070204 1021092845
     latitude    (feature_id) float32 dask.array<chunksize=(5783,), meta=np.ndarray>
@@ -215,120 +215,56 @@ No. bytes stored   : 17316 (16.9K)
 Storage ratio      : 1.3
 Chunks initialized : 1/1
 
-Chunk size in MB: 0.022060394287109375
+Un-Compressed Chunk size in MB: 0.022060394287109375
+   Compressed Chunk size in MB: 0.01696953406700721
 
 --------
 
 outflow
 
 xarray ds[outflow]:
-<xarray.DataArray 'outflow' (time: 19464, feature_id: 5783)>
-dask.array<open_dataset-1b1ad3a32df681d1cf075d9b78b34151outflow, shape=(19464, 5783), dtype=float64, chunksize=(8064, 500), chunktype=numpy.ndarray>
+<xarray.DataArray 'outflow' (time: 367439, feature_id: 5783)>
+dask.array<open_dataset-4611f0dadf26e2839d3521c8af37a85aoutflow, shape=(367439, 5783), dtype=float64, chunksize=(8064, 500), chunktype=numpy.ndarray>
 Coordinates:
   * feature_id  (feature_id) int32 491 531 747 ... 947070204 1021092845
     latitude    (feature_id) float32 dask.array<chunksize=(5783,), meta=np.ndarray>
     longitude   (feature_id) float32 dask.array<chunksize=(5783,), meta=np.ndarray>
-  * time        (time) datetime64[ns] 1979-02-10 ... 1981-04-30T23:00:00
+  * time        (time) datetime64[ns] 1979-02-01T01:00:00 ... 2020-12-31T23:0...
 Attributes:
     grid_mapping:  crs
     long_name:     Lake Outflow
     units:         m3 s-1
-    valid_range:   [-1000000, 1000000]
 
 zarr dz[outflow].info:
 Name               : /outflow
 Type               : zarr.core.Array
 Data type          : int32
-Shape              : (19464, 5783)
+Shape              : (367439, 5783)
 Chunk shape        : (8064, 500)
 Order              : C
 Read-only          : False
 Compressor         : Blosc(cname='lz4', clevel=5, shuffle=SHUFFLE, blocksize=0)
 Store type         : zarr.storage.DirectoryStore
-No. bytes          : 450241248 (429.4M)
-No. bytes stored   : 63222510 (60.3M)
-Storage ratio      : 7.1
-Chunks initialized : 36/36
+No. bytes          : 8499598948 (7.9G)
+No. bytes stored   : 1246211282 (1.2G)
+Storage ratio      : 6.8
+Chunks initialized : 552/552
 
-Chunk size in MB: 15.380859375
-
---------
-
-reservoir_assimilated_value
-
-xarray ds[reservoir_assimilated_value]:
-<xarray.DataArray 'reservoir_assimilated_value' (feature_id: 5783)>
-dask.array<open_dataset-1b1ad3a32df681d1cf075d9b78b34151reservoir_assimilated_value, shape=(5783,), dtype=float32, chunksize=(5783,), chunktype=numpy.ndarray>
-Coordinates:
-  * feature_id  (feature_id) int32 491 531 747 ... 947070204 1021092845
-    latitude    (feature_id) float32 dask.array<chunksize=(5783,), meta=np.ndarray>
-    longitude   (feature_id) float32 dask.array<chunksize=(5783,), meta=np.ndarray>
-Attributes:
-    long_name:  reservoir_assimilated_value
-    units:      m3 s-1
-
-zarr dz[reservoir_assimilated_value].info:
-Name               : /reservoir_assimilated_value
-Type               : zarr.core.Array
-Data type          : float32
-Shape              : (5783,)
-Chunk shape        : (5783,)
-Order              : C
-Read-only          : False
-Compressor         : Blosc(cname='lz4', clevel=5, shuffle=SHUFFLE, blocksize=0)
-Store type         : zarr.storage.DirectoryStore
-No. bytes          : 23132 (22.6K)
-No. bytes stored   : 656
-Storage ratio      : 35.3
-Chunks initialized : 1/1
-
-Chunk size in MB: 0.022060394287109375
-
---------
-
-reservoir_type
-
-xarray ds[reservoir_type]:
-<xarray.DataArray 'reservoir_type' (feature_id: 5783)>
-dask.array<open_dataset-1b1ad3a32df681d1cf075d9b78b34151reservoir_type, shape=(5783,), dtype=int32, chunksize=(5783,), chunktype=numpy.ndarray>
-Coordinates:
-  * feature_id  (feature_id) int32 491 531 747 ... 947070204 1021092845
-    latitude    (feature_id) float32 dask.array<chunksize=(5783,), meta=np.ndarray>
-    longitude   (feature_id) float32 dask.array<chunksize=(5783,), meta=np.ndarray>
-Attributes:
-    flag_meanings:  Level_pool USGS-persistence USACE-persistence RFC-forecasts
-    flag_values:    [1, 2, 3, 4]
-    long_name:      reservoir_type
-
-zarr dz[reservoir_type].info:
-Name               : /reservoir_type
-Type               : zarr.core.Array
-Data type          : int32
-Shape              : (5783,)
-Chunk shape        : (5783,)
-Order              : C
-Read-only          : False
-Compressor         : Blosc(cname='lz4', clevel=5, shuffle=SHUFFLE, blocksize=0)
-Store type         : zarr.storage.DirectoryStore
-No. bytes          : 23132 (22.6K)
-No. bytes stored   : 774
-Storage ratio      : 29.9
-Chunks initialized : 1/1
-
-Chunk size in MB: 0.022060394287109375
+Un-Compressed Chunk size in MB: 15.380859375
+   Compressed Chunk size in MB: 2.2618910845588234
 
 --------
 
 time
 
 xarray ds[time]:
-<xarray.DataArray 'time' (time: 19464)>
-array(['1979-02-10T00:00:00.000000000', '1979-02-10T01:00:00.000000000',
-       '1979-02-10T02:00:00.000000000', ..., '1981-04-30T21:00:00.000000000',
-       '1981-04-30T22:00:00.000000000', '1981-04-30T23:00:00.000000000'],
+<xarray.DataArray 'time' (time: 367439)>
+array(['1979-02-01T01:00:00.000000000', '1979-02-01T02:00:00.000000000',
+       '1979-02-01T03:00:00.000000000', ..., '2020-12-31T21:00:00.000000000',
+       '2020-12-31T22:00:00.000000000', '2020-12-31T23:00:00.000000000'],
       dtype='datetime64[ns]')
 Coordinates:
-  * time     (time) datetime64[ns] 1979-02-10 ... 1981-04-30T23:00:00
+  * time     (time) datetime64[ns] 1979-02-01T01:00:00 ... 2020-12-31T23:00:00
 Attributes:
     long_name:      valid output time
     standard_name:  time
@@ -339,31 +275,32 @@ zarr dz[time].info:
 Name               : /time
 Type               : zarr.core.Array
 Data type          : int64
-Shape              : (19464,)
+Shape              : (367439,)
 Chunk shape        : (8064,)
 Order              : C
 Read-only          : False
 Compressor         : Blosc(cname='lz4', clevel=5, shuffle=SHUFFLE, blocksize=0)
 Store type         : zarr.storage.DirectoryStore
-No. bytes          : 155712 (152.1K)
-No. bytes stored   : 2805 (2.7K)
-Storage ratio      : 55.5
-Chunks initialized : 3/3
+No. bytes          : 2939512 (2.8M)
+No. bytes stored   : 35841 (35.0K)
+Storage ratio      : 82.0
+Chunks initialized : 46/46
 
-Chunk size in MB: 0.0615234375
+Un-Compressed Chunk size in MB: 0.0615234375
+   Compressed Chunk size in MB: 0.0007502858231707317
 
 --------
 
 water_sfc_elev
 
 xarray ds[water_sfc_elev]:
-<xarray.DataArray 'water_sfc_elev' (time: 19464, feature_id: 5783)>
-dask.array<open_dataset-1b1ad3a32df681d1cf075d9b78b34151water_sfc_elev, shape=(19464, 5783), dtype=float32, chunksize=(8064, 500), chunktype=numpy.ndarray>
+<xarray.DataArray 'water_sfc_elev' (time: 367439, feature_id: 5783)>
+dask.array<open_dataset-4611f0dadf26e2839d3521c8af37a85awater_sfc_elev, shape=(367439, 5783), dtype=float32, chunksize=(8064, 500), chunktype=numpy.ndarray>
 Coordinates:
   * feature_id  (feature_id) int32 491 531 747 ... 947070204 1021092845
     latitude    (feature_id) float32 dask.array<chunksize=(5783,), meta=np.ndarray>
     longitude   (feature_id) float32 dask.array<chunksize=(5783,), meta=np.ndarray>
-  * time        (time) datetime64[ns] 1979-02-10 ... 1981-04-30T23:00:00
+  * time        (time) datetime64[ns] 1979-02-01T01:00:00 ... 2020-12-31T23:0...
 Attributes:
     comment:    If reservoir_type = 4, water_sfc_elev is invalid because this...
     long_name:  Water Surface Elevation
@@ -373,15 +310,16 @@ zarr dz[water_sfc_elev].info:
 Name               : /water_sfc_elev
 Type               : zarr.core.Array
 Data type          : float32
-Shape              : (19464, 5783)
+Shape              : (367439, 5783)
 Chunk shape        : (8064, 500)
 Order              : C
 Read-only          : False
 Compressor         : Blosc(cname='lz4', clevel=5, shuffle=SHUFFLE, blocksize=0)
 Store type         : zarr.storage.DirectoryStore
-No. bytes          : 450241248 (429.4M)
-No. bytes stored   : 146518209 (139.7M)
-Storage ratio      : 3.1
-Chunks initialized : 36/36
+No. bytes          : 8499598948 (7.9G)
+No. bytes stored   : 2828358144 (2.6G)
+Storage ratio      : 3.0
+Chunks initialized : 552/552
 
-Chunk size in MB: 15.380859375
+Un-Compressed Chunk size in MB: 15.380859375
+   Compressed Chunk size in MB: 5.126953125
