@@ -17,7 +17,7 @@ import xarray as xr
 import zarr
 
 # User config
-output_path = pathlib.Path("/glade/p/datashare/ishitas/nwm_retro_v2.1/ldasout")
+output_path = pathlib.Path("/glade/p/datashare/ishitas/ldasout")
 
 # Chunk config
 time_chunk_size = 224
@@ -30,7 +30,7 @@ n_cores = 1
 queue = "casper"
 cluster_mem_gb = 25
 
-n_chunks_job = 6  # how many to do before exiting, 12 is approx yearly
+n_chunks_job = 10  # how many to do before exiting, 12 is approx yearly
 end_date = '2020-12-31 23:00' # full time
 # this end_date tests all parts of the execution for
 # chunk size 224
@@ -153,7 +153,7 @@ def main():
         memory=f"{cluster_mem_gb}GB",
         queue=queue,
         project="NRAL0017",
-        walltime="04:00:00",
+        walltime="05:00:00",
         death_timeout=75,
     )
     dask.config.set({"distributed.dashboard.link": "/{port}/status"})
