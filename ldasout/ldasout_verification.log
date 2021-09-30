@@ -1,0 +1,703 @@
+Checking ldasout.zarr against its source files
+<xarray.Dataset>
+Dimensions:   (time: 5856, y: 3840, x: 4608, vis_nir: 2, soil_layers_stag: 4)
+Coordinates:
+  * time      (time) datetime64[ns] 1979-02-10 ... 1981-02-10T21:00:00
+  * x         (x) float64 -2.303e+06 -2.302e+06 ... 2.303e+06 2.304e+06
+  * y         (y) float64 -1.92e+06 -1.919e+06 ... 1.918e+06 1.919e+06
+Dimensions without coordinates: vis_nir, soil_layers_stag
+Data variables: (12/20)
+    ACCET     (time, y, x) float64 dask.array<chunksize=(224, 350, 350), meta=np.ndarray>
+    ACSNOM    (time, y, x) float64 dask.array<chunksize=(224, 350, 350), meta=np.ndarray>
+    ALBEDO    (time, y, x) float64 dask.array<chunksize=(224, 350, 350), meta=np.ndarray>
+    ALBSND    (time, y, vis_nir, x) float64 dask.array<chunksize=(224, 350, 1, 350), meta=np.ndarray>
+    ALBSNI    (time, y, vis_nir, x) float64 dask.array<chunksize=(224, 350, 1, 350), meta=np.ndarray>
+    COSZ      (time, y, x) float64 dask.array<chunksize=(224, 350, 350), meta=np.ndarray>
+    ...        ...
+    SNEQV     (time, y, x) float64 dask.array<chunksize=(224, 350, 350), meta=np.ndarray>
+    SNOWH     (time, y, x) float64 dask.array<chunksize=(224, 350, 350), meta=np.ndarray>
+    SOIL_M    (time, y, soil_layers_stag, x) float64 dask.array<chunksize=(224, 350, 1, 350), meta=np.ndarray>
+    SOIL_W    (time, y, soil_layers_stag, x) float64 dask.array<chunksize=(224, 350, 1, 350), meta=np.ndarray>
+    TRAD      (time, y, x) float64 dask.array<chunksize=(224, 350, 350), meta=np.ndarray>
+    UGDRNOFF  (time, y, x) float64 dask.array<chunksize=(224, 350, 350), meta=np.ndarray>
+Attributes:
+    Conventions:                CF-1.6
+    GDAL_DataType:              Generic
+    TITLE:                      OUTPUT FROM WRF-Hydro v5.2.0-beta2
+    code_version:               v5.2.0-beta2
+    model_configuration:        retrospective
+    model_initialization_time:  1981-01-01_00:00:00
+    model_output_type:          land
+    model_output_valid_time:    1981-02-07_00:00:00
+    model_total_valid_times:    720
+    proj4:                      +proj=lcc +units=m +a=6370000.0 +b=6370000.0 ...
+Checking data for 15 times
+
+Check (non-time) static variables once
+Checking variable: ACCET
+Checking variable: ACSNOM
+Checking variable: ALBEDO
+Checking variable: ALBSND
+Checking variable: ALBSNI
+Checking variable: COSZ
+Checking variable: EDIR
+Checking variable: FIRA
+Checking variable: FSA
+Checking variable: FSNO
+Checking variable: HFX
+Checking variable: LH
+Checking variable: QRAIN
+Checking variable: QSNOW
+Checking variable: SNEQV
+Checking variable: SNOWH
+Checking variable: SOIL_M
+Checking variable: SOIL_W
+Checking variable: TRAD
+Checking variable: UGDRNOFF
+Checking variable: x
+Checking variable: y
+
+1/15
+Checking time: 1979-02-10T00:00:00.000000000
+Checking variable: ACCET
+nans present
+Checking variable: ACSNOM
+nans present
+Checking variable: ALBEDO
+nans present
+Checking variable: ALBSND
+nans present
+Checking variable: ALBSNI
+nans present
+Checking variable: COSZ
+nans present
+Checking variable: EDIR
+nans present
+Checking variable: FIRA
+nans present
+Checking variable: FSA
+nans present
+Checking variable: FSNO
+nans present
+Checking variable: HFX
+nans present
+Checking variable: LH
+nans present
+Checking variable: QRAIN
+nans present
+Checking variable: QSNOW
+nans present
+Checking variable: SNEQV
+nans present
+Checking variable: SNOWH
+nans present
+Checking variable: SOIL_M
+nans present
+Checking variable: SOIL_W
+nans present
+Checking variable: TRAD
+nans present
+Checking variable: UGDRNOFF
+nans present
+
+2/15
+Checking time: 1981-02-10T21:00:00.000000000
+Checking variable: ACCET
+nans present
+Checking variable: ACSNOM
+nans present
+Checking variable: ALBEDO
+nans present
+Checking variable: ALBSND
+nans present
+Checking variable: ALBSNI
+nans present
+Checking variable: COSZ
+nans present
+Checking variable: EDIR
+nans present
+Checking variable: FIRA
+nans present
+Checking variable: FSA
+nans present
+Checking variable: FSNO
+nans present
+Checking variable: HFX
+nans present
+Checking variable: LH
+nans present
+Checking variable: QRAIN
+nans present
+Checking variable: QSNOW
+nans present
+Checking variable: SNEQV
+nans present
+Checking variable: SNOWH
+nans present
+Checking variable: SOIL_M
+nans present
+Checking variable: SOIL_W
+nans present
+Checking variable: TRAD
+nans present
+Checking variable: UGDRNOFF
+nans present
+
+3/15
+Checking time: 1979-03-31T18:00:00.000000000
+Checking variable: ACCET
+nans present
+Checking variable: ACSNOM
+nans present
+Checking variable: ALBEDO
+nans present
+Checking variable: ALBSND
+nans present
+Checking variable: ALBSNI
+nans present
+Checking variable: COSZ
+nans present
+Checking variable: EDIR
+nans present
+Checking variable: FIRA
+nans present
+Checking variable: FSA
+nans present
+Checking variable: FSNO
+nans present
+Checking variable: HFX
+nans present
+Checking variable: LH
+nans present
+Checking variable: QRAIN
+nans present
+Checking variable: QSNOW
+nans present
+Checking variable: SNEQV
+nans present
+Checking variable: SNOWH
+nans present
+Checking variable: SOIL_M
+nans present
+Checking variable: SOIL_W
+nans present
+Checking variable: TRAD
+nans present
+Checking variable: UGDRNOFF
+nans present
+
+4/15
+Checking time: 1979-11-24T18:00:00.000000000
+Checking variable: ACCET
+nans present
+Checking variable: ACSNOM
+nans present
+Checking variable: ALBEDO
+nans present
+Checking variable: ALBSND
+nans present
+Checking variable: ALBSNI
+nans present
+Checking variable: COSZ
+nans present
+Checking variable: EDIR
+nans present
+Checking variable: FIRA
+nans present
+Checking variable: FSA
+nans present
+Checking variable: FSNO
+nans present
+Checking variable: HFX
+nans present
+Checking variable: LH
+nans present
+Checking variable: QRAIN
+nans present
+Checking variable: QSNOW
+nans present
+Checking variable: SNEQV
+nans present
+Checking variable: SNOWH
+nans present
+Checking variable: SOIL_M
+nans present
+Checking variable: SOIL_W
+nans present
+Checking variable: TRAD
+nans present
+Checking variable: UGDRNOFF
+nans present
+
+5/15
+Checking time: 1979-09-24T09:00:00.000000000
+Checking variable: ACCET
+nans present
+Checking variable: ACSNOM
+nans present
+Checking variable: ALBEDO
+nans present
+Checking variable: ALBSND
+nans present
+Checking variable: ALBSNI
+nans present
+Checking variable: COSZ
+nans present
+Checking variable: EDIR
+nans present
+Checking variable: FIRA
+nans present
+Checking variable: FSA
+nans present
+Checking variable: FSNO
+nans present
+Checking variable: HFX
+nans present
+Checking variable: LH
+nans present
+Checking variable: QRAIN
+nans present
+Checking variable: QSNOW
+nans present
+Checking variable: SNEQV
+nans present
+Checking variable: SNOWH
+nans present
+Checking variable: SOIL_M
+nans present
+Checking variable: SOIL_W
+nans present
+Checking variable: TRAD
+nans present
+Checking variable: UGDRNOFF
+nans present
+
+6/15
+Checking time: 1980-12-02T03:00:00.000000000
+Checking variable: ACCET
+nans present
+Checking variable: ACSNOM
+nans present
+Checking variable: ALBEDO
+nans present
+Checking variable: ALBSND
+nans present
+Checking variable: ALBSNI
+nans present
+Checking variable: COSZ
+nans present
+Checking variable: EDIR
+nans present
+Checking variable: FIRA
+nans present
+Checking variable: FSA
+nans present
+Checking variable: FSNO
+nans present
+Checking variable: HFX
+nans present
+Checking variable: LH
+nans present
+Checking variable: QRAIN
+nans present
+Checking variable: QSNOW
+nans present
+Checking variable: SNEQV
+nans present
+Checking variable: SNOWH
+nans present
+Checking variable: SOIL_M
+nans present
+Checking variable: SOIL_W
+nans present
+Checking variable: TRAD
+nans present
+Checking variable: UGDRNOFF
+nans present
+
+7/15
+Checking time: 1980-02-21T00:00:00.000000000
+Checking variable: ACCET
+nans present
+Checking variable: ACSNOM
+nans present
+Checking variable: ALBEDO
+nans present
+Checking variable: ALBSND
+nans present
+Checking variable: ALBSNI
+nans present
+Checking variable: COSZ
+nans present
+Checking variable: EDIR
+nans present
+Checking variable: FIRA
+nans present
+Checking variable: FSA
+nans present
+Checking variable: FSNO
+nans present
+Checking variable: HFX
+nans present
+Checking variable: LH
+nans present
+Checking variable: QRAIN
+nans present
+Checking variable: QSNOW
+nans present
+Checking variable: SNEQV
+nans present
+Checking variable: SNOWH
+nans present
+Checking variable: SOIL_M
+nans present
+Checking variable: SOIL_W
+nans present
+Checking variable: TRAD
+nans present
+Checking variable: UGDRNOFF
+nans present
+
+8/15
+Checking time: 1980-03-26T21:00:00.000000000
+Checking variable: ACCET
+nans present
+Checking variable: ACSNOM
+nans present
+Checking variable: ALBEDO
+nans present
+Checking variable: ALBSND
+nans present
+Checking variable: ALBSNI
+nans present
+Checking variable: COSZ
+nans present
+Checking variable: EDIR
+nans present
+Checking variable: FIRA
+nans present
+Checking variable: FSA
+nans present
+Checking variable: FSNO
+nans present
+Checking variable: HFX
+nans present
+Checking variable: LH
+nans present
+Checking variable: QRAIN
+nans present
+Checking variable: QSNOW
+nans present
+Checking variable: SNEQV
+nans present
+Checking variable: SNOWH
+nans present
+Checking variable: SOIL_M
+nans present
+Checking variable: SOIL_W
+nans present
+Checking variable: TRAD
+nans present
+Checking variable: UGDRNOFF
+nans present
+
+9/15
+Checking time: 1981-01-04T09:00:00.000000000
+Checking variable: ACCET
+nans present
+Checking variable: ACSNOM
+nans present
+Checking variable: ALBEDO
+nans present
+Checking variable: ALBSND
+nans present
+Checking variable: ALBSNI
+nans present
+Checking variable: COSZ
+nans present
+Checking variable: EDIR
+nans present
+Checking variable: FIRA
+nans present
+Checking variable: FSA
+nans present
+Checking variable: FSNO
+nans present
+Checking variable: HFX
+nans present
+Checking variable: LH
+nans present
+Checking variable: QRAIN
+nans present
+Checking variable: QSNOW
+nans present
+Checking variable: SNEQV
+nans present
+Checking variable: SNOWH
+nans present
+Checking variable: SOIL_M
+nans present
+Checking variable: SOIL_W
+nans present
+Checking variable: TRAD
+nans present
+Checking variable: UGDRNOFF
+nans present
+
+10/15
+Checking time: 1980-09-28T18:00:00.000000000
+Checking variable: ACCET
+nans present
+Checking variable: ACSNOM
+nans present
+Checking variable: ALBEDO
+nans present
+Checking variable: ALBSND
+nans present
+Checking variable: ALBSNI
+nans present
+Checking variable: COSZ
+nans present
+Checking variable: EDIR
+nans present
+Checking variable: FIRA
+nans present
+Checking variable: FSA
+nans present
+Checking variable: FSNO
+nans present
+Checking variable: HFX
+nans present
+Checking variable: LH
+nans present
+Checking variable: QRAIN
+nans present
+Checking variable: QSNOW
+nans present
+Checking variable: SNEQV
+nans present
+Checking variable: SNOWH
+nans present
+Checking variable: SOIL_M
+nans present
+Checking variable: SOIL_W
+nans present
+Checking variable: TRAD
+nans present
+Checking variable: UGDRNOFF
+nans present
+
+11/15
+Checking time: 1980-06-22T15:00:00.000000000
+Checking variable: ACCET
+nans present
+Checking variable: ACSNOM
+nans present
+Checking variable: ALBEDO
+nans present
+Checking variable: ALBSND
+nans present
+Checking variable: ALBSNI
+nans present
+Checking variable: COSZ
+nans present
+Checking variable: EDIR
+nans present
+Checking variable: FIRA
+nans present
+Checking variable: FSA
+nans present
+Checking variable: FSNO
+nans present
+Checking variable: HFX
+nans present
+Checking variable: LH
+nans present
+Checking variable: QRAIN
+nans present
+Checking variable: QSNOW
+nans present
+Checking variable: SNEQV
+nans present
+Checking variable: SNOWH
+nans present
+Checking variable: SOIL_M
+nans present
+Checking variable: SOIL_W
+nans present
+Checking variable: TRAD
+nans present
+Checking variable: UGDRNOFF
+nans present
+
+12/15
+Checking time: 1979-08-27T21:00:00.000000000
+Checking variable: ACCET
+nans present
+Checking variable: ACSNOM
+nans present
+Checking variable: ALBEDO
+nans present
+Checking variable: ALBSND
+nans present
+Checking variable: ALBSNI
+nans present
+Checking variable: COSZ
+nans present
+Checking variable: EDIR
+nans present
+Checking variable: FIRA
+nans present
+Checking variable: FSA
+nans present
+Checking variable: FSNO
+nans present
+Checking variable: HFX
+nans present
+Checking variable: LH
+nans present
+Checking variable: QRAIN
+nans present
+Checking variable: QSNOW
+nans present
+Checking variable: SNEQV
+nans present
+Checking variable: SNOWH
+nans present
+Checking variable: SOIL_M
+nans present
+Checking variable: SOIL_W
+nans present
+Checking variable: TRAD
+nans present
+Checking variable: UGDRNOFF
+nans present
+
+13/15
+Checking time: 1980-06-10T15:00:00.000000000
+Checking variable: ACCET
+nans present
+Checking variable: ACSNOM
+nans present
+Checking variable: ALBEDO
+nans present
+Checking variable: ALBSND
+nans present
+Checking variable: ALBSNI
+nans present
+Checking variable: COSZ
+nans present
+Checking variable: EDIR
+nans present
+Checking variable: FIRA
+nans present
+Checking variable: FSA
+nans present
+Checking variable: FSNO
+nans present
+Checking variable: HFX
+nans present
+Checking variable: LH
+nans present
+Checking variable: QRAIN
+nans present
+Checking variable: QSNOW
+nans present
+Checking variable: SNEQV
+nans present
+Checking variable: SNOWH
+nans present
+Checking variable: SOIL_M
+nans present
+Checking variable: SOIL_W
+nans present
+Checking variable: TRAD
+nans present
+Checking variable: UGDRNOFF
+nans present
+
+14/15
+Checking time: 1980-12-19T06:00:00.000000000
+Checking variable: ACCET
+nans present
+Checking variable: ACSNOM
+nans present
+Checking variable: ALBEDO
+nans present
+Checking variable: ALBSND
+nans present
+Checking variable: ALBSNI
+nans present
+Checking variable: COSZ
+nans present
+Checking variable: EDIR
+nans present
+Checking variable: FIRA
+nans present
+Checking variable: FSA
+nans present
+Checking variable: FSNO
+nans present
+Checking variable: HFX
+nans present
+Checking variable: LH
+nans present
+Checking variable: QRAIN
+nans present
+Checking variable: QSNOW
+nans present
+Checking variable: SNEQV
+nans present
+Checking variable: SNOWH
+nans present
+Checking variable: SOIL_M
+nans present
+Checking variable: SOIL_W
+nans present
+Checking variable: TRAD
+nans present
+Checking variable: UGDRNOFF
+nans present
+
+15/15
+Checking time: 1981-01-02T09:00:00.000000000
+Checking variable: ACCET
+nans present
+Checking variable: ACSNOM
+nans present
+Checking variable: ALBEDO
+nans present
+Checking variable: ALBSND
+nans present
+Checking variable: ALBSNI
+nans present
+Checking variable: COSZ
+nans present
+Checking variable: EDIR
+nans present
+Checking variable: FIRA
+nans present
+Checking variable: FSA
+nans present
+Checking variable: FSNO
+nans present
+Checking variable: HFX
+nans present
+Checking variable: LH
+nans present
+Checking variable: QRAIN
+nans present
+Checking variable: QSNOW
+nans present
+Checking variable: SNEQV
+nans present
+Checking variable: SNOWH
+nans present
+Checking variable: SOIL_M
+nans present
+Checking variable: SOIL_W
+nans present
+Checking variable: TRAD
+nans present
+Checking variable: UGDRNOFF
+nans present
