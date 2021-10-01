@@ -1,13 +1,14 @@
 # nwm_v21_retro_rechunk
 Rechunking NWM v2.1 retrospective runs to more approachable chunks in Zarr output.
 
-Authors: James McCreight (NCAR), Ishita Srivastava (NCAR), and Rich Signell (USGS)
+Authors: __James McCreight (NCAR), Ishita Srivastava (NCAR), and Rich Signell (USGS)__
 
 
 ## Overview
 The National Water Model (NWM) version 2.1 retrospective simulation spans 42-years (Feb 1979 - Dec 2020). The model
 domain is the continential US. Inputs are hourly and outputs are provided at hourly or 3-hourly resolution (more details
-below).
+provide below and in [this document](https://drive.google.com/file/d/1zUtBZ_SM7uHqNDHLdOwGvfasVFMHfH6a/view).
+
 
 The model writes output to files at each output time separately. Within those individual files the data are not chunked 
 in space. For the use case of opening a full timeseries at a single point, the user would be required to read in the entire data
@@ -17,14 +18,23 @@ Enter rechunking. The goal of rechunking this dataset is to provide chunks (data
 of the data) that support efficient data access for most use cases. 
 
 
-
-[Notes on the NWM v2.1 retrospective data set](https://drive.google.com/file/d/1zUtBZ_SM7uHqNDHLdOwGvfasVFMHfH6a/view)
-
 ## Data overview
+Six separate zarr stores have been created, corresponding closely to the model output files, and their time resolution is noted
+
+* chrtout: Output from the streamflow model(hourly)
+* gwout: Output from the groundwater model (hourly)
+* lakeout: Output from the lake model (hourly)
+* ldasout: Output from the NoahMP land surface model (3-hourly)
+* rtout: Output from the overland and subsurface terrain routing model (3-hourly)
+* precip: Input precipitation fields from the OWP AORC forcing data set (hourly)
+
+Additonal detail on these stores (variables contained and space-time information) is provided in the data description section 
+below and via accompanying notebooks.
 
 
 ## Data Access
-The data are accessible via globus. Please see
+
+The data are currently accessible via globus but will be moved to AWS cloud. Please see
 https://www2.cisl.ucar.edu/resources/storage-and-file-systems/using-the-ncar-data-sharing-service#retrieve
 for details on accesing these globus data shares and let us know if permission errors arise. The following 
 links will open the end points in the globus web browser app
@@ -43,9 +53,7 @@ These can alternatively be found on the NCAR casper cluster (for those with acce
 ```
 
 ## Data Description
-chrtout/
-lakeout/
-gwout/
-ldasout/
-rtout/
-precip_forcing/
+The [accompanying notebook](data_description.ipynb) gives a detailed overview of the datasets using the xarray. 
+
+## Use Cases
+The 
