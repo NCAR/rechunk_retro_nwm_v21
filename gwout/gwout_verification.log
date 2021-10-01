@@ -1,25 +1,22 @@
 Checking gwout.zarr against its source files
 <xarray.Dataset>
-Dimensions:     (time: 19464, feature_id: 2776738)
+Dimensions:     (time: 367439, feature_id: 2776738)
 Coordinates:
   * feature_id  (feature_id) int32 6635572 6635590 6635598 ... 25293410 15450136
-  * time        (time) datetime64[ns] 1979-02-10 ... 1981-04-30T23:00:00
+  * time        (time) datetime64[ns] 1979-02-01T01:00:00 ... 2020-12-31T23:0...
 Data variables:
     depth       (time, feature_id) float64 dask.array<chunksize=(672, 30000), meta=np.ndarray>
     inflow      (time, feature_id) float64 dask.array<chunksize=(672, 30000), meta=np.ndarray>
     outflow     (time, feature_id) float64 dask.array<chunksize=(672, 30000), meta=np.ndarray>
 Attributes:
-    Conventions:                CF-1.6
-    TITLE:                      OUTPUT FROM WRF-Hydro v5.2.0-beta2
-    code_version:               v5.2.0-beta2
-    featureType:                timeSeries
-    model_configuration:        retrospective
-    model_initialization_time:  1981-04-01_00:00:00
-    model_output_type:          groundwater_rt
-    model_output_valid_time:    1981-04-04_00:00:00
-    model_total_valid_times:    2184
-    station_dimension:          gw_id
-Checking data for 30 times
+    Conventions:          CF-1.6
+    TITLE:                OUTPUT FROM WRF-Hydro v5.2.0-beta2
+    code_version:         v5.2.0-beta2
+    featureType:          timeSeries
+    model_configuration:  retrospective
+    model_output_type:    groundwater_rt
+    station_dimension:    gw_id
+Checking data for 250 times
 
 Check (non-time) static variables once
 Checking variable: depth
@@ -27,182 +24,1502 @@ Checking variable: feature_id
 Checking variable: inflow
 Checking variable: outflow
 
-1/30
-Checking time: 1979-02-10T00:00:00.000000000
+1/250
+Checking time: 1979-02-01T01:00:00.000000000
 Checking variable: depth
 Checking variable: inflow
 Checking variable: outflow
 
-2/30
-Checking time: 1981-04-30T23:00:00.000000000
+2/250
+Checking time: 2020-12-31T23:00:00.000000000
 Checking variable: depth
 Checking variable: inflow
 Checking variable: outflow
 
-3/30
-Checking time: 1979-12-23T07:00:00.000000000
+3/250
+Checking time: 1996-10-06T14:00:00.000000000
 Checking variable: depth
 Checking variable: inflow
 Checking variable: outflow
 
-4/30
-Checking time: 1980-04-16T04:00:00.000000000
+4/250
+Checking time: 1985-03-10T07:00:00.000000000
 Checking variable: depth
 Checking variable: inflow
 Checking variable: outflow
 
-5/30
-Checking time: 1980-04-19T02:00:00.000000000
+5/250
+Checking time: 1984-05-02T23:00:00.000000000
 Checking variable: depth
 Checking variable: inflow
 Checking variable: outflow
 
-6/30
-Checking time: 1979-05-02T22:00:00.000000000
+6/250
+Checking time: 1997-02-04T15:00:00.000000000
 Checking variable: depth
 Checking variable: inflow
 Checking variable: outflow
 
-7/30
-Checking time: 1979-03-07T04:00:00.000000000
+7/250
+Checking time: 2006-04-02T01:00:00.000000000
 Checking variable: depth
 Checking variable: inflow
 Checking variable: outflow
 
-8/30
-Checking time: 1979-06-25T22:00:00.000000000
+8/250
+Checking time: 1998-06-08T21:00:00.000000000
 Checking variable: depth
 Checking variable: inflow
 Checking variable: outflow
 
-9/30
-Checking time: 1979-06-11T14:00:00.000000000
+9/250
+Checking time: 2014-06-16T04:00:00.000000000
 Checking variable: depth
 Checking variable: inflow
 Checking variable: outflow
 
-10/30
-Checking time: 1979-08-10T15:00:00.000000000
+10/250
+Checking time: 2019-02-11T13:00:00.000000000
 Checking variable: depth
 Checking variable: inflow
 Checking variable: outflow
 
-11/30
-Checking time: 1980-11-29T09:00:00.000000000
+11/250
+Checking time: 2011-02-18T05:00:00.000000000
 Checking variable: depth
 Checking variable: inflow
 Checking variable: outflow
 
-12/30
-Checking time: 1980-09-07T05:00:00.000000000
+12/250
+Checking time: 2008-08-24T19:00:00.000000000
 Checking variable: depth
 Checking variable: inflow
 Checking variable: outflow
 
-13/30
-Checking time: 1981-04-09T22:00:00.000000000
+13/250
+Checking time: 1987-10-23T02:00:00.000000000
 Checking variable: depth
 Checking variable: inflow
 Checking variable: outflow
 
-14/30
-Checking time: 1980-08-08T13:00:00.000000000
+14/250
+Checking time: 1992-11-23T07:00:00.000000000
 Checking variable: depth
 Checking variable: inflow
 Checking variable: outflow
 
-15/30
-Checking time: 1981-04-29T00:00:00.000000000
+15/250
+Checking time: 2013-05-14T22:00:00.000000000
 Checking variable: depth
 Checking variable: inflow
 Checking variable: outflow
 
-16/30
-Checking time: 1981-02-17T20:00:00.000000000
+16/250
+Checking time: 1994-02-13T11:00:00.000000000
 Checking variable: depth
 Checking variable: inflow
 Checking variable: outflow
 
-17/30
-Checking time: 1980-06-23T01:00:00.000000000
+17/250
+Checking time: 1988-08-31T09:00:00.000000000
 Checking variable: depth
 Checking variable: inflow
 Checking variable: outflow
 
-18/30
-Checking time: 1980-10-19T10:00:00.000000000
+18/250
+Checking time: 2007-02-20T12:00:00.000000000
 Checking variable: depth
 Checking variable: inflow
 Checking variable: outflow
 
-19/30
-Checking time: 1979-07-13T00:00:00.000000000
+19/250
+Checking time: 1986-03-07T13:00:00.000000000
 Checking variable: depth
 Checking variable: inflow
 Checking variable: outflow
 
-20/30
-Checking time: 1980-02-09T00:00:00.000000000
+20/250
+Checking time: 2004-01-26T10:00:00.000000000
 Checking variable: depth
 Checking variable: inflow
 Checking variable: outflow
 
-21/30
-Checking time: 1981-04-05T07:00:00.000000000
+21/250
+Checking time: 2016-03-19T13:00:00.000000000
 Checking variable: depth
 Checking variable: inflow
 Checking variable: outflow
 
-22/30
-Checking time: 1979-10-14T11:00:00.000000000
+22/250
+Checking time: 2020-12-30T23:00:00.000000000
 Checking variable: depth
 Checking variable: inflow
 Checking variable: outflow
 
-23/30
-Checking time: 1981-04-10T17:00:00.000000000
+23/250
+Checking time: 2006-09-08T15:00:00.000000000
 Checking variable: depth
 Checking variable: inflow
 Checking variable: outflow
 
-24/30
-Checking time: 1979-11-19T06:00:00.000000000
+24/250
+Checking time: 2017-05-30T21:00:00.000000000
 Checking variable: depth
 Checking variable: inflow
 Checking variable: outflow
 
-25/30
-Checking time: 1981-04-01T22:00:00.000000000
+25/250
+Checking time: 2009-06-25T12:00:00.000000000
 Checking variable: depth
 Checking variable: inflow
 Checking variable: outflow
 
-26/30
-Checking time: 1981-04-07T03:00:00.000000000
+26/250
+Checking time: 1996-07-09T17:00:00.000000000
 Checking variable: depth
 Checking variable: inflow
 Checking variable: outflow
 
-27/30
-Checking time: 1980-03-12T15:00:00.000000000
+27/250
+Checking time: 2009-06-12T21:00:00.000000000
 Checking variable: depth
 Checking variable: inflow
 Checking variable: outflow
 
-28/30
-Checking time: 1980-10-31T03:00:00.000000000
+28/250
+Checking time: 1990-04-05T08:00:00.000000000
 Checking variable: depth
 Checking variable: inflow
 Checking variable: outflow
 
-29/30
-Checking time: 1980-07-26T13:00:00.000000000
+29/250
+Checking time: 1980-12-26T19:00:00.000000000
 Checking variable: depth
 Checking variable: inflow
 Checking variable: outflow
 
-30/30
-Checking time: 1979-06-30T08:00:00.000000000
+30/250
+Checking time: 1984-07-20T14:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+31/250
+Checking time: 1989-04-04T07:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+32/250
+Checking time: 2009-07-08T18:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+33/250
+Checking time: 1996-11-26T04:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+34/250
+Checking time: 2011-05-25T13:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+35/250
+Checking time: 2007-11-19T00:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+36/250
+Checking time: 1990-03-13T03:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+37/250
+Checking time: 1981-06-10T09:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+38/250
+Checking time: 1982-12-23T22:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+39/250
+Checking time: 2020-01-08T07:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+40/250
+Checking time: 1982-11-02T06:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+41/250
+Checking time: 2001-09-15T04:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+42/250
+Checking time: 2018-06-04T19:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+43/250
+Checking time: 2007-03-10T13:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+44/250
+Checking time: 1995-12-06T07:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+45/250
+Checking time: 2013-05-06T17:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+46/250
+Checking time: 2003-09-04T02:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+47/250
+Checking time: 2001-08-01T20:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+48/250
+Checking time: 2006-08-23T23:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+49/250
+Checking time: 1983-12-02T01:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+50/250
+Checking time: 2000-03-15T00:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+51/250
+Checking time: 1981-01-14T08:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+52/250
+Checking time: 2000-09-30T08:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+53/250
+Checking time: 1981-07-27T15:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+54/250
+Checking time: 2004-01-17T02:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+55/250
+Checking time: 1991-03-18T06:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+56/250
+Checking time: 1994-06-23T19:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+57/250
+Checking time: 1995-12-11T04:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+58/250
+Checking time: 1991-10-16T13:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+59/250
+Checking time: 1987-05-12T06:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+60/250
+Checking time: 1985-12-27T04:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+61/250
+Checking time: 2007-08-11T09:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+62/250
+Checking time: 2011-12-09T07:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+63/250
+Checking time: 1989-09-03T12:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+64/250
+Checking time: 2013-06-27T17:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+65/250
+Checking time: 2005-07-24T10:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+66/250
+Checking time: 2018-01-12T12:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+67/250
+Checking time: 2003-02-15T04:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+68/250
+Checking time: 1985-03-05T08:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+69/250
+Checking time: 1983-09-12T20:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+70/250
+Checking time: 2013-01-17T16:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+71/250
+Checking time: 1997-05-14T00:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+72/250
+Checking time: 1984-11-28T02:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+73/250
+Checking time: 1996-05-03T02:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+74/250
+Checking time: 1988-02-26T09:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+75/250
+Checking time: 2012-10-02T03:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+76/250
+Checking time: 2011-09-26T20:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+77/250
+Checking time: 1985-11-04T04:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+78/250
+Checking time: 1990-06-12T00:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+79/250
+Checking time: 2019-08-10T23:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+80/250
+Checking time: 2012-04-14T12:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+81/250
+Checking time: 1987-06-03T09:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+82/250
+Checking time: 2020-02-24T11:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+83/250
+Checking time: 1983-08-25T18:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+84/250
+Checking time: 1994-07-21T00:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+85/250
+Checking time: 2014-07-13T01:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+86/250
+Checking time: 2009-04-23T23:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+87/250
+Checking time: 2007-05-04T08:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+88/250
+Checking time: 1992-03-03T06:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+89/250
+Checking time: 1997-03-14T11:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+90/250
+Checking time: 2004-04-07T20:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+91/250
+Checking time: 2003-05-11T00:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+92/250
+Checking time: 2011-02-21T09:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+93/250
+Checking time: 1999-03-16T06:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+94/250
+Checking time: 2000-12-18T03:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+95/250
+Checking time: 2018-11-04T23:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+96/250
+Checking time: 1993-04-10T07:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+97/250
+Checking time: 1982-04-22T11:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+98/250
+Checking time: 2015-06-30T03:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+99/250
+Checking time: 1998-03-06T16:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+100/250
+Checking time: 1998-04-25T21:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+101/250
+Checking time: 2002-03-08T11:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+102/250
+Checking time: 2016-09-04T05:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+103/250
+Checking time: 2011-08-16T08:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+104/250
+Checking time: 2015-05-31T17:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+105/250
+Checking time: 2020-05-28T12:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+106/250
+Checking time: 2019-04-29T02:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+107/250
+Checking time: 2006-10-20T17:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+108/250
+Checking time: 1999-08-04T21:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+109/250
+Checking time: 2001-08-21T05:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+110/250
+Checking time: 1988-11-02T20:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+111/250
+Checking time: 1992-12-11T20:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+112/250
+Checking time: 1982-07-20T14:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+113/250
+Checking time: 1992-06-26T11:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+114/250
+Checking time: 2013-03-12T02:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+115/250
+Checking time: 1995-12-07T08:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+116/250
+Checking time: 2011-06-14T09:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+117/250
+Checking time: 2011-02-07T13:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+118/250
+Checking time: 2019-07-24T21:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+119/250
+Checking time: 1979-11-07T05:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+120/250
+Checking time: 2010-04-29T22:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+121/250
+Checking time: 1988-01-04T04:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+122/250
+Checking time: 1986-10-06T04:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+123/250
+Checking time: 2011-03-30T17:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+124/250
+Checking time: 2009-07-29T05:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+125/250
+Checking time: 1997-12-19T06:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+126/250
+Checking time: 2016-06-10T10:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+127/250
+Checking time: 1985-08-03T17:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+128/250
+Checking time: 1991-09-04T14:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+129/250
+Checking time: 1993-11-19T09:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+130/250
+Checking time: 2002-12-19T14:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+131/250
+Checking time: 1981-08-29T16:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+132/250
+Checking time: 1990-02-17T11:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+133/250
+Checking time: 1986-01-28T19:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+134/250
+Checking time: 2020-09-09T01:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+135/250
+Checking time: 2017-10-12T12:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+136/250
+Checking time: 2007-05-05T03:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+137/250
+Checking time: 1991-05-05T06:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+138/250
+Checking time: 2005-11-01T02:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+139/250
+Checking time: 2018-09-01T20:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+140/250
+Checking time: 1991-11-20T05:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+141/250
+Checking time: 1985-05-19T18:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+142/250
+Checking time: 2012-02-07T04:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+143/250
+Checking time: 1998-01-15T01:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+144/250
+Checking time: 1997-12-15T20:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+145/250
+Checking time: 2003-11-10T03:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+146/250
+Checking time: 2002-08-01T14:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+147/250
+Checking time: 2011-03-03T05:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+148/250
+Checking time: 1989-01-26T00:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+149/250
+Checking time: 1994-06-21T12:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+150/250
+Checking time: 2007-01-18T21:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+151/250
+Checking time: 1982-06-11T10:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+152/250
+Checking time: 2020-08-30T15:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+153/250
+Checking time: 2019-11-17T11:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+154/250
+Checking time: 1997-12-10T06:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+155/250
+Checking time: 2017-08-24T23:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+156/250
+Checking time: 2014-10-22T20:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+157/250
+Checking time: 1987-05-04T22:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+158/250
+Checking time: 2011-10-15T06:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+159/250
+Checking time: 1991-04-12T02:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+160/250
+Checking time: 1984-02-14T20:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+161/250
+Checking time: 2009-01-13T16:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+162/250
+Checking time: 1994-09-08T22:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+163/250
+Checking time: 2020-04-26T03:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+164/250
+Checking time: 2013-11-23T02:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+165/250
+Checking time: 2003-09-16T07:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+166/250
+Checking time: 2017-03-29T10:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+167/250
+Checking time: 2019-11-11T07:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+168/250
+Checking time: 1980-03-26T04:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+169/250
+Checking time: 1984-07-31T13:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+170/250
+Checking time: 2009-04-03T17:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+171/250
+Checking time: 2007-07-13T22:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+172/250
+Checking time: 1981-09-21T19:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+173/250
+Checking time: 2013-01-24T04:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+174/250
+Checking time: 2017-08-13T12:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+175/250
+Checking time: 2004-02-29T20:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+176/250
+Checking time: 1982-01-23T21:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+177/250
+Checking time: 1980-04-12T11:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+178/250
+Checking time: 2008-09-16T17:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+179/250
+Checking time: 1988-10-03T21:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+180/250
+Checking time: 2015-11-03T09:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+181/250
+Checking time: 1980-03-24T12:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+182/250
+Checking time: 2002-02-25T21:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+183/250
+Checking time: 2010-10-07T04:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+184/250
+Checking time: 1984-08-25T23:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+185/250
+Checking time: 1996-12-10T21:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+186/250
+Checking time: 2018-03-17T15:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+187/250
+Checking time: 2010-07-21T06:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+188/250
+Checking time: 2007-03-13T10:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+189/250
+Checking time: 2012-06-10T04:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+190/250
+Checking time: 1996-09-25T13:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+191/250
+Checking time: 1993-12-26T23:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+192/250
+Checking time: 1990-04-15T04:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+193/250
+Checking time: 2015-10-13T05:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+194/250
+Checking time: 2006-10-24T23:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+195/250
+Checking time: 1994-04-15T01:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+196/250
+Checking time: 1993-07-14T16:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+197/250
+Checking time: 1993-07-12T17:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+198/250
+Checking time: 1981-05-27T21:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+199/250
+Checking time: 1996-01-17T18:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+200/250
+Checking time: 2011-10-02T10:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+201/250
+Checking time: 1989-05-30T02:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+202/250
+Checking time: 1999-03-22T18:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+203/250
+Checking time: 1979-11-02T14:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+204/250
+Checking time: 1985-12-02T05:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+205/250
+Checking time: 1996-08-25T02:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+206/250
+Checking time: 1980-06-23T07:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+207/250
+Checking time: 1999-08-19T16:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+208/250
+Checking time: 1997-09-03T12:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+209/250
+Checking time: 2015-12-23T13:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+210/250
+Checking time: 2006-08-28T12:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+211/250
+Checking time: 2003-11-25T20:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+212/250
+Checking time: 1997-12-19T16:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+213/250
+Checking time: 1985-08-14T01:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+214/250
+Checking time: 2017-08-27T01:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+215/250
+Checking time: 2013-12-25T16:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+216/250
+Checking time: 2006-10-13T21:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+217/250
+Checking time: 2011-11-28T05:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+218/250
+Checking time: 1997-12-06T13:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+219/250
+Checking time: 2000-02-05T06:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+220/250
+Checking time: 1996-12-08T14:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+221/250
+Checking time: 2020-07-15T20:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+222/250
+Checking time: 1980-12-21T05:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+223/250
+Checking time: 1994-04-25T17:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+224/250
+Checking time: 2019-07-10T00:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+225/250
+Checking time: 2020-10-29T13:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+226/250
+Checking time: 1999-12-22T04:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+227/250
+Checking time: 2002-05-08T10:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+228/250
+Checking time: 2016-11-26T09:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+229/250
+Checking time: 1980-12-09T04:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+230/250
+Checking time: 2008-08-31T19:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+231/250
+Checking time: 2011-05-07T03:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+232/250
+Checking time: 1983-07-06T14:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+233/250
+Checking time: 2017-07-20T22:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+234/250
+Checking time: 1979-06-09T01:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+235/250
+Checking time: 2015-01-21T14:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+236/250
+Checking time: 1984-12-26T06:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+237/250
+Checking time: 1988-01-22T15:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+238/250
+Checking time: 1995-10-28T01:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+239/250
+Checking time: 2005-12-06T01:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+240/250
+Checking time: 2003-09-06T09:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+241/250
+Checking time: 2017-09-24T18:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+242/250
+Checking time: 2015-02-04T10:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+243/250
+Checking time: 1996-02-07T19:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+244/250
+Checking time: 2018-10-14T20:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+245/250
+Checking time: 2007-02-04T19:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+246/250
+Checking time: 1984-12-11T14:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+247/250
+Checking time: 1983-05-25T14:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+248/250
+Checking time: 1998-05-18T19:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+249/250
+Checking time: 2007-04-17T08:00:00.000000000
+Checking variable: depth
+Checking variable: inflow
+Checking variable: outflow
+
+250/250
+Checking time: 1984-08-16T14:00:00.000000000
 Checking variable: depth
 Checking variable: inflow
 Checking variable: outflow

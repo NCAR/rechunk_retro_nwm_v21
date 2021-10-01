@@ -6,10 +6,11 @@ Rechunking retrospective runs to more approachable chunks in Zarr output.
 ## Data Access
 The data are accessible via globus. They are located at 
 ```
-/glade/p/datashare/jamesmcc/nwm_retro_v2.1/gwout.zarr
+/glade/p/datashare/ishitas/nwm_retro_v2.1/gwout.zarr
 /glade/p/datashare/jamesmcc/nwm_retro_v2.1/lakeout.zarr
 /glade/p/datashare/ishitas/nwm_retro_v2.1/chrtout.zarr
 /glade/p/datashare/jamesmcc/nwm_retro_v2.1/precip.zarr
+/glade/p/datashare/ishitas/nwm_retro_v2.1/ldasout.zarr
 ```
 Please see
 https://www2.cisl.ucar.edu/resources/storage-and-file-systems/using-the-ncar-data-sharing-service#retrieve

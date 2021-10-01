@@ -15,6 +15,7 @@ type_pattern_dict = {
     "chrtout.zarr": "CHRTOUT_DOMAIN1.comp",
     "gwout.zarr": "GWOUT_DOMAIN1.comp",
     "lakeout.zarr": "LAKEOUT_DOMAIN1.comp",
+    "ldasout.zarr" : "LDASOUT_DOMAIN1.comp",
     "precip.zarr": "LDASIN_DOMAIN1",
 }
 
@@ -92,7 +93,6 @@ def main(file_rechunked):
                     assert np.nanmin(np.abs(diffs)) < 1e-8
                 else:
                     assert np.min(np.abs(diffs)) < 1e-8
-                    ### THIS EQUATIONS NEEDS SCRUTINIZED
 
 
 if __name__ == "__main__":
