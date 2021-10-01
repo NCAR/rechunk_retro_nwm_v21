@@ -1,0 +1,180 @@
+Checking rtout.zarr against its source files
+<xarray.Dataset>
+Dimensions:       (time: 6496, y: 15360, x: 18432)
+Coordinates:
+  * time          (time) datetime64[ns] 1979-02-01T03:00:00 ... 1981-04-23
+  * x             (x) float64 -2.304e+06 -2.304e+06 ... 2.304e+06 2.304e+06
+  * y             (y) float64 -1.92e+06 -1.92e+06 ... 1.92e+06 1.92e+06
+Data variables:
+    crs           |S1 ...
+    sfcheadsubrt  (time, y, x) float64 dask.array<chunksize=(224, 350, 350), meta=np.ndarray>
+    zwattablrt    (time, y, x) float64 dask.array<chunksize=(224, 350, 350), meta=np.ndarray>
+Attributes:
+    Conventions:                CF-1.6
+    GDAL_DataType:              Generic
+    TITLE:                      OUTPUT FROM WRF-Hydro v5.2.0-beta2
+    code_version:               v5.2.0-beta2
+    model_configuration:        retrospective
+    model_initialization_time:  1981-01-01_00:00:00
+    model_output_type:          terrain_rt
+    model_output_valid_time:    1981-03-26_03:00:00
+    model_total_valid_times:    720
+    proj4:                      +proj=lcc +units=m +a=6370000.0 +b=6370000.0 ...
+Checking data for 30 times
+
+Check (non-time) static variables once
+Checking variable: crs
+Checking variable: sfcheadsubrt
+Checking variable: x
+Checking variable: y
+Checking variable: zwattablrt
+
+1/30
+Checking time: 1979-02-01T03:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+
+2/30
+Checking time: 1981-04-23T00:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+
+3/30
+Checking time: 1980-11-09T00:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+
+4/30
+Checking time: 1979-12-04T18:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+
+5/30
+Checking time: 1979-03-28T03:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+
+6/30
+Checking time: 1979-12-03T15:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+
+7/30
+Checking time: 1979-12-11T18:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+
+8/30
+Checking time: 1979-07-13T00:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+
+9/30
+Checking time: 1979-06-22T03:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+
+10/30
+Checking time: 1979-07-03T06:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+
+11/30
+Checking time: 1979-06-22T18:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+
+12/30
+Checking time: 1979-04-18T06:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+
+13/30
+Checking time: 1979-06-23T06:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+
+14/30
+Checking time: 1980-09-22T00:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+
+15/30
+Checking time: 1980-06-19T00:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+
+16/30
+Checking time: 1980-05-21T15:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+
+17/30
+Checking time: 1980-08-02T18:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+
+18/30
+Checking time: 1979-08-13T21:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+
+19/30
+Checking time: 1980-03-21T03:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+
+20/30
+Checking time: 1980-06-04T03:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+
+21/30
+Checking time: 1980-02-24T00:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+
+22/30
+Checking time: 1980-02-25T06:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+
+23/30
+Checking time: 1979-05-19T15:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+
+24/30
+Checking time: 1980-07-18T15:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+
+25/30
+Checking time: 1980-09-26T00:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+
+26/30
+Checking time: 1980-10-21T12:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+
+27/30
+Checking time: 1980-07-29T09:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+
+28/30
+Checking time: 1979-03-10T18:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+
+29/30
+Checking time: 1979-04-04T03:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+
+30/30
+Checking time: 1979-08-25T00:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt

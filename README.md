@@ -11,6 +11,7 @@ The data are accessible via globus. They are located at
 /glade/p/datashare/ishitas/nwm_retro_v2.1/chrtout.zarr
 /glade/p/datashare/jamesmcc/nwm_retro_v2.1/precip.zarr
 /glade/p/datashare/ishitas/nwm_retro_v2.1/ldasout.zarr
+/glade/p/datashare/jamesmcc/nwm_retro_v2.1/rtout.zarr
 ```
 Please see
 https://www2.cisl.ucar.edu/resources/storage-and-file-systems/using-the-ncar-data-sharing-service#retrieve
