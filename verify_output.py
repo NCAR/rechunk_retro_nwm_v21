@@ -10,7 +10,6 @@ with warnings.catch_warnings():
     import sys
     import xarray as xr
 
-orig_dir = pathlib.Path("/glade/scratch/zhangyx/WRF-Hydro/model.data.v2.1")
 
 type_pattern_dict = {
     "chrtout.zarr": "CHRTOUT_DOMAIN1.comp",
@@ -20,12 +19,14 @@ type_pattern_dict = {
 }
 
 
+
 def main(file_rechunked):
     if file_rechunked.name == 'precip.zarr':
         orig_dir = pathlib.Path(
             "/glade/campaign/ral/hap/zhangyx/AORC.Forcing")
 
     pattern = type_pattern_dict[file_rechunked.name]
+    orig_dir = pathlib.Path("/glade/scratch/zhangyx/WRF-Hydro/model.data.v2.1")
 
     # Open the rechunked zarr output
     ds = xr.open_zarr(file_rechunked)
@@ -33,7 +34,7 @@ def main(file_rechunked):
     print(ds)
 
     # randomly sample some times, but always check first and last
-    n_samples = 30
+    n_samples = 250
     random_samp = random.sample(range(len(ds.time)), n_samples - 2)
     random_samp = [0, len(ds.time) - 1] + random_samp
     print(f"Checking data for {len(random_samp)} times")

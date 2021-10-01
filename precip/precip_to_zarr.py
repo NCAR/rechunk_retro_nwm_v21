@@ -18,7 +18,7 @@ import zarr
 
 # User config
 output_path = pathlib.Path(
-    "/glade/p/datashare/jamesmcc/nwm_retro_v2.1/precip")
+    "/glade/p/datashare/jamesmcc/precip")
 
 # Chunk config
 time_chunk_size = 672
