@@ -30,7 +30,7 @@ n_cores = 1
 queue = "casper"
 cluster_mem_gb = 25
 
-n_chunks_job = 10  # how many to do before exiting, 12 is approx yearly
+n_chunks_job = 7  # how many to do before exiting, 12 is approx yearly
 end_date = '2020-12-31 23:00' # full time
 # this end_date tests all parts of the execution for
 # chunk size 224

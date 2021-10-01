@@ -193,6 +193,8 @@ def main():
             f'Please use the fixer script on that file.')
         return(255)
 
+    gage_id = get_gage_id()
+
     print(f"Generate files list for all chunks in this job")
     if file_chunked.exists():
         print(f"\n ** Warning appending to existing output file: {file_chunked}")
@@ -204,7 +206,6 @@ def main():
             start=last_time, periods=n_chunks_job * time_chunk_size + 1, freq=freq
         )[1:]
     else:
-        gage_id = get_gage_id()
         dates = pd.date_range(
             start=start_date, periods=n_chunks_job * time_chunk_size, freq=freq
         )
