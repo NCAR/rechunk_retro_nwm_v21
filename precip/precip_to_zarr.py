@@ -25,7 +25,7 @@ time_chunk_size = 672
 x_chunk_size = 350
 y_chunk_size = 350
 
-n_workers = 8
+n_workers = 12
 n_cores = 1
 queue = "casper"
 cluster_mem_gb = 20
@@ -44,7 +44,10 @@ file_temp = output_path / "temp.zarr"
 file_log_loop_time = output_path / "precip_loop_time.txt"
 file_lock = output_path / "precip_write_in_progress.lock"
 
-input_dir = "/glade/campaign/ral/hap/zhangyx/AORC.Forcing"
+coord_file = '/glade/scratch/jamesmcc/aorc_forcing_symlinks/1979/197902010000.LDASIN_DOMAIN1'
+
+# input_dir = "/glade/campaign/ral/hap/zhangyx/AORC.Forcing"
+input_dir = '/glade/scratch/jamesmcc/aorc_forcing_symlinks'
 start_date = "1979-02-01 00:00"
 freq = "1h"
 
@@ -88,21 +91,30 @@ def del_zarr_file(the_file: pathlib.Path):
 
 
 def preprocess_precip(ds):
-    ds = ds.drop(
-        [
-            "reference_time", "crs", 'U2D',
-            'V2D', 'LWDOWN', 'T2D',
-            'Q2D', 'PSFC', 'SWDOWN',
-            'LQFRAC'
-        ]
-    )
+    drop_vars_full = [
+        "reference_time", "crs", 'U2D',
+        'V2D', 'LWDOWN', 'T2D',
+        'Q2D', 'PSFC', 'SWDOWN',
+        'LQFRAC', 'x', 'y']
+    drop_vars = list(
+        set(ds.variables).intersection(set(drop_vars_full)))
+    ds = ds.drop(drop_vars)
+    if 'valid_time' in ds.variables:
+        ds= (ds
+             .rename({'valid_time': 'time'})
+             .set_coords('time')
+             .swap_dims({'Time': 'time'})
+             .drop('Times')
+             .rename({'south_north': 'y', 'west_east': 'x'}))
     for mm in metadata_global_rm:
-        del ds.attrs[mm]
+        if mm in ds.attrs.keys():
+            del ds.attrs[mm]
     for kk, vv in metadata_global_add.items():
         ds.attrs[kk] = vv
     for vv, ll in metadata_variable_rm.items():
         for mm in ll:
-            del ds[vv].attrs[mm]
+            if mm in ds.attrs.keys(): 
+                del ds[vv].attrs[mm]
     return ds.reset_coords(drop=True)
 
 
@@ -142,7 +154,7 @@ def main():
     n_chunks_job_actual = ceil(len(files) / time_chunk_size)
 
     print(f"Get single file data and metadata")
-    dset = xr.open_dataset(files[0])
+    dset = xr.open_dataset(coord_file)
 
     print("Set cluster")
     cluster = PBSCluster(
@@ -201,6 +213,8 @@ def main():
         # print(ds)
 
         # in the first chunk, add back the static/invariant variables
+        ds['x'] = dset['x']
+        ds['y'] = dset['y']
         if not file_chunked.exists():
             ds["crs"] = dset["crs"]
 
