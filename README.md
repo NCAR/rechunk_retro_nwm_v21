@@ -39,6 +39,7 @@ These can alternatively be found on the NCAR casper cluster (for those with acce
 /glade/p/datashare/ishitas/nwm_retro_v2.1/chrtout.zarr
 /glade/p/datashare/jamesmcc/nwm_retro_v2.1/precip.zarr
 /glade/p/datashare/ishitas/nwm_retro_v2.1/ldasout.zarr
+/glade/p/datashare/jamesmcc/nwm_retro_v2.1/rtout.zarr
 ```
 
 ## Data Description
