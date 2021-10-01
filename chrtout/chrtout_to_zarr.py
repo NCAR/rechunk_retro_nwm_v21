@@ -17,19 +17,21 @@ import xarray as xr
 import zarr
 
 # User config
-output_path = pathlib.Path("/glade/scratch/jamesmcc/retro_collect/lakeout")
+output_path = pathlib.Path("/glade/p/datashare/ishitas/chrtout")
 
 # Chunk config
-time_chunk_size = 672 * 12
-feature_chunk_size = 500
+time_chunk_size = 672
+feature_chunk_size = 30000
 
-n_workers = 4
+n_workers = 18
 n_cores = 1
 queue = "casper"
 cluster_mem_gb = 15
 
-n_chunks_job = 2  # how many to do before exiting, 12 is approx yearly
-end_date = '2020-12-31 23:00'
+n_chunks_job = 12 * 6  # how many to do before exiting, 12 is approx yearly
+end_date = '2020-12-31 23:00'  # full time
+# end_date = "1979-04-12 23:00"  # pilot 2.5 months
+# end_date = "1979-02-03 12:00"
 # this end_date tests all parts of the execution for
 # chunk size 672 and n_chunks_job=1
 # end_date = "1979-04-17 00:00"
@@ -37,12 +39,12 @@ end_date = '2020-12-31 23:00'
 # files
 ## output_path is a global, user-defined variable defined above.
 os.chdir(output_path)
-file_chunked = output_path / "lakeout.zarr"
+file_chunked = output_path / "chrtout.zarr"
 file_step = output_path / "step.zarr"
 file_last_step = output_path / "last_step.zarr"
 file_temp = output_path / "temp.zarr"
-file_log_loop_time = output_path / "lakeout_loop_time.txt"
-file_lock = output_path / "lakeout_write_in_progress.lock"
+file_log_loop_time = output_path / "chrtout_loop_time.txt"
+file_lock = output_path / "chrtout_write_in_progress.lock"
 
 # static information
 # todo JLM: centralize this info?
@@ -50,18 +52,44 @@ input_dir = "/glade/scratch/zhangyx/WRF-Hydro/model.data.v2.1"
 start_date = "1979-02-01 01:00"
 freq = "1h"
 
-metadata_global_add = {
-    'reservoir_type': '1 = level pool everywhere',
-    'reservoir_assimilated_value': 'Assimilation not performed'}
+drop_vars = [
+    "reference_time",
+    "qBtmVertRunoff", "qBucket", "qSfcLatRunoff", "q_lateral", ]
+
+static_vars = [
+    "crs",
+    'longitude', 'latitude', 'elevation', 'order',]
+
+coord_vars_min = ["feature_id", 'time']
+coord_vars = coord_vars_min + [
+    "longitude", "latitude", "elevation", "order",]
+coord_vars_gage = coord_vars + ["gage_id",]
 
 metadata_global_rm = [
     'model_initialization_time',
+    'station_dimension',
     'model_output_valid_time',
-    'model_total_valid_times']
-
+    'model_total_valid_times',
+    'stream_order_output',
+    'cdm_datatype',
+    'Conventions',
+    'model_output_type',
+    'dev_OVRTSWCRT',
+    'dev_NOAH_TIMESTEP',
+    'dev_channel_only',
+    'dev_channelBucket_only',
+    'dev',]
 metadata_variable_rm = {
-    'inflow': ['valid_range'],
-    'outflow': ['valid_range']}
+    'streamflow': ['valid_range'],
+    'velocity': ['valid_range'],
+    'elevation': ['standard_name'],
+    'order': ['standard_name'],
+    'time': ['valid_min', 'valid_max'],}
+metadata_variable_add = {
+    'elevation': {"long_name": "feature elevation"},
+    'latitude': {"long_name": "feature latitude"},
+    'longitude': {"long_name": "feature longitude"},
+    'order': {"long_name": "stream order"},}
 
 
 def write_lock_file(file_lock, file_chunked, dates_chunk, freq):
@@ -94,24 +122,67 @@ def del_zarr_file(the_file: pathlib.Path):
     return None
 
 
-def preprocess_lakeout(ds):
-    ds = ds.drop(
-        [
-            "reference_time",
-            "feature_id",
-            "crs",
-            "reservoir_type",
-            "reservoir_assimilated_value",
-        ]
-    )
+def metadata_edits(ds):
     for mm in metadata_global_rm:
         del ds.attrs[mm]
-    for kk, vv in metadata_global_add.items():
-        ds.attrs[kk] = vv
     for vv, ll in metadata_variable_rm.items():
-        for mm in ll:
-            del ds[vv].attrs[mm]
+        if vv in ds.variables:
+            for mm in ll:
+                del ds[vv].attrs[mm]
+    for vv, dd in metadata_variable_add.items():
+        if vv in ds.variables:
+            for kk, yy in dd.items():
+                ds[vv].attrs[kk] = yy
+    return ds
+
+
+def preprocess_chrtout(ds):
+    ds = ds.drop(drop_vars + ['feature_id', 'crs'])
+    ds = metadata_edits(ds)
     return ds.reset_coords(drop=True)
+
+
+def preprocess_chrtout_0(ds):
+    ds = ds.drop('reference_time').reset_coords()
+    ds = metadata_edits(ds)
+    return ds
+
+
+def get_gage_id():
+    chrtout_file = pathlib.Path(
+        '/glade/scratch/zhangyx/WRF-Hydro/model.data.v2.1/'
+        '1979/197902020000.CHRTOUT_DOMAIN1.comp')
+    rl_file = pathlib.Path(
+        '/glade/work/jamesmcc/domains/private/CONUS_v2.1_final/NWM/DOMAIN/'
+        'RouteLink_NWMv2.1.nc')
+
+    print("Dropping data variables")
+    ds = xr.open_dataset(chrtout_file)
+    ds = ds.drop(drop_vars + static_vars)
+
+    print('Bring in gage_id from the routelink.')
+    rl = xr.open_dataset(rl_file)
+    # This loop can be shortened with a set difference
+    for vv in rl.variables:
+        if vv in ["link", "gages"]:
+            continue
+        rl = rl.drop(vv)
+    rl = rl.set_coords("link")
+    rl = rl.rename({"link": "feature_id", "gages": "gage_id"})
+    rl = rl.sortby("feature_id")
+    assert rl.feature_id.equals(ds.feature_id)
+    ds2 = ds.merge(rl)
+
+    print("Checking the merge")
+    gages_unique = np.unique(ds2.gage_id.values)
+    gage_random = gages_unique[1]
+    wh_random_ds = np.where(ds2.gage_id.isin([gage_random]).values)
+    feature_random_ds = ds2.feature_id[wh_random_ds]
+    wh_random_rl = np.where(rl.gage_id.isin([gage_random]).values)
+    feature_random_rl = rl.feature_id[wh_random_rl]
+    assert feature_random_rl.equals(feature_random_ds)
+
+    return ds2.gage_id
 
 
 def main():
@@ -121,6 +192,8 @@ def main():
             f'indicates that the last previous write was unsuccessful.\n'
             f'Please use the fixer script on that file.')
         return(255)
+
+    gage_id = get_gage_id()
 
     print(f"Generate files list for all chunks in this job")
     if file_chunked.exists():
@@ -142,7 +215,7 @@ def main():
         pathlib.Path(
             f"{input_dir}/"
             f'{date.strftime("%Y")}/'
-            f'{date.strftime("%Y%m%d%H%M")}.LAKEOUT_DOMAIN1.comp'
+            f'{date.strftime("%Y%m%d%H%M")}.CHRTOUT_DOMAIN1.comp'
         )
         for date in dates
     ]
@@ -150,7 +223,7 @@ def main():
     n_chunks_job_actual = ceil(len(files) / time_chunk_size)
 
     print(f"Get single file data and metadata")
-    dset = xr.open_dataset(files[0])
+    dset = preprocess_chrtout_0(xr.open_dataset(files[0]))
 
     print("Set cluster")
     cluster = PBSCluster(
@@ -158,7 +231,7 @@ def main():
         memory=f"{cluster_mem_gb}GB",
         queue=queue,
         project="NRAL0017",
-        walltime="02:00:00",
+        walltime="05:00:00",
         death_timeout=75,
     )
     dask.config.set({"distributed.dashboard.link": "/{port}/status"})
@@ -201,19 +274,19 @@ def main():
         ds = xr.open_mfdataset(
             files_chunk,
             parallel=True,
-            preprocess=preprocess_lakeout,
+            preprocess=preprocess_chrtout,
             combine="by_coords",
             concat_dim="time",
             join="override",
         )
-        # print(ds)
 
-        # add back in the 'feature_id' coordinate removed by preprocessing
-        ds.coords["feature_id"] = dset.coords["feature_id"]
-        # in the first chunk, add back the static/invariant variables
-        if not file_chunked.exists():
-            for vv in ["crs"]:
-                ds[vv] = dset[vv]
+        ds['feature_id'] = dset['feature_id']
+        ds['gage_id'] = gage_id
+        for vv in static_vars:
+            ds[vv] = dset[vv]
+        if file_chunked.exists():
+            ds = ds.drop('crs')
+        ds = ds.set_coords(coord_vars_gage)
 
         # remove the temp and step zarr datasets
         # moving these and deleting asynchornously might help speed?
@@ -282,15 +355,10 @@ def main():
 
             print(f"{indt}Rehunking final chunk")
             ds1 = ds.chunk({"feature_id": feature_chunk_size, "time": time_chunk_size})
-            print(f"{indt}Writing last step file")
             _ = ds1.to_zarr(str(file_last_step), consolidated=True, mode="w")
-            _ = ds1.close()
-
-            print(f'{indt}Open last step file')
             ds2 = xr.open_zarr(str(file_last_step), consolidated=True)
 
             _ = write_lock_file(file_lock, file_chunked, dates_chunk, freq)
-            print(f'{indt}Append last chunk to full zarr file')
             _ = ds2.to_zarr(file_chunked, consolidated=True, append_dim="time")
             _ = ds2.close()
             _ = rm_lock_file(file_lock)

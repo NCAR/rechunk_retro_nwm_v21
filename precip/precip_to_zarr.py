@@ -17,51 +17,44 @@ import xarray as xr
 import zarr
 
 # User config
-output_path = pathlib.Path("/glade/scratch/jamesmcc/retro_collect/lakeout")
+output_path = pathlib.Path(
+    "/glade/p/datashare/jamesmcc/precip")
 
 # Chunk config
-time_chunk_size = 672 * 12
-feature_chunk_size = 500
+time_chunk_size = 672
+x_chunk_size = 350
+y_chunk_size = 350
 
-n_workers = 4
+n_workers = 8
 n_cores = 1
 queue = "casper"
-cluster_mem_gb = 15
+cluster_mem_gb = 20
 
-n_chunks_job = 2  # how many to do before exiting, 12 is approx yearly
-end_date = '2020-12-31 23:00'
-# this end_date tests all parts of the execution for
-# chunk size 672 and n_chunks_job=1
-# end_date = "1979-04-17 00:00"
+n_chunks_job = 12  # how many to do before exiting, 12 is approx yearly
+end_date = '2018-12-31 23:00' # full time
+# end_date = "1979-04-15 00:00"  # 1.5 months
 
 # files
 ## output_path is a global, user-defined variable defined above.
 os.chdir(output_path)
-file_chunked = output_path / "lakeout.zarr"
+file_chunked = output_path / "precip.zarr"
 file_step = output_path / "step.zarr"
 file_last_step = output_path / "last_step.zarr"
 file_temp = output_path / "temp.zarr"
-file_log_loop_time = output_path / "lakeout_loop_time.txt"
-file_lock = output_path / "lakeout_write_in_progress.lock"
+file_log_loop_time = output_path / "precip_loop_time.txt"
+file_lock = output_path / "precip_write_in_progress.lock"
 
-# static information
-# todo JLM: centralize this info?
-input_dir = "/glade/scratch/zhangyx/WRF-Hydro/model.data.v2.1"
-start_date = "1979-02-01 01:00"
+input_dir = "/glade/campaign/ral/hap/zhangyx/AORC.Forcing"
+start_date = "1979-02-01 00:00"
 freq = "1h"
 
-metadata_global_add = {
-    'reservoir_type': '1 = level pool everywhere',
-    'reservoir_assimilated_value': 'Assimilation not performed'}
-
+metadata_global_add = {}
 metadata_global_rm = [
     'model_initialization_time',
     'model_output_valid_time',
     'model_total_valid_times']
 
-metadata_variable_rm = {
-    'inflow': ['valid_range'],
-    'outflow': ['valid_range']}
+metadata_variable_rm = {}
 
 
 def write_lock_file(file_lock, file_chunked, dates_chunk, freq):
@@ -94,14 +87,13 @@ def del_zarr_file(the_file: pathlib.Path):
     return None
 
 
-def preprocess_lakeout(ds):
+def preprocess_precip(ds):
     ds = ds.drop(
         [
-            "reference_time",
-            "feature_id",
-            "crs",
-            "reservoir_type",
-            "reservoir_assimilated_value",
+            "reference_time", "crs", 'U2D',
+            'V2D', 'LWDOWN', 'T2D',
+            'Q2D', 'PSFC', 'SWDOWN',
+            'LQFRAC'
         ]
     )
     for mm in metadata_global_rm:
@@ -142,7 +134,7 @@ def main():
         pathlib.Path(
             f"{input_dir}/"
             f'{date.strftime("%Y")}/'
-            f'{date.strftime("%Y%m%d%H%M")}.LAKEOUT_DOMAIN1.comp'
+            f'{date.strftime("%Y%m%d%H%M")}.LDASIN_DOMAIN1'
         )
         for date in dates
     ]
@@ -158,7 +150,7 @@ def main():
         memory=f"{cluster_mem_gb}GB",
         queue=queue,
         project="NRAL0017",
-        walltime="02:00:00",
+        walltime="05:00:00",
         death_timeout=75,
     )
     dask.config.set({"distributed.dashboard.link": "/{port}/status"})
@@ -201,19 +193,16 @@ def main():
         ds = xr.open_mfdataset(
             files_chunk,
             parallel=True,
-            preprocess=preprocess_lakeout,
+            preprocess=preprocess_precip,
             combine="by_coords",
             concat_dim="time",
             join="override",
         )
         # print(ds)
 
-        # add back in the 'feature_id' coordinate removed by preprocessing
-        ds.coords["feature_id"] = dset.coords["feature_id"]
         # in the first chunk, add back the static/invariant variables
         if not file_chunked.exists():
-            for vv in ["crs"]:
-                ds[vv] = dset[vv]
+            ds["crs"] = dset["crs"]
 
         # remove the temp and step zarr datasets
         # moving these and deleting asynchornously might help speed?
@@ -228,8 +217,8 @@ def main():
         if len(files_chunk) == time_chunk_size:
             chunk_plan = {}
             for var in ds.data_vars:
-                if len(ds[var].dims) == 2:
-                    var_chunk = (time_chunk_size, feature_chunk_size)
+                if len(ds[var].dims) == 3:
+                    var_chunk = (time_chunk_size, y_chunk_size, x_chunk_size)
                     chunk_plan[var] = var_chunk
 
             print(f"{indt}chunk_plan: {chunk_plan}")
@@ -280,8 +269,10 @@ def main():
             _ = del_zarr_file(file_last_step)
             end_del_timer = time.time()
 
-            print(f"{indt}Rehunking final chunk")
-            ds1 = ds.chunk({"feature_id": feature_chunk_size, "time": time_chunk_size})
+            print(f"{indt}Rechunking final chunk")
+            last_chunk_size = len(ds.time)
+            ds1 = ds.chunk(
+                {"y": y_chunk_size, "x": x_chunk_size, "time": last_chunk_size})
             print(f"{indt}Writing last step file")
             _ = ds1.to_zarr(str(file_last_step), consolidated=True, mode="w")
             _ = ds1.close()
@@ -309,7 +300,8 @@ def main():
         cmd = (
             f"echo completed core: {n_workers*n_cores} "
             f"time_chunk_size: {time_chunk_size} "
-            f"feature_chunk_size: {feature_chunk_size} "
+            f"x_chunk_size: {x_chunk_size} "
+            f"y_chunk_size: {y_chunk_size} "
             f"first_file: {files_chunk[0].name} "
             f"last_file: {files_chunk[-1].name} "
             f"loop_time_taken: {time_taken} "
