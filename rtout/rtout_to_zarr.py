@@ -17,25 +17,21 @@ import xarray as xr
 import zarr
 
 # User config
-output_path = pathlib.Path("/glade/scratch/jamesmcc/retro_collect/rtout")
+output_path = pathlib.Path("/glade/p/datashare/jamesmcc/rtout")
 
 # Chunk config
 time_chunk_size = 224
 x_chunk_size = 350
 y_chunk_size = 350
 
-n_workers = 10
+n_workers = 18
 n_cores = 1
 queue = "casper"
 cluster_mem_gb = 25  ## 25 works for time 224
 
 n_chunks_job = 6  # how many to do before exiting, 12 is approx yearly
 # end_date = '2018-12-31 23:00' # full time
-end_date = "1981-04-23 00:00"  # pilot 2 years
-# this end_date tests all parts of the execution for
-# chunk size 672 and n_chunks_job=1
-#end_date = "1979-05-17 00:00"  #"1979-04-17 00:00"
-# end_date = "1979-02-18 12:00"  #"1979-04-17 00:00"
+end_date = "1979-04-17 00:00"
 
 # files
 ## output_path is a global, user-defined variable defined above.
@@ -45,13 +41,38 @@ file_step = output_path / "step.zarr"
 file_last_step = output_path / "last_step.zarr"
 file_temp = output_path / "temp.zarr"
 file_log_loop_time = output_path / "rtout_loop_time.txt"
+file_lock = output_path / "rtout_write_in_progress.lock"
 
-# static information
-# todo JLM: centralize this info?
 input_dir = "/glade/scratch/zhangyx/WRF-Hydro/model.data.v2.1"
 start_date = "1979-02-01 03:00"
-#start_date = "1979-02-10 00:00"
 freq = "3h"
+
+metadata_global_rm = [
+    'model_initialization_time',
+    'model_output_valid_time',
+    'model_total_valid_times',]
+metadata_variable_rm = {
+    'sfcheadsubrt': ['valid_range'],
+    'zwattablrt': ['valid_range'],}
+metadata_variable_add = {}
+
+
+def write_lock_file(file_lock, file_chunked, dates_chunk, freq):
+    with open(file_lock, 'w') as ff:
+        ff.write(f'file_rechunked: {str(file_chunked)}\n')
+        ff.write(f'start_date: {dates_chunk[0]}\n')
+        ff.write(f'end_date: {dates_chunk[-1]}\n')
+        ff.write(f'freq: {freq}\n')
+
+    assert file_lock.exists()
+    return None
+
+
+def rm_lock_file(file_lock):
+    assert file_lock.exists()
+    _ = file_lock.unlink()
+    assert not file_lock.exists()
+    return None
 
 
 def del_zarr_file(the_file: pathlib.Path):
@@ -66,12 +87,34 @@ def del_zarr_file(the_file: pathlib.Path):
     return None
 
 
+def metadata_edits(ds):
+    for mm in metadata_global_rm:
+        del ds.attrs[mm]
+    for vv, ll in metadata_variable_rm.items():
+        if vv in ds.variables:
+            for mm in ll:
+                del ds[vv].attrs[mm]
+    for vv, dd in metadata_variable_add.items():
+        if vv in ds.variables:
+            for kk, yy in dd.items():
+                ds[vv].attrs[kk] = yy
+    return ds
+
+
 def preprocess_rtout(ds):
     ds = ds.drop(["reference_time", "crs"])
+    ds = metadata_edits(ds)
     return ds.reset_coords(drop=True)
 
 
 def main():
+    if file_lock.exists():
+        raise FileExistsError(
+            f'\nThe existence of the lock file:\n    {file_lock} \n'
+            f'indicates that the last previous write was unsuccessful.\n'
+            f'Please use the fixer script on that file.')
+        return(255)
+
     print(f"Generate files list for all chunks in this job")
     if file_chunked.exists():
         print(f"\n ** Warning appending to existing output file: {file_chunked}")
@@ -143,6 +186,7 @@ def main():
 
         istart = ii * time_chunk_size
         istop = int(np.min([(ii + 1) * time_chunk_size, len(files)]))
+        dates_chunk = dates[istart:istop]
         files_chunk = files[istart:istop]
         print(f"{indt}First file: {files_chunk[0].name}")
         print(f"{indt}Last file: {files_chunk[-1].name}")
@@ -157,8 +201,6 @@ def main():
         )
         # print(ds)
 
-        # add back in the 'feature_id' coordinate removed by preprocessing
-        # ds.coords["x"] = dset.coords["x"]
         # in the first chunk, add back the static/invariant variables
         if not file_chunked.exists():
             ds["crs"] = dset["crs"]
@@ -202,14 +244,21 @@ def main():
             print(f"{indt}Open zarr step file")
             ds = xr.open_zarr(str(file_step), consolidated=False)
 
-            print(f"{indt}Write/append step to zarr chunked file")
+            # Set the lock file before writing to file_chunked
+            _ = write_lock_file(file_lock, file_chunked, dates_chunk, freq)
+
             if not file_chunked.exists():
+                print(f"{indt}Write step to zarr chunked file")
                 ds.to_zarr(str(file_chunked), consolidated=True, mode="w")
             else:
+                print(f"{indt}Append step to zarr chunked file")
                 ds.to_zarr(str(file_chunked), consolidated=True, append_dim="time")
 
             print(f"{indt}Close zarr chunked file")
             ds.close()
+
+            # Remove the lock file after successful write
+            _ = rm_lock_file(file_lock)
 
         else:
             print(f"{indt}Processing the final time chunk!")
@@ -225,15 +274,18 @@ def main():
             last_chunk_size = len(ds.time)
             ds1 = ds.chunk(
                 {"y": y_chunk_size, "x": x_chunk_size, "time": last_chunk_size})
-            # ds1.attrs = {}
+
             print(f"{indt}Writing last step file")
             _ = ds1.to_zarr(str(file_last_step), consolidated=True, mode="w")
             _ = ds1.close()
             print(f'Open last step file')
             ds2 = xr.open_zarr(str(file_last_step), consolidated=True)
+
+            _ = write_lock_file(file_lock, file_chunked, dates_chunk, freq)
             print(f'Append last chunk to full zarr file')
             _ = ds2.to_zarr(file_chunked, consolidated=True, append_dim="time")
             _ = ds2.close()
+            _ = rm_lock_file(file_lock)
 
             print(f"{indt}Final file clean up")
             _ = del_zarr_file(file_temp)
