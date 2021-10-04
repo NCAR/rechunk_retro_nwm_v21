@@ -22,7 +22,8 @@ Attributes:
     reservoir_assimilated_value:  Assimilation not performed
     reservoir_type:               1 = level pool everywhere
     station_dimension:            lake_id
-Checking data for 250 times
+
+Checking a random time in chunk #1 (of 46)...
 
 Check (non-time) static variables once
 Checking variable: crs
@@ -32,1503 +33,277 @@ Checking variable: latitude
 Checking variable: longitude
 Checking variable: outflow
 Checking variable: water_sfc_elev
-
-1/250
-Checking time: 1979-02-01T01:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-2/250
-Checking time: 2020-12-31T23:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-3/250
-Checking time: 2015-08-15T16:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-4/250
-Checking time: 2009-12-07T05:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-5/250
-Checking time: 1979-09-21T12:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-6/250
-Checking time: 1980-08-18T06:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-7/250
-Checking time: 2014-06-05T11:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-8/250
-Checking time: 1989-11-27T15:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-9/250
-Checking time: 1999-06-17T13:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-10/250
-Checking time: 1996-06-06T11:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-11/250
-Checking time: 1989-08-05T03:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-12/250
-Checking time: 2005-07-25T07:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-13/250
-Checking time: 1991-11-14T06:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-14/250
-Checking time: 1994-03-11T04:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-15/250
-Checking time: 1987-09-14T18:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-16/250
-Checking time: 1996-07-18T00:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-17/250
-Checking time: 1980-10-14T23:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-18/250
-Checking time: 1981-10-14T16:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-19/250
-Checking time: 1989-09-24T12:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-20/250
-Checking time: 1987-06-17T21:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-21/250
-Checking time: 1993-11-02T05:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-22/250
-Checking time: 2009-08-24T17:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-23/250
-Checking time: 1997-06-28T17:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-24/250
-Checking time: 2003-03-15T03:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-25/250
-Checking time: 1988-11-24T09:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-26/250
-Checking time: 1986-02-13T13:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-27/250
-Checking time: 2020-10-19T20:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-28/250
-Checking time: 2007-11-10T01:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-29/250
-Checking time: 1994-06-20T06:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-30/250
-Checking time: 2020-02-11T13:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-31/250
-Checking time: 1994-09-19T11:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-32/250
-Checking time: 2008-08-05T08:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-33/250
-Checking time: 1988-12-21T09:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-34/250
-Checking time: 1994-10-03T08:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-35/250
-Checking time: 2017-01-06T02:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-36/250
-Checking time: 2015-09-23T17:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-37/250
-Checking time: 2007-05-11T05:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-38/250
-Checking time: 1984-04-08T00:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-39/250
-Checking time: 1997-07-17T13:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-40/250
-Checking time: 1995-12-21T22:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-41/250
-Checking time: 2002-06-14T07:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-42/250
-Checking time: 2000-07-12T20:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-43/250
-Checking time: 2010-01-26T02:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-44/250
-Checking time: 2015-11-28T08:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-45/250
-Checking time: 2015-03-15T08:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-46/250
-Checking time: 1987-08-11T09:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-47/250
-Checking time: 2008-09-07T14:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-48/250
-Checking time: 2015-04-04T23:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-49/250
-Checking time: 2002-12-05T10:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-50/250
-Checking time: 2009-12-28T12:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-51/250
-Checking time: 2017-12-25T11:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-52/250
-Checking time: 2012-03-21T03:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-53/250
-Checking time: 1995-06-18T06:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-54/250
-Checking time: 1990-12-07T09:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-55/250
-Checking time: 2017-11-11T23:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-56/250
-Checking time: 1986-01-23T07:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-57/250
-Checking time: 2020-06-08T10:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-58/250
-Checking time: 2012-06-14T21:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-59/250
-Checking time: 2009-07-31T04:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-60/250
-Checking time: 1981-09-30T05:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-61/250
-Checking time: 1998-10-06T10:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-62/250
-Checking time: 2015-02-18T20:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-63/250
-Checking time: 1992-09-10T10:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-64/250
-Checking time: 2013-02-16T08:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-65/250
-Checking time: 1979-02-19T00:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-66/250
-Checking time: 2002-10-11T17:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-67/250
-Checking time: 2008-02-11T13:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-68/250
-Checking time: 2009-02-20T22:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-69/250
-Checking time: 2003-07-11T07:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-70/250
-Checking time: 2002-07-18T19:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-71/250
-Checking time: 2003-01-17T19:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-72/250
-Checking time: 2009-03-15T15:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-73/250
-Checking time: 1990-02-16T05:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-74/250
-Checking time: 2014-07-09T03:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-75/250
-Checking time: 1990-05-22T22:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-76/250
-Checking time: 1990-06-12T22:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-77/250
-Checking time: 1987-10-06T01:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-78/250
-Checking time: 1984-02-14T03:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-79/250
-Checking time: 2001-12-14T04:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-80/250
-Checking time: 1997-05-25T05:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-81/250
-Checking time: 2009-07-01T00:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-82/250
-Checking time: 2014-06-16T00:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-83/250
-Checking time: 2009-02-18T18:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-84/250
-Checking time: 1988-01-02T15:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-85/250
-Checking time: 2008-03-16T08:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-86/250
-Checking time: 1993-09-26T10:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-87/250
-Checking time: 1998-11-08T02:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-88/250
-Checking time: 1998-12-03T21:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-89/250
-Checking time: 1993-07-10T02:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-90/250
-Checking time: 2018-08-11T05:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-91/250
-Checking time: 1990-02-08T11:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-92/250
-Checking time: 2000-05-19T08:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-93/250
-Checking time: 2014-11-13T00:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-94/250
-Checking time: 2016-07-27T01:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-95/250
-Checking time: 2020-08-16T09:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-96/250
-Checking time: 1984-05-03T22:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-97/250
-Checking time: 1998-07-05T03:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-98/250
-Checking time: 2012-03-06T18:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-99/250
-Checking time: 2009-07-10T06:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-100/250
-Checking time: 2001-05-24T07:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-101/250
-Checking time: 2018-11-11T07:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-102/250
-Checking time: 1983-09-04T08:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-103/250
-Checking time: 1987-05-07T08:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-104/250
-Checking time: 2015-02-20T10:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-105/250
-Checking time: 1986-09-15T04:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-106/250
-Checking time: 2001-11-22T09:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-107/250
-Checking time: 2007-10-16T15:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-108/250
-Checking time: 2007-06-03T08:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-109/250
-Checking time: 2019-07-07T20:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-110/250
-Checking time: 2013-08-19T19:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-111/250
-Checking time: 2006-03-09T16:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-112/250
-Checking time: 1981-11-17T16:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-113/250
-Checking time: 2006-03-21T15:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-114/250
-Checking time: 1981-01-10T14:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-115/250
-Checking time: 2012-04-10T22:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-116/250
-Checking time: 1981-08-13T23:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-117/250
-Checking time: 2001-02-15T09:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-118/250
-Checking time: 1990-09-12T22:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-119/250
-Checking time: 1994-08-04T01:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-120/250
-Checking time: 1986-06-10T04:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-121/250
-Checking time: 1998-02-20T07:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-122/250
-Checking time: 1991-12-26T08:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-123/250
-Checking time: 1999-02-09T12:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-124/250
-Checking time: 2014-04-27T02:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-125/250
-Checking time: 1981-05-31T04:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-126/250
-Checking time: 2016-04-23T04:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-127/250
-Checking time: 2017-01-05T06:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-128/250
-Checking time: 1995-05-02T05:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-129/250
-Checking time: 1992-04-12T16:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-130/250
-Checking time: 2001-03-26T03:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-131/250
-Checking time: 1988-12-03T11:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-132/250
-Checking time: 2016-10-22T21:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-133/250
-Checking time: 1994-01-01T08:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-134/250
-Checking time: 1998-03-19T15:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-135/250
-Checking time: 1986-06-21T15:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-136/250
-Checking time: 1984-12-04T07:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-137/250
-Checking time: 2004-05-27T00:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-138/250
-Checking time: 2011-03-26T00:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-139/250
-Checking time: 2010-03-10T11:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-140/250
-Checking time: 2020-02-23T02:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-141/250
-Checking time: 2002-12-21T18:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-142/250
-Checking time: 2018-12-19T05:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-143/250
-Checking time: 2000-10-20T12:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-144/250
-Checking time: 2015-01-29T21:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-145/250
-Checking time: 1982-09-22T09:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-146/250
-Checking time: 1991-06-20T09:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-147/250
-Checking time: 1996-08-19T16:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-148/250
-Checking time: 2019-11-05T11:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-149/250
-Checking time: 1998-03-27T23:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-150/250
-Checking time: 2005-08-05T02:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-151/250
-Checking time: 2018-01-17T04:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-152/250
-Checking time: 1980-01-04T22:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-153/250
-Checking time: 2018-05-16T23:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-154/250
-Checking time: 2005-10-07T01:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-155/250
-Checking time: 1994-04-03T22:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-156/250
-Checking time: 2015-05-13T22:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-157/250
-Checking time: 2012-02-05T16:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-158/250
-Checking time: 1980-11-09T23:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-159/250
-Checking time: 1993-05-16T12:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-160/250
-Checking time: 1991-07-17T11:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-161/250
-Checking time: 1982-03-13T03:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-162/250
-Checking time: 1989-02-20T05:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-163/250
-Checking time: 1991-05-04T20:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-164/250
-Checking time: 2012-10-23T11:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-165/250
-Checking time: 2016-06-21T06:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-166/250
-Checking time: 1995-02-27T09:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-167/250
-Checking time: 2019-04-17T04:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-168/250
-Checking time: 2009-06-21T22:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-169/250
-Checking time: 2007-12-07T03:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-170/250
-Checking time: 2005-09-24T18:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-171/250
-Checking time: 2008-09-11T01:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-172/250
-Checking time: 2019-07-07T22:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-173/250
-Checking time: 2013-09-14T09:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-174/250
-Checking time: 1980-09-22T03:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-175/250
-Checking time: 1982-01-09T00:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-176/250
-Checking time: 2009-08-13T12:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-177/250
-Checking time: 1995-07-23T07:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-178/250
-Checking time: 2004-10-16T08:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-179/250
-Checking time: 2007-11-01T05:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-180/250
-Checking time: 1997-01-14T23:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-181/250
-Checking time: 2019-07-09T22:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-182/250
-Checking time: 1986-06-07T08:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-183/250
-Checking time: 2003-12-12T13:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-184/250
-Checking time: 2019-09-07T23:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-185/250
-Checking time: 2000-01-06T17:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-186/250
-Checking time: 1994-10-22T00:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-187/250
-Checking time: 2017-11-10T02:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-188/250
-Checking time: 2017-01-22T01:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-189/250
-Checking time: 2012-02-14T18:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-190/250
-Checking time: 1983-11-28T07:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-191/250
-Checking time: 1984-11-11T21:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-192/250
-Checking time: 1988-01-16T21:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-193/250
-Checking time: 1981-06-05T19:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-194/250
-Checking time: 1986-02-02T07:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-195/250
-Checking time: 2004-02-26T00:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-196/250
-Checking time: 1983-04-22T06:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-197/250
-Checking time: 2012-10-03T07:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-198/250
-Checking time: 2004-10-31T20:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-199/250
-Checking time: 1979-09-30T07:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-200/250
-Checking time: 2011-09-25T08:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-201/250
-Checking time: 1982-09-17T05:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-202/250
-Checking time: 2016-03-23T11:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-203/250
-Checking time: 1989-05-24T10:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-204/250
-Checking time: 1993-06-23T19:00:00.000000000
-Checking variable: inflow
-Checking variable: outflow
-Checking variable: water_sfc_elev
-
-205/250
-Checking time: 2000-04-04T19:00:00.000000000
+Checking time: 1979-06-05T14:00:00.000000000
 Checking variable: inflow
 Checking variable: outflow
 Checking variable: water_sfc_elev
 
-206/250
-Checking time: 2013-03-10T23:00:00.000000000
+Checking a random time in chunk #2 (of 46)...
+Checking time: 1980-03-30T09:00:00.000000000
 Checking variable: inflow
 Checking variable: outflow
 Checking variable: water_sfc_elev
 
-207/250
-Checking time: 1989-02-23T12:00:00.000000000
+Checking a random time in chunk #3 (of 46)...
+Checking time: 1981-01-25T17:00:00.000000000
 Checking variable: inflow
 Checking variable: outflow
 Checking variable: water_sfc_elev
 
-208/250
-Checking time: 2013-01-31T01:00:00.000000000
+Checking a random time in chunk #4 (of 46)...
+Checking time: 1982-05-13T07:00:00.000000000
 Checking variable: inflow
 Checking variable: outflow
 Checking variable: water_sfc_elev
 
-209/250
-Checking time: 1985-08-08T10:00:00.000000000
+Checking a random time in chunk #5 (of 46)...
+Checking time: 1983-01-10T00:00:00.000000000
 Checking variable: inflow
 Checking variable: outflow
 Checking variable: water_sfc_elev
 
-210/250
-Checking time: 1985-02-18T22:00:00.000000000
+Checking a random time in chunk #6 (of 46)...
+Checking time: 1984-01-04T22:00:00.000000000
 Checking variable: inflow
 Checking variable: outflow
 Checking variable: water_sfc_elev
 
-211/250
-Checking time: 1985-08-23T22:00:00.000000000
+Checking a random time in chunk #7 (of 46)...
+Checking time: 1985-03-10T05:00:00.000000000
 Checking variable: inflow
 Checking variable: outflow
 Checking variable: water_sfc_elev
 
-212/250
-Checking time: 1984-10-18T06:00:00.000000000
+Checking a random time in chunk #8 (of 46)...
+Checking time: 1985-08-02T09:00:00.000000000
 Checking variable: inflow
 Checking variable: outflow
 Checking variable: water_sfc_elev
 
-213/250
-Checking time: 1999-12-16T11:00:00.000000000
+Checking a random time in chunk #9 (of 46)...
+Checking time: 1986-06-16T23:00:00.000000000
 Checking variable: inflow
 Checking variable: outflow
 Checking variable: water_sfc_elev
 
-214/250
-Checking time: 1989-06-14T02:00:00.000000000
+Checking a random time in chunk #10 (of 46)...
+Checking time: 1988-03-29T10:00:00.000000000
 Checking variable: inflow
 Checking variable: outflow
 Checking variable: water_sfc_elev
 
-215/250
-Checking time: 2001-06-09T11:00:00.000000000
+Checking a random time in chunk #11 (of 46)...
+Checking time: 1988-08-12T14:00:00.000000000
 Checking variable: inflow
 Checking variable: outflow
 Checking variable: water_sfc_elev
 
-216/250
-Checking time: 1979-05-27T00:00:00.000000000
+Checking a random time in chunk #12 (of 46)...
+Checking time: 1989-03-26T00:00:00.000000000
 Checking variable: inflow
 Checking variable: outflow
 Checking variable: water_sfc_elev
 
-217/250
-Checking time: 2020-11-19T19:00:00.000000000
+Checking a random time in chunk #13 (of 46)...
+Checking time: 1990-03-15T19:00:00.000000000
 Checking variable: inflow
 Checking variable: outflow
 Checking variable: water_sfc_elev
 
-218/250
-Checking time: 1991-07-22T18:00:00.000000000
+Checking a random time in chunk #14 (of 46)...
+Checking time: 1991-09-30T19:00:00.000000000
 Checking variable: inflow
 Checking variable: outflow
 Checking variable: water_sfc_elev
 
-219/250
-Checking time: 1995-12-23T17:00:00.000000000
+Checking a random time in chunk #15 (of 46)...
+Checking time: 1992-07-31T17:00:00.000000000
 Checking variable: inflow
 Checking variable: outflow
 Checking variable: water_sfc_elev
 
-220/250
-Checking time: 2004-11-08T03:00:00.000000000
+Checking a random time in chunk #16 (of 46)...
+Checking time: 1992-12-05T03:00:00.000000000
 Checking variable: inflow
 Checking variable: outflow
 Checking variable: water_sfc_elev
 
-221/250
-Checking time: 1979-07-15T10:00:00.000000000
+Checking a random time in chunk #17 (of 46)...
+Checking time: 1993-10-26T06:00:00.000000000
 Checking variable: inflow
 Checking variable: outflow
 Checking variable: water_sfc_elev
 
-222/250
-Checking time: 1988-03-20T13:00:00.000000000
+Checking a random time in chunk #18 (of 46)...
+Checking time: 1994-12-14T07:00:00.000000000
 Checking variable: inflow
 Checking variable: outflow
 Checking variable: water_sfc_elev
 
-223/250
-Checking time: 1988-01-16T11:00:00.000000000
+Checking a random time in chunk #19 (of 46)...
+Checking time: 1996-03-05T16:00:00.000000000
 Checking variable: inflow
 Checking variable: outflow
 Checking variable: water_sfc_elev
 
-224/250
-Checking time: 2004-09-18T01:00:00.000000000
+Checking a random time in chunk #20 (of 46)...
+Checking time: 1996-10-23T19:00:00.000000000
 Checking variable: inflow
 Checking variable: outflow
 Checking variable: water_sfc_elev
 
-225/250
-Checking time: 1982-10-13T18:00:00.000000000
+Checking a random time in chunk #21 (of 46)...
+Checking time: 1998-04-12T10:00:00.000000000
 Checking variable: inflow
 Checking variable: outflow
 Checking variable: water_sfc_elev
 
-226/250
-Checking time: 2013-02-09T22:00:00.000000000
+Checking a random time in chunk #22 (of 46)...
+Checking time: 1998-09-25T18:00:00.000000000
 Checking variable: inflow
 Checking variable: outflow
 Checking variable: water_sfc_elev
 
-227/250
-Checking time: 1994-10-21T14:00:00.000000000
+Checking a random time in chunk #23 (of 46)...
+Checking time: 2000-02-03T21:00:00.000000000
 Checking variable: inflow
 Checking variable: outflow
 Checking variable: water_sfc_elev
 
-228/250
-Checking time: 2001-07-14T20:00:00.000000000
+Checking a random time in chunk #24 (of 46)...
+Checking time: 2001-01-12T13:00:00.000000000
 Checking variable: inflow
 Checking variable: outflow
 Checking variable: water_sfc_elev
 
-229/250
-Checking time: 1999-09-02T18:00:00.000000000
+Checking a random time in chunk #25 (of 46)...
+Checking time: 2001-10-01T10:00:00.000000000
 Checking variable: inflow
 Checking variable: outflow
 Checking variable: water_sfc_elev
 
-230/250
-Checking time: 1996-09-08T09:00:00.000000000
+Checking a random time in chunk #26 (of 46)...
+Checking time: 2002-09-23T04:00:00.000000000
 Checking variable: inflow
 Checking variable: outflow
 Checking variable: water_sfc_elev
 
-231/250
-Checking time: 2006-01-10T11:00:00.000000000
+Checking a random time in chunk #27 (of 46)...
+Checking time: 2003-11-06T04:00:00.000000000
 Checking variable: inflow
 Checking variable: outflow
 Checking variable: water_sfc_elev
 
-232/250
-Checking time: 1991-03-13T22:00:00.000000000
+Checking a random time in chunk #28 (of 46)...
+Checking time: 2004-01-15T03:00:00.000000000
 Checking variable: inflow
 Checking variable: outflow
 Checking variable: water_sfc_elev
 
-233/250
-Checking time: 2020-01-01T18:00:00.000000000
+Checking a random time in chunk #29 (of 46)...
+Checking time: 2004-12-28T05:00:00.000000000
 Checking variable: inflow
 Checking variable: outflow
 Checking variable: water_sfc_elev
 
-234/250
-Checking time: 1995-07-15T14:00:00.000000000
+Checking a random time in chunk #30 (of 46)...
+Checking time: 2006-05-09T06:00:00.000000000
 Checking variable: inflow
 Checking variable: outflow
 Checking variable: water_sfc_elev
 
-235/250
-Checking time: 2014-01-24T12:00:00.000000000
+Checking a random time in chunk #31 (of 46)...
+Checking time: 2006-10-31T06:00:00.000000000
 Checking variable: inflow
 Checking variable: outflow
 Checking variable: water_sfc_elev
 
-236/250
-Checking time: 2009-07-04T11:00:00.000000000
+Checking a random time in chunk #32 (of 46)...
+Checking time: 2007-09-20T13:00:00.000000000
 Checking variable: inflow
 Checking variable: outflow
 Checking variable: water_sfc_elev
 
-237/250
-Checking time: 2001-02-10T19:00:00.000000000
+Checking a random time in chunk #33 (of 46)...
+Checking time: 2008-10-13T16:00:00.000000000
 Checking variable: inflow
 Checking variable: outflow
 Checking variable: water_sfc_elev
 
-238/250
-Checking time: 2014-12-24T07:00:00.000000000
+Checking a random time in chunk #34 (of 46)...
+Checking time: 2009-10-16T15:00:00.000000000
 Checking variable: inflow
 Checking variable: outflow
 Checking variable: water_sfc_elev
 
-239/250
-Checking time: 1997-11-03T09:00:00.000000000
+Checking a random time in chunk #35 (of 46)...
+Checking time: 2010-12-22T14:00:00.000000000
 Checking variable: inflow
 Checking variable: outflow
 Checking variable: water_sfc_elev
 
-240/250
-Checking time: 1985-05-09T03:00:00.000000000
+Checking a random time in chunk #36 (of 46)...
+Checking time: 2011-08-30T12:00:00.000000000
 Checking variable: inflow
 Checking variable: outflow
 Checking variable: water_sfc_elev
 
-241/250
-Checking time: 2005-08-26T10:00:00.000000000
+Checking a random time in chunk #37 (of 46)...
+Checking time: 2012-09-23T16:00:00.000000000
 Checking variable: inflow
 Checking variable: outflow
 Checking variable: water_sfc_elev
 
-242/250
-Checking time: 1985-11-04T08:00:00.000000000
+Checking a random time in chunk #38 (of 46)...
+Checking time: 2013-03-07T00:00:00.000000000
 Checking variable: inflow
 Checking variable: outflow
 Checking variable: water_sfc_elev
 
-243/250
-Checking time: 2010-11-06T03:00:00.000000000
+Checking a random time in chunk #39 (of 46)...
+Checking time: 2014-09-16T13:00:00.000000000
 Checking variable: inflow
 Checking variable: outflow
 Checking variable: water_sfc_elev
 
-244/250
-Checking time: 2015-09-02T05:00:00.000000000
+Checking a random time in chunk #40 (of 46)...
+Checking time: 2015-05-25T09:00:00.000000000
 Checking variable: inflow
 Checking variable: outflow
 Checking variable: water_sfc_elev
 
-245/250
-Checking time: 2012-08-10T09:00:00.000000000
+Checking a random time in chunk #41 (of 46)...
+Checking time: 2016-01-28T20:00:00.000000000
 Checking variable: inflow
 Checking variable: outflow
 Checking variable: water_sfc_elev
 
-246/250
-Checking time: 1984-06-19T19:00:00.000000000
+Checking a random time in chunk #42 (of 46)...
+Checking time: 2017-09-03T04:00:00.000000000
 Checking variable: inflow
 Checking variable: outflow
 Checking variable: water_sfc_elev
 
-247/250
-Checking time: 1986-07-13T05:00:00.000000000
+Checking a random time in chunk #43 (of 46)...
+Checking time: 2018-07-18T18:00:00.000000000
 Checking variable: inflow
 Checking variable: outflow
 Checking variable: water_sfc_elev
 
-248/250
-Checking time: 1997-08-17T03:00:00.000000000
+Checking a random time in chunk #44 (of 46)...
+Checking time: 2019-04-04T18:00:00.000000000
 Checking variable: inflow
 Checking variable: outflow
 Checking variable: water_sfc_elev
 
-249/250
-Checking time: 1985-11-15T03:00:00.000000000
+Checking a random time in chunk #45 (of 46)...
+Checking time: 2019-10-18T11:00:00.000000000
 Checking variable: inflow
 Checking variable: outflow
 Checking variable: water_sfc_elev
 
-250/250
-Checking time: 2000-05-30T23:00:00.000000000
+Checking a random time in chunk #46 (of 46)...
+Checking time: 2020-11-07T19:00:00.000000000
 Checking variable: inflow
 Checking variable: outflow
 Checking variable: water_sfc_elev
