@@ -9,20 +9,22 @@ The National Water Model (NWM) version 2.1 retrospective simulation spans 42-yea
 domain is the continential US. Inputs are hourly and outputs are provided at hourly or 3-hourly resolution (more details
 provide below and in [this document](https://drive.google.com/file/d/1zUtBZ_SM7uHqNDHLdOwGvfasVFMHfH6a/view).
 
+The model writes separate files at each output time. Within those individual files the data are not chunked 
+in space. In the use case of opening a full timeseries at a single point or a sub-region, the user would be required to 
+read in the entire data set: a very inefficient data access pattern for a very common use case. 
 
-The model writes output to files at each output time separately. Within those individual files the data are not chunked 
-in space. For the use case of opening a full timeseries at a single point, the user would be required to read in the entire data
-set. This is a very inefficient data access pattern for a very common use case. 
+Enter rechunking. The goal of rechunking this model dataset is to provide chunks (data pieces partitioning the dimnensions of
+of the data) that support efficient data access for most use cases. In the case that a specific, intensive use case would benefit
+from a different chunk scheme, these datasets can be rechunked to accomodate that pattern. 
 
-Enter rechunking. The goal of rechunking this dataset is to provide chunks (data pieces partitioning the dimnensions of
-of the data) that support efficient data access for most use cases. 
+Examples of use cases will be supplied below, including re-rechunking.
 
 
 ## Data overview
 Six separate zarr stores have been created, corresponding closely to the model output files, and their time resolution is noted
 
-* chrtout: Output from the streamflow model(hourly)
 * gwout: Output from the groundwater model (hourly)
+* chrtout: Output from the streamflow model(hourly)
 * lakeout: Output from the lake model (hourly)
 * ldasout: Output from the NoahMP land surface model (3-hourly)
 * rtout: Output from the overland and subsurface terrain routing model (3-hourly)
@@ -34,15 +36,9 @@ below and via accompanying notebooks.
 
 ## Data Access
 
-The data are currently accessible via globus but will be moved to AWS cloud. Please see
-https://www2.cisl.ucar.edu/resources/storage-and-file-systems/using-the-ncar-data-sharing-service#retrieve
-for details on accesing these globus data shares and let us know if permission errors arise. The following 
-links will open the end points in the globus web browser app
+The data are currently pending delivery to AWS cloud as are further details here.
 
-[James' globus end point "nwm\_retro\_v2.1" (lakeout, rtout, and precip)](https://app.globus.org/file-manager?origin_id=a70eef1a-a2d3-11eb-92d2-6b08dd67ff48&origin_path=%2F). 
-[Ishita's globus end point "nwmretrov2.1\_ishitas" (gwout, chrtout, and ldasout)](https://app.globus.org/file-manager?origin_id=b4122504-22f2-11ec-a47d-a50ad076c282&origin_path=%2F). 
-
-These can alternatively be found on the NCAR casper cluster (for those with access) at the following paths:
+For those with access to NCAR computing resources, these can alternatively be found at the following paths:
 ```
 /glade/p/datashare/ishitas/nwm_retro_v2.1/gwout.zarr
 /glade/p/datashare/jamesmcc/nwm_retro_v2.1/lakeout.zarr
@@ -53,7 +49,18 @@ These can alternatively be found on the NCAR casper cluster (for those with acce
 ```
 
 ## Data Description
-The [accompanying notebook](data_description.ipynb) gives a detailed overview of the datasets using the xarray. 
+
+Data as accessed by `xarray.open_zarr` can be found in the [accompanying notebook (exported to html)](data_description.html). This includes
+metadata, chunking schemes, and data types for all variables and coordinates. 
+
+Further details about the Zarr stores are provided in this [accompanying notebook (html)](data_description_detailed.html). xarray reports 
+for each variable are accompanied by Zarr reports showing storage data types, levels of compression and other details. Note that the 
+difference
 
 ## Use Cases
-The 
+
+* Example of single timeser
+
+
+## Code overview
+An overview of the code used can be found in [README_code.md](README_code.md).
