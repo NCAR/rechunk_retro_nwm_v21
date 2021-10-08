@@ -16,14 +16,15 @@ problem and uses dask and disk to manage computation and memory. Currently the o
 is to write Zarr stores. However, there is nothing much wrong with Zarr other than it dosent have interfaces to several popular
 languages besides python.
 
-Rich Signell (USGS) first applied rechunker to the NWM CHRTOUT (streamflow model) output in
-[this notebook](https://nbviewer.org/gist/rsignell-usgs/c0b87ed1fa5fc694e665fb789e8381bb) and he explored the data in 
-[this notebook](https://github.com/Quansight/qhub/discussions/200).
+Rich Signell (USGS) first applied rechunker to the NWM CHRTOUT (streamflow model) output in as discussed [here](https://github.com/Quansight/qhub/discussions/200) whic points to this
+[rechunking notebook](https://nbviewer.org/gist/rsignell-usgs/c0b87ed1fa5fc694e665fb789e8381bb) and this
+[analysis notebook](https://nbviewer.org/gist/rsignell-usgs/78a4ce00360c65bc99764aa3e88a2493).
 
 Following on this success, both NOAA's Office of Water Prediction and NCAR were interested in doing something similar for the next version
 of the NWM retrospective run. For NWM version 2.1, the task of rechunking the full retrospective on NCAR computing resources (where
-the model runs were performed) is expressed in this notebook. All the output files were rechunked as well as the input/forcing
-precipitation data. 
+the model runs were performed) is expressed in this repository. This included 4 other output file types, including gridded land surface model data and 
+terrain/subsurface routing data. Also rechunked were the input/forcing precipitation data (just one variable from the full forcing data). 
+
 
 ## Status and looking forward
 
