@@ -39,19 +39,22 @@ To recover from these failures, we used xarray's capability ro write regions to 
 This highligted that appending to the Zarr store might not be the preferred strategy and that perhaps all the data could be written with the region approach, 
 after initalizing the zarr store (e.g. `Dataset.to\zarr(file, compute=False)`). Following this approach might also provide the advantages that, for each file type, 
 individual variables could then be processed in parallel (using separate jobs writing to different variables in the same store) which could further speed up
-the time to rechunking .
+the time to rechunking.
+
+Finally, we maintained the storage integer types and `scale_factor` and `add_offset` information that originated in the model in the Zarr stores. We noted that several of the integers could likely be shortened from int32 to int16 without loss of information while providing improved compression (smaller Zarr stores).
 
 ## Code Overview
 
 There is  a directory for each file type
 
 ```
-chrtout/
+
 lakeout/
 gwout/
+chrtout/
+precip/
 ldasout/
 rtout/
-precip_forcing/
 ```
 
 in this directory will be the following for each `type`:
@@ -106,7 +109,8 @@ first. The remainder of the times will be drawn at random from the index of time
 output file (without replacement). The static variables in the file are checked once (at the first 
 time) and the time varying variables are checked at every time. Values are checked to have less 
 absolute differece than 1e-8 and if nans are present it is required that the diffs have the same
-number of nans as both of the original and zarr datasets. 
+number of nans as both of the original and zarr datasets. The verification is logged in a similar manner 
+to the report, as shown above.
 
 
 ### `type_script_pbs.sh`
@@ -124,3 +128,7 @@ jobs will continue in the event one of them fails.
 This is the python script which converts a given type to a single zarr file. It checks if the output 
 file already exists, and if it does it then knows to start from the end of the existing output to 
 continue the rechunking. 
+
+### `type_to_zarr_fix.py`
+This file is not present in every type. This is the script that fixes a failed write on the current/latest chunk while it was being appended. It's 
+largely redundant with `type_to_zarr.py` and the codes have not been consolidated. 
