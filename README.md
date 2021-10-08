@@ -7,7 +7,7 @@ Authors: __James McCreight (NCAR), Ishita Srivastava (NCAR), and Rich Signell (U
 ## Overview
 The National Water Model (NWM) version 2.1 retrospective simulation spans 42-years (Feb 1979 - Dec 2020). The model
 domain is the continential US. Inputs are hourly and outputs are provided at hourly or 3-hourly resolution (more details
-provide below and in [this document](https://drive.google.com/file/d/1zUtBZ_SM7uHqNDHLdOwGvfasVFMHfH6a/view).
+provide below and in [this document](https://drive.google.com/file/d/1zUtBZ_SM7uHqNDHLdOwGvfasVFMHfH6a/view)).
 
 The model writes separate files at each output time. Within those individual files the data are not chunked 
 in space. In the use case of opening a full timeseries at a single point or a sub-region, the user would be required to 
@@ -53,12 +53,12 @@ For those with access to NCAR computing resources, these can alternatively be fo
 
 Data as accessed by `xarray.open_zarr` can be found in the accompanying notebook
 [(html)](https://htmlpreview.github.io/?https://github.com/NCAR/rechunk\_retro_nwm\_v21/blob/main/notebooks/data\_description.html) 
-[(jupyter\\_notebook)](https://github.com/NCAR/rechunk\_retro\_nwm\_v21/notebooks/data\_description.ipynb). This includes
+[(jupyter\_notebook)](https://github.com/NCAR/rechunk_retro_nwm_v21/blob/main/notebooks/data_description.ipynb). This includes
 metadata, chunking schemes, and data types for all variables and coordinates. 
 
 Further details about the Zarr stores are provided in this accompanying notebook 
-[(html)](https://htmlpreview.github.io/?https://github.com/NCAR/rechunk\_retro\_nwm\_v21/blob/main/notebooks/data\_description\_detailed.html) 
-[(jupyter notebook)](https://github.com/NCAR/rechunk\_retro\_nwm\_v21/notebooks/data\_description\_detailed.ipynb)
+[(html)](https://htmlpreview.github.io/?https://github.com/NCAR/rechunk_retro_nwm_v21/blob/main/notebooks/data_description_detail.html) 
+[(jupyter notebook)](https://github.com/NCAR/rechunk_retro_nwm_v21/blob/main/notebooks/data_description_detail.ipynb)
 which contains the xarray dataset reports and also xarray and Zarr details for each variable showing storage data types, levels of 
 compression and other details. Note that the difference in the data types between xarray and zarr result from the use of scale\_factor 
 and add\_offset metadata in the underlying Zarr data set which xarray uses to recover floating point variables from the stored 
@@ -68,12 +68,12 @@ integers.
 ## Use Cases
 
 * Example of retrieving and plotting a single timeserires from the chrtout store
-[(html)](https://htmlpreview.github.io/?https://github.com/NCAR/rechunk\_retro\_nwm\_v21/blob/main/notebooks/usage\_example\_streamflow\_timeseries.html) 
-[(jupyter notebook)](https://htmlpreview.github.io/?https://github.com/NCAR/rechunk\_retro\_nwm\_v21/notebooks/usage\_example\_streamflow\_timeseries.ipynb)
+[(html)](https://htmlpreview.github.io/?https://github.com/NCAR/rechunk_retro_nwm_v21/blob/main/notebooks/usage_example_streamflow_timeseries.html) 
+[(jupyter notebook)](https://github.com/NCAR/rechunk_retro_nwm_v21/blob/main/notebooks/usage_example_streamflow_timeseries.ipynb)
 
 * Example of subsetting and rechunking the store to optimize data access pattern: selecting only streamflow gages from chrtout
-[(html)](https://htmlpreview.github.io/?https://github.com/NCAR/rechunk\_retro\_nwm\_v21/blob/main/notebooks/usage\_example\_rerechunk\_chrtout.html) 
-[(jupyter notebook)](https://htmlpreview.github.io/?https://github.com/NCAR/rechunk\_retro\_nwm\_v21/notebooks/usage\_example\_rerechunk\_chrtoutipynb)
+[(html)](https://htmlpreview.github.io/?https://github.com/NCAR/rechunk_retro_nwm_v21/blob/main/notebooks/usage_example_rerechunk_chrtout.html) 
+[(jupyter notebook)](https://github.com/NCAR/rechunk_retro_nwm_v21/blob/main/notebooks/usage_example_rerechunk_chrtout.ipynb)
 
 
 ## Code overview
