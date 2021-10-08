@@ -29,9 +29,7 @@ queue = "casper"
 cluster_mem_gb = 15
 
 n_chunks_job = 3 #12  # how many to do before exiting, 12 is approx yearly
-# end_date = '2018-12-31 23:00' # full time
-end_date = "1979-02-03 12:00"  
-# end_date = "1981-04-30 23:00"  # pilot 2 years
+end_date = "2020-12-31 23:00"
 
 # this end_date tests all parts of the execution for
 # chunk size 672 and n_chunks_job=1

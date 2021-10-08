@@ -1,35 +1,37 @@
 
 -------------------------------------------------------
-Output file report: /glade/p/datashare/ishitas/chrtout.zarr
-Total file size: 36G
+Output file report: /glade/p/datashare/ishitas/nwm_retro_v2.1/chrtout.zarr
+Total file size: 1.4T
 Dataset overviews:
 zarr ds.info:
 Name        : /
 Type        : zarr.hierarchy.Group
 Read-only   : False
 Store type  : zarr.storage.DirectoryStore
-No. members : 9
-No. arrays  : 9
+No. members : 10
+No. arrays  : 10
 No. groups  : 0
-Arrays      : elevation, feature_id, gage_id, latitude, longitude, order,
+Arrays      : crs, elevation, feature_id, gage_id, latitude, longitude, order,
             : streamflow, time, velocity
 
 
 xarray ds.info:
 <xarray.Dataset>
-Dimensions:     (feature_id: 2776738, time: 9408)
+Dimensions:     (feature_id: 2776738, time: 367439)
 Coordinates:
     elevation   (feature_id) float32 dask.array<chunksize=(2776738,), meta=np.ndarray>
   * feature_id  (feature_id) int32 101 179 181 ... 1180001803 1180001804
+    gage_id     (feature_id) |S15 dask.array<chunksize=(2776738,), meta=np.ndarray>
     latitude    (feature_id) float32 dask.array<chunksize=(2776738,), meta=np.ndarray>
     longitude   (feature_id) float32 dask.array<chunksize=(2776738,), meta=np.ndarray>
-  * time        (time) datetime64[ns] 1979-02-10 ... 1980-03-07T23:00:00
-Data variables:
-    gage_id     (feature_id) |S15 dask.array<chunksize=(2776738,), meta=np.ndarray>
     order       (feature_id) int32 dask.array<chunksize=(2776738,), meta=np.ndarray>
+  * time        (time) datetime64[ns] 1979-02-01T01:00:00 ... 2020-12-31T23:0...
+Data variables:
+    crs         |S1 ...
     streamflow  (time, feature_id) float64 dask.array<chunksize=(672, 30000), meta=np.ndarray>
     velocity    (time, feature_id) float64 dask.array<chunksize=(672, 30000), meta=np.ndarray>
 Attributes:
+    TITLE:                OUTPUT FROM WRF-Hydro v5.2.0-beta2
     code_version:         v5.2.0-beta2
     featureType:          timeSeries
     model_configuration:  retrospective
@@ -40,16 +42,55 @@ Variable comparison xarray and zarr
 
 --------
 
+crs
+
+xarray ds[crs]:
+<xarray.DataArray 'crs' ()>
+array(b'', dtype='|S1')
+Attributes:
+    _CoordinateAxes:              latitude longitude
+    esri_pe_string:               GEOGCS["GCS_WGS_1984",DATUM["D_WGS_1984",SP...
+    grid_mapping_name:            latitude longitude
+    inverse_flattening:           298.2572326660156
+    long_name:                    CRS definition
+    longitude_of_prime_meridian:  0.0
+    semi_major_axis:              6378137.0
+    semi_minor_axis:              6356752.5
+    spatial_ref:                  GEOGCS["GCS_WGS_1984",DATUM["D_WGS_1984",SP...
+    transform_name:               latitude longitude
+
+zarr dz[crs].info:
+Name               : /crs
+Type               : zarr.core.Array
+Data type          : |S1
+Shape              : ()
+Chunk shape        : ()
+Order              : C
+Read-only          : False
+Compressor         : None
+Store type         : zarr.storage.DirectoryStore
+No. bytes          : 1
+No. bytes stored   : 1077 (1.1K)
+Storage ratio      : 0.0
+Chunks initialized : 3/1
+
+Un-Compressed Chunk size in MB: 9.5367431640625e-07
+   Compressed Chunk size in MB: inf
+
+--------
+
 elevation
 
 xarray ds[elevation]:
 <xarray.DataArray 'elevation' (feature_id: 2776738)>
-dask.array<open_dataset-0517528263efefb37845803547e9ec95elevation, shape=(2776738,), dtype=float32, chunksize=(2776738,), chunktype=numpy.ndarray>
+dask.array<xarray-elevation, shape=(2776738,), dtype=float32, chunksize=(2776738,), chunktype=numpy.ndarray>
 Coordinates:
     elevation   (feature_id) float32 dask.array<chunksize=(2776738,), meta=np.ndarray>
   * feature_id  (feature_id) int32 101 179 181 ... 1180001803 1180001804
+    gage_id     (feature_id) |S15 dask.array<chunksize=(2776738,), meta=np.ndarray>
     latitude    (feature_id) float32 dask.array<chunksize=(2776738,), meta=np.ndarray>
     longitude   (feature_id) float32 dask.array<chunksize=(2776738,), meta=np.ndarray>
+    order       (feature_id) int32 dask.array<chunksize=(2776738,), meta=np.ndarray>
 Attributes:
     long_name:  feature elevation
     units:      meters
@@ -69,7 +110,8 @@ No. bytes stored   : 8779076 (8.4M)
 Storage ratio      : 1.3
 Chunks initialized : 1/1
 
-Chunk size in MB: 10.592414855957031
+Un-Compressed Chunk size in MB: 10.592414855957031
+   Compressed Chunk size in MB: 8.148011427659254
 
 --------
 
@@ -82,8 +124,10 @@ array([       101,        179,        181, ..., 1180001802, 1180001803,
 Coordinates:
     elevation   (feature_id) float32 dask.array<chunksize=(2776738,), meta=np.ndarray>
   * feature_id  (feature_id) int32 101 179 181 ... 1180001803 1180001804
+    gage_id     (feature_id) |S15 dask.array<chunksize=(2776738,), meta=np.ndarray>
     latitude    (feature_id) float32 dask.array<chunksize=(2776738,), meta=np.ndarray>
     longitude   (feature_id) float32 dask.array<chunksize=(2776738,), meta=np.ndarray>
+    order       (feature_id) int32 dask.array<chunksize=(2776738,), meta=np.ndarray>
 Attributes:
     cf_role:    timeseries_id
     comment:    NHDPlusv2 ComIDs within CONUS, arbitrary Reach IDs outside of...
@@ -104,7 +148,8 @@ No. bytes stored   : 795015 (776.4K)
 Storage ratio      : 14.0
 Chunks initialized : 1/1
 
-Chunk size in MB: 10.592414855957031
+Un-Compressed Chunk size in MB: 10.592414855957031
+   Compressed Chunk size in MB: 0.756601061139788
 
 --------
 
@@ -112,14 +157,17 @@ gage_id
 
 xarray ds[gage_id]:
 <xarray.DataArray 'gage_id' (feature_id: 2776738)>
-dask.array<open_dataset-0517528263efefb37845803547e9ec95gage_id, shape=(2776738,), dtype=|S15, chunksize=(2776738,), chunktype=numpy.ndarray>
+dask.array<xarray-gage_id, shape=(2776738,), dtype=|S15, chunksize=(2776738,), chunktype=numpy.ndarray>
 Coordinates:
     elevation   (feature_id) float32 dask.array<chunksize=(2776738,), meta=np.ndarray>
   * feature_id  (feature_id) int32 101 179 181 ... 1180001803 1180001804
+    gage_id     (feature_id) |S15 dask.array<chunksize=(2776738,), meta=np.ndarray>
     latitude    (feature_id) float32 dask.array<chunksize=(2776738,), meta=np.ndarray>
     longitude   (feature_id) float32 dask.array<chunksize=(2776738,), meta=np.ndarray>
+    order       (feature_id) int32 dask.array<chunksize=(2776738,), meta=np.ndarray>
 Attributes:
-    long_name:  NHD Gage Event ID from SOURCE_FEA field in Gages feature class
+    coordinates:  lat lon
+    long_name:    NHD Gage Event ID from SOURCE_FEA field in Gages feature class
 
 zarr dz[gage_id].info:
 Name               : /gage_id
@@ -132,11 +180,12 @@ Read-only          : False
 Compressor         : Blosc(cname='lz4', clevel=5, shuffle=SHUFFLE, blocksize=0)
 Store type         : zarr.storage.DirectoryStore
 No. bytes          : 41651070 (39.7M)
-No. bytes stored   : 488085 (476.6K)
+No. bytes stored   : 488064 (476.6K)
 Storage ratio      : 85.3
 Chunks initialized : 1/1
 
-Chunk size in MB: 39.72155570983887
+Un-Compressed Chunk size in MB: 39.72155570983887
+   Compressed Chunk size in MB: 0.46566888288205005
 
 --------
 
@@ -144,12 +193,14 @@ latitude
 
 xarray ds[latitude]:
 <xarray.DataArray 'latitude' (feature_id: 2776738)>
-dask.array<open_dataset-0517528263efefb37845803547e9ec95latitude, shape=(2776738,), dtype=float32, chunksize=(2776738,), chunktype=numpy.ndarray>
+dask.array<xarray-latitude, shape=(2776738,), dtype=float32, chunksize=(2776738,), chunktype=numpy.ndarray>
 Coordinates:
     elevation   (feature_id) float32 dask.array<chunksize=(2776738,), meta=np.ndarray>
   * feature_id  (feature_id) int32 101 179 181 ... 1180001803 1180001804
+    gage_id     (feature_id) |S15 dask.array<chunksize=(2776738,), meta=np.ndarray>
     latitude    (feature_id) float32 dask.array<chunksize=(2776738,), meta=np.ndarray>
     longitude   (feature_id) float32 dask.array<chunksize=(2776738,), meta=np.ndarray>
+    order       (feature_id) int32 dask.array<chunksize=(2776738,), meta=np.ndarray>
 Attributes:
     long_name:      feature latitude
     standard_name:  latitude
@@ -170,7 +221,8 @@ No. bytes stored   : 5866963 (5.6M)
 Storage ratio      : 1.9
 Chunks initialized : 1/1
 
-Chunk size in MB: 10.592414855957031
+Un-Compressed Chunk size in MB: 10.592414855957031
+   Compressed Chunk size in MB: 5.5749551873458065
 
 --------
 
@@ -178,12 +230,14 @@ longitude
 
 xarray ds[longitude]:
 <xarray.DataArray 'longitude' (feature_id: 2776738)>
-dask.array<open_dataset-0517528263efefb37845803547e9ec95longitude, shape=(2776738,), dtype=float32, chunksize=(2776738,), chunktype=numpy.ndarray>
+dask.array<xarray-longitude, shape=(2776738,), dtype=float32, chunksize=(2776738,), chunktype=numpy.ndarray>
 Coordinates:
     elevation   (feature_id) float32 dask.array<chunksize=(2776738,), meta=np.ndarray>
   * feature_id  (feature_id) int32 101 179 181 ... 1180001803 1180001804
+    gage_id     (feature_id) |S15 dask.array<chunksize=(2776738,), meta=np.ndarray>
     latitude    (feature_id) float32 dask.array<chunksize=(2776738,), meta=np.ndarray>
     longitude   (feature_id) float32 dask.array<chunksize=(2776738,), meta=np.ndarray>
+    order       (feature_id) int32 dask.array<chunksize=(2776738,), meta=np.ndarray>
 Attributes:
     long_name:      feature longitude
     standard_name:  longitude
@@ -204,7 +258,8 @@ No. bytes stored   : 6301787 (6.0M)
 Storage ratio      : 1.8
 Chunks initialized : 1/1
 
-Chunk size in MB: 10.592414855957031
+Un-Compressed Chunk size in MB: 10.592414855957031
+   Compressed Chunk size in MB: 5.884674919976129
 
 --------
 
@@ -212,12 +267,14 @@ order
 
 xarray ds[order]:
 <xarray.DataArray 'order' (feature_id: 2776738)>
-dask.array<open_dataset-0517528263efefb37845803547e9ec95order, shape=(2776738,), dtype=int32, chunksize=(2776738,), chunktype=numpy.ndarray>
+dask.array<xarray-order, shape=(2776738,), dtype=int32, chunksize=(2776738,), chunktype=numpy.ndarray>
 Coordinates:
     elevation   (feature_id) float32 dask.array<chunksize=(2776738,), meta=np.ndarray>
   * feature_id  (feature_id) int32 101 179 181 ... 1180001803 1180001804
+    gage_id     (feature_id) |S15 dask.array<chunksize=(2776738,), meta=np.ndarray>
     latitude    (feature_id) float32 dask.array<chunksize=(2776738,), meta=np.ndarray>
     longitude   (feature_id) float32 dask.array<chunksize=(2776738,), meta=np.ndarray>
+    order       (feature_id) int32 dask.array<chunksize=(2776738,), meta=np.ndarray>
 Attributes:
     long_name:  stream order
 
@@ -232,60 +289,63 @@ Read-only          : False
 Compressor         : Blosc(cname='lz4', clevel=5, shuffle=SHUFFLE, blocksize=0)
 Store type         : zarr.storage.DirectoryStore
 No. bytes          : 11106952 (10.6M)
-No. bytes stored   : 1541936 (1.5M)
+No. bytes stored   : 1541885 (1.5M)
 Storage ratio      : 7.2
 Chunks initialized : 1/1
 
-Chunk size in MB: 10.592414855957031
+Un-Compressed Chunk size in MB: 10.592414855957031
+   Compressed Chunk size in MB: 1.4711687299940321
 
 --------
 
 streamflow
 
 xarray ds[streamflow]:
-<xarray.DataArray 'streamflow' (time: 9408, feature_id: 2776738)>
-dask.array<open_dataset-0517528263efefb37845803547e9ec95streamflow, shape=(9408, 2776738), dtype=float64, chunksize=(672, 30000), chunktype=numpy.ndarray>
+<xarray.DataArray 'streamflow' (time: 367439, feature_id: 2776738)>
+dask.array<xarray-streamflow, shape=(367439, 2776738), dtype=float64, chunksize=(672, 30000), chunktype=numpy.ndarray>
 Coordinates:
     elevation   (feature_id) float32 dask.array<chunksize=(2776738,), meta=np.ndarray>
   * feature_id  (feature_id) int32 101 179 181 ... 1180001803 1180001804
+    gage_id     (feature_id) |S15 dask.array<chunksize=(2776738,), meta=np.ndarray>
     latitude    (feature_id) float32 dask.array<chunksize=(2776738,), meta=np.ndarray>
     longitude   (feature_id) float32 dask.array<chunksize=(2776738,), meta=np.ndarray>
-  * time        (time) datetime64[ns] 1979-02-10 ... 1980-03-07T23:00:00
+    order       (feature_id) int32 dask.array<chunksize=(2776738,), meta=np.ndarray>
+  * time        (time) datetime64[ns] 1979-02-01T01:00:00 ... 2020-12-31T23:0...
 Attributes:
     grid_mapping:  crs
     long_name:     River Flow
     units:         m3 s-1
-    valid_range:   [0, 5000000]
 
 zarr dz[streamflow].info:
 Name               : /streamflow
 Type               : zarr.core.Array
 Data type          : int32
-Shape              : (9408, 2776738)
+Shape              : (367439, 2776738)
 Chunk shape        : (672, 30000)
 Order              : C
 Read-only          : False
 Compressor         : Blosc(cname='lz4', clevel=5, shuffle=SHUFFLE, blocksize=0)
 Store type         : zarr.storage.DirectoryStore
-No. bytes          : 104494204416 (97.3G)
-No. bytes stored   : 20098329869 (18.7G)
-Storage ratio      : 5.2
-Chunks initialized : 1302/1302
+No. bytes          : 4081127335928 (3.7T)
+No. bytes stored   : 754124414981 (702.3G)
+Storage ratio      : 5.4
+Chunks initialized : 50871/50871
 
-Chunk size in MB: 76.904296875
+Un-Compressed Chunk size in MB: 76.904296875
+   Compressed Chunk size in MB: 14.241536458333332
 
 --------
 
 time
 
 xarray ds[time]:
-<xarray.DataArray 'time' (time: 9408)>
-array(['1979-02-10T00:00:00.000000000', '1979-02-10T01:00:00.000000000',
-       '1979-02-10T02:00:00.000000000', ..., '1980-03-07T21:00:00.000000000',
-       '1980-03-07T22:00:00.000000000', '1980-03-07T23:00:00.000000000'],
+<xarray.DataArray 'time' (time: 367439)>
+array(['1979-02-01T01:00:00.000000000', '1979-02-01T02:00:00.000000000',
+       '1979-02-01T03:00:00.000000000', ..., '2020-12-31T21:00:00.000000000',
+       '2020-12-31T22:00:00.000000000', '2020-12-31T23:00:00.000000000'],
       dtype='datetime64[ns]')
 Coordinates:
-  * time     (time) datetime64[ns] 1979-02-10 ... 1980-03-07T23:00:00
+  * time     (time) datetime64[ns] 1979-02-01T01:00:00 ... 2020-12-31T23:00:00
 Attributes:
     long_name:      valid output time
     standard_name:  time
@@ -294,51 +354,54 @@ zarr dz[time].info:
 Name               : /time
 Type               : zarr.core.Array
 Data type          : int64
-Shape              : (9408,)
+Shape              : (367439,)
 Chunk shape        : (672,)
 Order              : C
 Read-only          : False
 Compressor         : Blosc(cname='lz4', clevel=5, shuffle=SHUFFLE, blocksize=0)
 Store type         : zarr.storage.DirectoryStore
-No. bytes          : 75264 (73.5K)
-No. bytes stored   : 6414 (6.3K)
-Storage ratio      : 11.7
-Chunks initialized : 14/14
+No. bytes          : 2939512 (2.8M)
+No. bytes stored   : 231119 (225.7K)
+Storage ratio      : 12.7
+Chunks initialized : 547/547
 
-Chunk size in MB: 0.005126953125
+Un-Compressed Chunk size in MB: 0.005126953125
+   Compressed Chunk size in MB: 0.00040369709645669296
 
 --------
 
 velocity
 
 xarray ds[velocity]:
-<xarray.DataArray 'velocity' (time: 9408, feature_id: 2776738)>
-dask.array<open_dataset-0517528263efefb37845803547e9ec95velocity, shape=(9408, 2776738), dtype=float64, chunksize=(672, 30000), chunktype=numpy.ndarray>
+<xarray.DataArray 'velocity' (time: 367439, feature_id: 2776738)>
+dask.array<xarray-velocity, shape=(367439, 2776738), dtype=float64, chunksize=(672, 30000), chunktype=numpy.ndarray>
 Coordinates:
     elevation   (feature_id) float32 dask.array<chunksize=(2776738,), meta=np.ndarray>
   * feature_id  (feature_id) int32 101 179 181 ... 1180001803 1180001804
+    gage_id     (feature_id) |S15 dask.array<chunksize=(2776738,), meta=np.ndarray>
     latitude    (feature_id) float32 dask.array<chunksize=(2776738,), meta=np.ndarray>
     longitude   (feature_id) float32 dask.array<chunksize=(2776738,), meta=np.ndarray>
-  * time        (time) datetime64[ns] 1979-02-10 ... 1980-03-07T23:00:00
+    order       (feature_id) int32 dask.array<chunksize=(2776738,), meta=np.ndarray>
+  * time        (time) datetime64[ns] 1979-02-01T01:00:00 ... 2020-12-31T23:0...
 Attributes:
     grid_mapping:  crs
     long_name:     River Velocity
     units:         m s-1
-    valid_range:   [0, 5000000]
 
 zarr dz[velocity].info:
 Name               : /velocity
 Type               : zarr.core.Array
 Data type          : int32
-Shape              : (9408, 2776738)
+Shape              : (367439, 2776738)
 Chunk shape        : (672, 30000)
 Order              : C
 Read-only          : False
 Compressor         : Blosc(cname='lz4', clevel=5, shuffle=SHUFFLE, blocksize=0)
 Store type         : zarr.storage.DirectoryStore
-No. bytes          : 104494204416 (97.3G)
-No. bytes stored   : 17993155343 (16.8G)
-Storage ratio      : 5.8
-Chunks initialized : 1302/1302
+No. bytes          : 4081127335928 (3.7T)
+No. bytes stored   : 679656250705 (633.0G)
+Storage ratio      : 6.0
+Chunks initialized : 50871/50871
 
-Chunk size in MB: 76.904296875
+Un-Compressed Chunk size in MB: 76.904296875
+   Compressed Chunk size in MB: 12.8173828125
