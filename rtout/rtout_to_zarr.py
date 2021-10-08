@@ -30,7 +30,7 @@ queue = "casper"
 cluster_mem_gb = 25  ## 25 works for time 224
 
 n_chunks_job = 6  # how many to do before exiting, 12 is approx yearly
-end_date = '2018-12-31 23:00' # full time
+end_date = '2020-12-31 23:00' # full time
 # end_date = "1979-04-17 00:00"
 
 # files
