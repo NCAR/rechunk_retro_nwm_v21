@@ -16,14 +16,15 @@ problem and uses dask and disk to manage computation and memory. Currently the o
 is to write Zarr stores. However, there is nothing much wrong with Zarr other than it dosent have interfaces to several popular
 languages besides python.
 
-Rich Signell (USGS) first applied rechunker to the NWM CHRTOUT (streamflow model) output in
-[this notebook](https://nbviewer.org/gist/rsignell-usgs/c0b87ed1fa5fc694e665fb789e8381bb) and he explored the data in 
-[this notebook](https://github.com/Quansight/qhub/discussions/200).
+Rich Signell (USGS) first applied rechunker to the NWM CHRTOUT (streamflow model) output in as discussed [here](https://github.com/Quansight/qhub/discussions/200) whic points to this
+[rechunking notebook](https://nbviewer.org/gist/rsignell-usgs/c0b87ed1fa5fc694e665fb789e8381bb) and this
+[analysis notebook](https://nbviewer.org/gist/rsignell-usgs/78a4ce00360c65bc99764aa3e88a2493).
 
 Following on this success, both NOAA's Office of Water Prediction and NCAR were interested in doing something similar for the next version
 of the NWM retrospective run. For NWM version 2.1, the task of rechunking the full retrospective on NCAR computing resources (where
-the model runs were performed) is expressed in this notebook. All the output files were rechunked as well as the input/forcing
-precipitation data. 
+the model runs were performed) is expressed in this repository. This included 4 other output file types, including gridded land surface model data and 
+terrain/subsurface routing data. Also rechunked were the input/forcing precipitation data (just one variable from the full forcing data). 
+
 
 ## Status and looking forward
 
@@ -39,19 +40,22 @@ To recover from these failures, we used xarray's capability ro write regions to 
 This highligted that appending to the Zarr store might not be the preferred strategy and that perhaps all the data could be written with the region approach, 
 after initalizing the zarr store (e.g. `Dataset.to\zarr(file, compute=False)`). Following this approach might also provide the advantages that, for each file type, 
 individual variables could then be processed in parallel (using separate jobs writing to different variables in the same store) which could further speed up
-the time to rechunking .
+the time to rechunking.
+
+Finally, we maintained the storage integer types and `scale_factor` and `add_offset` information that originated in the model in the Zarr stores. We noted that several of the integers could likely be shortened from int32 to int16 without loss of information while providing improved compression (smaller Zarr stores).
 
 ## Code Overview
 
 There is  a directory for each file type
 
 ```
-chrtout/
+
 lakeout/
 gwout/
+chrtout/
+precip/
 ldasout/
 rtout/
-precip_forcing/
 ```
 
 in this directory will be the following for each `type`:
@@ -106,7 +110,8 @@ first. The remainder of the times will be drawn at random from the index of time
 output file (without replacement). The static variables in the file are checked once (at the first 
 time) and the time varying variables are checked at every time. Values are checked to have less 
 absolute differece than 1e-8 and if nans are present it is required that the diffs have the same
-number of nans as both of the original and zarr datasets. 
+number of nans as both of the original and zarr datasets. The verification is logged in a similar manner 
+to the report, as shown above.
 
 
 ### `type_script_pbs.sh`
@@ -124,3 +129,7 @@ jobs will continue in the event one of them fails.
 This is the python script which converts a given type to a single zarr file. It checks if the output 
 file already exists, and if it does it then knows to start from the end of the existing output to 
 continue the rechunking. 
+
+### `type_to_zarr_fix.py`
+This file is not present in every type. This is the script that fixes a failed write on the current/latest chunk while it was being appended. It's 
+largely redundant with `type_to_zarr.py` and the codes have not been consolidated. 
