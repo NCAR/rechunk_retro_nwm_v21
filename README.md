@@ -1,6 +1,4 @@
-# nwm_v21_retro_rechunk
-Rechunking National Water Model v2.1 retrospective simulations to more (cloud-)approachable chunks in Zarr format.
-
+# Rechunking National Water Model v2.1 retrospective simulations to more (cloud-)approachable chunks in Zarr format.
 Authors: _James McCreight (NCAR), Ishita Srivastava (NCAR), and Rich Signell (USGS)_
 
 
