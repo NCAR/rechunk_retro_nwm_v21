@@ -24,7 +24,7 @@ def main(file_rechunked):
     print(f"Total file size: {file_size}")
 
     ds = xr.open_zarr(file_rechunked)
-    dz = zr.open(file_rechunked)
+    dz = zr.open(str(file_rechunked))
 
     print("Dataset overviews:")
     print(f"zarr ds.info:\n{dz.info}")

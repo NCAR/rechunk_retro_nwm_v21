@@ -5,7 +5,9 @@ import pandas as pd
 import xarray as xr
 
 # should be the entire config.
+# file_last_prev_date = dt.datetime.strptime('201811161800', '%Y%m%d%H00')
 # file_last_prev_date = dt.datetime.strptime('201812122300', '%Y%m%d%H00')
+file_last_prev_date = dt.datetime.strptime('201911132300', '%Y%m%d%H00')
 
 # -------------------------------------------------------
 
@@ -55,37 +57,52 @@ ds = xr.open_mfdataset(
     join="override",)
 
 times = ds.time.values
+print(len(times))
+
 time_diff = np.diff(times)
-wh_miss = np.where(time_diff > time_diff[0])[0][0]
-times[wh_miss + [-1,0,1]]
+wh_miss = np.where(time_diff > time_diff[0])[0]
+assert len(wh_miss) == 1, "more than a single missing time! investigate."
 
-time_miss = pd.to_datetime(times[wh_miss]) + dt.timedelta(hours=1)
+missing_before = times[wh_miss + 0][0]
+missing_after = times[wh_miss + 1][0]
+missing_gap = missing_after - missing_before
+n_missing_times = int(missing_gap / np.timedelta64(int(freq.split('H')[0]), 'h'))
 
-file_bad = pathlib.Path(
-    f'/glade/p/cisl/nwc/nwm_forcings/AORC/'
-    f'{time_miss.strftime("%Y%m%d%H")}.LDASIN_DOMAIN1')
-ds_bad = xr.open_dataset(file_bad)
-ds_fix = ds_bad.drop('valid_time').copy()
+for tt in range(n_missing_times):
+    print(tt)
+    time_miss = pd.to_datetime(missing_before) + dt.timedelta(hours=tt + 1)
+    da_valid_time = xr.DataArray(
+        np.array([str(time_miss)], dtype='datetime64[ns]'),
+        dims=['Time'])
 
-ds_fix['valid_time'] = xr.DataArray(
-    np.array([str(time_miss)], dtype='datetime64[ns]'),
-    dims=['Time'])
+    file_bad = pathlib.Path(
+        f'/glade/p/cisl/nwc/nwm_forcings/AORC/'
+        f'{time_miss.strftime("%Y%m%d%H")}.LDASIN_DOMAIN1')
+    ds_bad = xr.open_dataset(file_bad)
+    ds_fix = ds_bad.drop('valid_time').copy()
+    ds_bad.close()
+    ds_fix['valid_time'] = da_valid_time
 
-file_replacement = pathlib.Path(
-    f'/glade/scratch/jamesmcc/aorc_forcing_symlinks/'
-    f'{time_miss.strftime("%Y")}/'
-    f'{time_miss.strftime("%Y%m%d%H00")}.LDASIN_DOMAIN1')
+    file_replacement = pathlib.Path(
+        f'/glade/scratch/jamesmcc/aorc_forcing_symlinks/'
+        f'{time_miss.strftime("%Y")}/'
+        f'{time_miss.strftime("%Y%m%d%H00")}.LDASIN_DOMAIN1')
 
-if file_replacement.exists():
-    file_replacement.unlink()
+    if file_replacement.exists():
+        file_replacement.unlink()
 
-ds_fix.to_netcdf(file_replacement)
-ds_fix.close()
+    ds_fix.to_netcdf(file_replacement)
+    ds_fix.close()
 
-ds_check = xr.open_dataset(file_replacement)
-assert ds_check.valid_time.equals(ds_fix.valid_time)
-del ds_check
+    ds_check = xr.open_dataset(file_replacement)
+    ds_check.close()
+    ds_check = xr.open_dataset(file_replacement)  # This makes no sense, there seems to be a bug in xarray
+    assert ds_check.valid_time.equals(ds_fix.valid_time)
+    assert ds_check.valid_time == time_miss
+    ds_check.close()
+    del ds_check, ds_fix, ds_bad
 
+# Check the full.    
 ds = xr.open_mfdataset(
     files,
     parallel=True,

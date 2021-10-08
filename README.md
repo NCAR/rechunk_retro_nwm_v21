@@ -48,6 +48,7 @@ For those with access to NCAR computing resources, these can alternatively be fo
 /glade/p/datashare/jamesmcc/nwm_retro_v2.1/rtout.zarr
 ```
 
+
 ## Data Description
 
 Data as accessed by `xarray.open_zarr` can be found in the accompanying notebook
@@ -63,15 +64,17 @@ compression and other details. Note that the difference in the data types betwee
 and add\_offset metadata in the underlying Zarr data set which xarray uses to recover floating point variables from the stored 
 integers. 
 
+
 ## Use Cases
+
+* Example of retrieving and plotting a single timeserires from the chrtout store
+[(html)](https://htmlpreview.github.io/?https://github.com/NCAR/rechunk\_retro\_nwm\_v21/blob/main/notebooks/usage\_example\_streamflow\_timeseries.html) 
+[(jupyter notebook)](https://htmlpreview.github.io/?https://github.com/NCAR/rechunk\_retro\_nwm\_v21/notebooks/usage\_example\_streamflow\_timeseries.ipynb)
 
 * Example of subsetting and rechunking the store to optimize data access pattern: selecting only streamflow gages from chrtout
 [(html)](https://htmlpreview.github.io/?https://github.com/NCAR/rechunk\_retro\_nwm\_v21/blob/main/notebooks/usage\_example\_rerechunk\_chrtout.html) 
 [(jupyter notebook)](https://htmlpreview.github.io/?https://github.com/NCAR/rechunk\_retro\_nwm\_v21/notebooks/usage\_example\_rerechunk\_chrtoutipynb)
 
-* Example of retrieving and plotting a single timeserires from the chrtout store
-[(html)](https://htmlpreview.github.io/?https://github.com/NCAR/rechunk\_retro\_nwm\_v21/blob/main/notebooks/usage\_example\_streamflow\_timeseries.html) 
-[(jupyter notebook)](https://htmlpreview.github.io/?https://github.com/NCAR/rechunk\_retro\_nwm\_v21/notebooks/usage\_example\_streamflow\_timeseries.ipynb)
 
 ## Code overview
 An overview of the code used can be found in [README_code.md](README_code.md).

@@ -23,28 +23,35 @@ type_pattern_dict = {
 
 
 def main(file_rechunked):
+    pattern = type_pattern_dict[file_rechunked.name]
+
+    orig_dir = pathlib.Path("/glade/scratch/zhangyx/WRF-Hydro/model.data.v2.1")
     if file_rechunked.name == 'precip.zarr':
         orig_dir = pathlib.Path(
-            "/glade/campaign/ral/hap/zhangyx/AORC.Forcing")
-
-    pattern = type_pattern_dict[file_rechunked.name]
-    orig_dir = pathlib.Path("/glade/scratch/zhangyx/WRF-Hydro/model.data.v2.1")
-
+            '/glade/scratch/jamesmcc/aorc_forcing_symlinks')
+    
     # Open the rechunked zarr output
     ds = xr.open_zarr(file_rechunked)
     print(f"Checking {file_rechunked.name} against its source files")
     print(ds)
 
-    # randomly sample some times, but always check first and last
-    n_samples = 250
-    random_samp = random.sample(range(len(ds.time)), n_samples - 2)
-    random_samp = [0, len(ds.time) - 1] + random_samp
-    print(f"Checking data for {len(random_samp)} times")
+    # Check one time in every time chunk
+    data_vars = list(set(list(ds.data_vars)).difference(set(['crs'])))
+    dv0 = ds[data_vars[0]]
+    time_ind = dv0.dims.index('time')
+    time_chunks = dv0.chunks[time_ind]
+    n_time_chunks = len(time_chunks)
 
     check_static_variables = True
 
-    for ii in range(len(random_samp)):
-        rr = random_samp[ii]
+    for cc in list(reversed(range(n_time_chunks))):
+        print(f'\nChecking a random time in chunk #{cc+1} (of {n_time_chunks})...', flush=True)
+
+        ind_chunk_first_time = sum(time_chunks[0:cc])
+        n_samples = 1
+        random_samp = random.sample(range(time_chunks[cc]), n_samples)[0]
+        rr = ind_chunk_first_time + random_samp
+
         time_random = pd.to_datetime(str(ds.time[rr].values))
         file_random = orig_dir / (
             time_random.strftime("%Y/") + time_random.strftime(f"%Y%m%d%H%M.{pattern}")
@@ -78,7 +85,6 @@ def main(file_rechunked):
             check_static_variables = False
 
         # Check at this time
-        print(f"\n{ii+1}/{n_samples}")
         print(f"Checking time: {ds.time[rr].values}")
         for vv in ds.variables:
             if vv == "time":
