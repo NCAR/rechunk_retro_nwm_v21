@@ -50,12 +50,12 @@ For those with access to NCAR computing resources, these can alternatively be fo
 ## Data Description
 
 Data as accessed by `xarray.open_zarr` can be found in the accompanying notebook
-[(html)](https://htmlpreview.github.io/?https://github.com/NCAR/rechunk\_retro_nwm\_v21/blob/main/notebooks/data\_description.html) 
+[(html)](https://nbviewer.org/github/NCAR/rechunk\_retro_nwm\_v21/blob/main/notebooks/data\_description.ipynb) 
 [(jupyter\_notebook)](https://github.com/NCAR/rechunk_retro_nwm_v21/blob/main/notebooks/data_description.ipynb). This includes
 metadata, chunking schemes, and data types for all variables and coordinates. 
 
 Further details in this accompanying notebook 
-[(html)](https://htmlpreview.github.io/?https://github.com/NCAR/rechunk_retro_nwm_v21/blob/main/notebooks/data_description_detail.html) 
+[(html)](https://nbviewer.org/github/NCAR/rechunk_retro_nwm_v21/blob/main/notebooks/data_description_detail.ipynb) 
 [(jupyter notebook)](https://github.com/NCAR/rechunk_retro_nwm_v21/blob/main/notebooks/data_description_detail.ipynb)
 including the xarray dataset reports and also xarray and Zarr details for each variable showing storage data types, levels of 
 compression and other information. Note that the difference in the data types between xarray and zarr result from the use of scale\_factor 
@@ -66,11 +66,11 @@ integers.
 ## Use Cases
 
 * Example of retrieving and plotting a single timeserires from the chrtout store
-[(html)](https://htmlpreview.github.io/?https://github.com/NCAR/rechunk_retro_nwm_v21/blob/main/notebooks/usage_example_streamflow_timeseries.html) 
+[(html)](https://nbviewer.org/github/NCAR/rechunk_retro_nwm_v21/blob/main/notebooks/usage_example_streamflow_timeseries.ipynb) 
 [(jupyter notebook)](https://github.com/NCAR/rechunk_retro_nwm_v21/blob/main/notebooks/usage_example_streamflow_timeseries.ipynb)
 
 * Example of subsetting and rechunking the store to optimize data access pattern: selecting only streamflow gages from chrtout
-[(html)](https://htmlpreview.github.io/?https://github.com/NCAR/rechunk_retro_nwm_v21/blob/main/notebooks/usage_example_rerechunk_chrtout.html) 
+[(html)](https://nbviewer.org/github/NCAR/rechunk_retro_nwm_v21/blob/main/notebooks/usage_example_rerechunk_chrtout.ipynb) 
 [(jupyter notebook)](https://github.com/NCAR/rechunk_retro_nwm_v21/blob/main/notebooks/usage_example_rerechunk_chrtout.ipynb)
 
 
