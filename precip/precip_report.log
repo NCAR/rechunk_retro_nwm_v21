@@ -1,7 +1,7 @@
 
 -------------------------------------------------------
-Output file report: /glade/scratch/jamesmcc/retro_collect/precip/precip.zarr
-Total file size: 65G
+Output file report: /glade/p/datashare/jamesmcc/nwm_retro_v2.1/precip.zarr
+Total file size: 2.0T
 Dataset overviews:
 zarr ds.info:
 Name        : /
@@ -16,21 +16,18 @@ Arrays      : RAINRATE, crs, time, x, y
 
 xarray ds.info:
 <xarray.Dataset>
-Dimensions:   (time: 19489, y: 3840, x: 4608)
+Dimensions:   (time: 367440, x: 4608, y: 3840)
 Coordinates:
-    crs       |S1 ...
-  * time      (time) datetime64[ns] 1979-02-01 ... 1981-04-23
+  * time      (time) datetime64[ns] 1979-02-01 ... 2020-12-31T23:00:00
   * x         (x) float64 -2.303e+06 -2.302e+06 ... 2.303e+06 2.304e+06
   * y         (y) float64 -1.92e+06 -1.919e+06 ... 1.918e+06 1.919e+06
 Data variables:
     RAINRATE  (time, y, x) float32 dask.array<chunksize=(672, 350, 350), meta=np.ndarray>
+    crs       |S1 ...
 Attributes:
-    NWM_version_number:         v2.1
-    model_configuration:        AORC
-    model_initialization_time:  1981-04-01_00:00:00
-    model_output_type:          forcing
-    model_output_valid_time:    1981-04-23_00:00:00
-    model_total_valid_times:    720.0
+    NWM_version_number:   v2.1
+    model_configuration:  AORC
+    model_output_type:    forcing
 
 -----------------------------------
 Variable comparison xarray and zarr
@@ -40,11 +37,10 @@ Variable comparison xarray and zarr
 RAINRATE
 
 xarray ds[RAINRATE]:
-<xarray.DataArray 'RAINRATE' (time: 19489, y: 3840, x: 4608)>
-dask.array<open_dataset-849f642bddd31b1658b7746d39ab7a6bRAINRATE, shape=(19489, 3840, 4608), dtype=float32, chunksize=(672, 350, 350), chunktype=numpy.ndarray>
+<xarray.DataArray 'RAINRATE' (time: 367440, y: 3840, x: 4608)>
+dask.array<xarray-RAINRATE, shape=(367440, 3840, 4608), dtype=float32, chunksize=(672, 350, 350), chunktype=numpy.ndarray>
 Coordinates:
-    crs      |S1 ...
-  * time     (time) datetime64[ns] 1979-02-01 1979-02-01T01:00:00 ... 1981-04-23
+  * time     (time) datetime64[ns] 1979-02-01 ... 2020-12-31T23:00:00
   * x        (x) float64 -2.303e+06 -2.302e+06 ... 2.303e+06 2.304e+06
   * y        (y) float64 -1.92e+06 -1.919e+06 -1.918e+06 ... 1.918e+06 1.919e+06
 Attributes:
@@ -61,18 +57,19 @@ zarr dz[RAINRATE].info:
 Name               : /RAINRATE
 Type               : zarr.core.Array
 Data type          : float32
-Shape              : (19489, 3840, 4608)
+Shape              : (367440, 3840, 4608)
 Chunk shape        : (672, 350, 350)
 Order              : C
 Read-only          : False
 Compressor         : Blosc(cname='lz4', clevel=5, shuffle=SHUFFLE, blocksize=0)
 Store type         : zarr.storage.DirectoryStore
-No. bytes          : 1379409592320 (1.3T)
-No. bytes stored   : 69323006156 (64.6G)
-Storage ratio      : 19.9
-Chunks initialized : 4620/4620
+No. bytes          : 26006991667200 (23.7T)
+No. bytes stored   : 2184316757648 (2.0T)
+Storage ratio      : 11.9
+Chunks initialized : 84238/84238
 
-Chunk size in MB: 314.02587890625
+Un-Compressed Chunk size in MB: 314.02587890625
+   Compressed Chunk size in MB: 26.388729319852942
 
 --------
 
@@ -81,16 +78,18 @@ crs
 xarray ds[crs]:
 <xarray.DataArray 'crs' ()>
 array(b'', dtype='|S1')
-Coordinates:
-    crs      |S1 ...
-Attributes: (12/17)
+Attributes:
     GeoTransform:                   -2303999.17655 1000.0 0 1919999.66329 0 -...
     _CoordinateAxes:                y x
     _CoordinateTransformType:       Projection
     earth_radius:                   6370000.0
     esri_pe_string:                 PROJCS["Lambert_Conformal_Conic",GEOGCS["...
     false_easting:                  0.0
-    ...                             ...
+    false_northing:                 0.0
+    grid_mapping_name:              lambert_conformal_conic
+    inverse_flattening:             0.0
+    latitude_of_projection_origin:  40.0
+    long_name:                      CRS definition
     longitude_of_central_meridian:  -97.0
     longitude_of_prime_meridian:    0.0
     semi_major_axis:                6370000.0
@@ -113,21 +112,21 @@ No. bytes stored   : 1970 (1.9K)
 Storage ratio      : 0.0
 Chunks initialized : 3/1
 
-Chunk size in MB: 9.5367431640625e-07
+Un-Compressed Chunk size in MB: 9.5367431640625e-07
+   Compressed Chunk size in MB: inf
 
 --------
 
 time
 
 xarray ds[time]:
-<xarray.DataArray 'time' (time: 19489)>
+<xarray.DataArray 'time' (time: 367440)>
 array(['1979-02-01T00:00:00.000000000', '1979-02-01T01:00:00.000000000',
-       '1979-02-01T02:00:00.000000000', ..., '1981-04-22T22:00:00.000000000',
-       '1981-04-22T23:00:00.000000000', '1981-04-23T00:00:00.000000000'],
+       '1979-02-01T02:00:00.000000000', ..., '2020-12-31T21:00:00.000000000',
+       '2020-12-31T22:00:00.000000000', '2020-12-31T23:00:00.000000000'],
       dtype='datetime64[ns]')
 Coordinates:
-    crs      |S1 ...
-  * time     (time) datetime64[ns] 1979-02-01 1979-02-01T01:00:00 ... 1981-04-23
+  * time     (time) datetime64[ns] 1979-02-01 ... 2020-12-31T23:00:00
 Attributes:
     long_name:      valid output time
     standard_name:  time
@@ -136,18 +135,19 @@ zarr dz[time].info:
 Name               : /time
 Type               : zarr.core.Array
 Data type          : int64
-Shape              : (19489,)
+Shape              : (367440,)
 Chunk shape        : (672,)
 Order              : C
 Read-only          : False
 Compressor         : Blosc(cname='lz4', clevel=5, shuffle=SHUFFLE, blocksize=0)
 Store type         : zarr.storage.DirectoryStore
-No. bytes          : 155912 (152.3K)
-No. bytes stored   : 12898 (12.6K)
-Storage ratio      : 12.1
-Chunks initialized : 30/30
+No. bytes          : 2939520 (2.8M)
+No. bytes stored   : 231110 (225.7K)
+Storage ratio      : 12.7
+Chunks initialized : 547/547
 
-Chunk size in MB: 0.005126953125
+Un-Compressed Chunk size in MB: 0.005126953125
+   Compressed Chunk size in MB: 0.00040369709645669296
 
 --------
 
@@ -158,7 +158,6 @@ xarray ds[x]:
 array([-2303499.25, -2302499.25, -2301499.25, ...,  2301500.75,  2302500.75,
         2303500.75])
 Coordinates:
-    crs      |S1 ...
   * x        (x) float64 -2.303e+06 -2.302e+06 ... 2.303e+06 2.304e+06
 Attributes:
     _CoordinateAxisType:  GeoX
@@ -182,7 +181,8 @@ No. bytes stored   : 6753 (6.6K)
 Storage ratio      : 5.5
 Chunks initialized : 1/1
 
-Chunk size in MB: 0.03515625
+Un-Compressed Chunk size in MB: 0.03515625
+   Compressed Chunk size in MB: 0.006392045454545455
 
 --------
 
@@ -193,7 +193,6 @@ xarray ds[y]:
 array([-1919500.375, -1918500.375, -1917500.375, ...,  1917499.625,
         1918499.625,  1919499.625])
 Coordinates:
-    crs      |S1 ...
   * y        (y) float64 -1.92e+06 -1.919e+06 -1.918e+06 ... 1.918e+06 1.919e+06
 Attributes:
     _CoordinateAxisType:  GeoY
@@ -217,4 +216,5 @@ No. bytes stored   : 5679 (5.5K)
 Storage ratio      : 5.4
 Chunks initialized : 1/1
 
-Chunk size in MB: 0.029296875
+Un-Compressed Chunk size in MB: 0.029296875
+   Compressed Chunk size in MB: 0.005425347222222222

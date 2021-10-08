@@ -1,144 +1,2208 @@
-[22;0t]0;IPython: rechunk_retro_nwm_v21/precipChecking precip.zarr against its source files
+Checking precip.zarr against its source files
 <xarray.Dataset>
-Dimensions:   (time: 19489, y: 3840, x: 4608)
+Dimensions:   (time: 367440, y: 3840, x: 4608)
 Coordinates:
-    crs       |S1 ...
-  * time      (time) datetime64[ns] 1979-02-01 ... 1981-04-23
+  * time      (time) datetime64[ns] 1979-02-01 ... 2020-12-31T23:00:00
   * x         (x) float64 -2.303e+06 -2.302e+06 ... 2.303e+06 2.304e+06
   * y         (y) float64 -1.92e+06 -1.919e+06 ... 1.918e+06 1.919e+06
 Data variables:
     RAINRATE  (time, y, x) float32 dask.array<chunksize=(672, 350, 350), meta=np.ndarray>
+    crs       |S1 ...
 Attributes:
-    NWM_version_number:         v2.1
-    model_configuration:        AORC
-    model_initialization_time:  1981-04-01_00:00:00
-    model_output_type:          forcing
-    model_output_valid_time:    1981-04-23_00:00:00
-    model_total_valid_times:    720.0
-Checking data for 30 times
+    NWM_version_number:   v2.1
+    model_configuration:  AORC
+    model_output_type:    forcing
+
+Checking a random time in chunk #547 (of 547)...
 
 Check (non-time) static variables once
 Checking variable: RAINRATE
 Checking variable: crs
 Checking variable: x
 Checking variable: y
-
-1/30
-Checking time: 1979-02-01T00:00:00.000000000
+Checking time: 2020-12-15T01:00:00.000000000
 Checking variable: RAINRATE
 
-2/30
-Checking time: 1981-04-23T00:00:00.000000000
+Checking a random time in chunk #546 (of 547)...
+Checking time: 2020-11-26T07:00:00.000000000
 Checking variable: RAINRATE
 
-3/30
-Checking time: 1980-03-05T03:00:00.000000000
+Checking a random time in chunk #545 (of 547)...
+Checking time: 2020-11-04T07:00:00.000000000
 Checking variable: RAINRATE
 
-4/30
-Checking time: 1979-02-19T19:00:00.000000000
+Checking a random time in chunk #544 (of 547)...
+Checking time: 2020-10-03T10:00:00.000000000
 Checking variable: RAINRATE
 
-5/30
-Checking time: 1979-07-21T04:00:00.000000000
+Checking a random time in chunk #543 (of 547)...
+Checking time: 2020-08-25T02:00:00.000000000
 Checking variable: RAINRATE
 
-6/30
-Checking time: 1979-12-19T01:00:00.000000000
+Checking a random time in chunk #542 (of 547)...
+Checking time: 2020-07-31T22:00:00.000000000
 Checking variable: RAINRATE
 
-7/30
-Checking time: 1980-01-15T02:00:00.000000000
+Checking a random time in chunk #541 (of 547)...
+Checking time: 2020-06-25T05:00:00.000000000
 Checking variable: RAINRATE
 
-8/30
-Checking time: 1980-10-18T22:00:00.000000000
+Checking a random time in chunk #540 (of 547)...
+Checking time: 2020-05-29T10:00:00.000000000
 Checking variable: RAINRATE
 
-9/30
-Checking time: 1980-04-27T09:00:00.000000000
+Checking a random time in chunk #539 (of 547)...
+Checking time: 2020-05-22T04:00:00.000000000
 Checking variable: RAINRATE
 
-10/30
-Checking time: 1980-04-22T21:00:00.000000000
+Checking a random time in chunk #538 (of 547)...
+Checking time: 2020-04-25T02:00:00.000000000
 Checking variable: RAINRATE
 
-11/30
-Checking time: 1980-09-18T11:00:00.000000000
+Checking a random time in chunk #537 (of 547)...
+Checking time: 2020-03-19T01:00:00.000000000
 Checking variable: RAINRATE
 
-12/30
-Checking time: 1980-02-24T19:00:00.000000000
+Checking a random time in chunk #536 (of 547)...
+Checking time: 2020-03-01T03:00:00.000000000
 Checking variable: RAINRATE
 
-13/30
-Checking time: 1979-09-23T08:00:00.000000000
+Checking a random time in chunk #535 (of 547)...
+Checking time: 2020-01-12T08:00:00.000000000
 Checking variable: RAINRATE
 
-14/30
-Checking time: 1980-03-10T07:00:00.000000000
+Checking a random time in chunk #534 (of 547)...
+Checking time: 2019-12-27T04:00:00.000000000
 Checking variable: RAINRATE
 
-15/30
-Checking time: 1980-05-16T18:00:00.000000000
+Checking a random time in chunk #533 (of 547)...
+Checking time: 2019-11-25T05:00:00.000000000
 Checking variable: RAINRATE
 
-16/30
-Checking time: 1979-10-01T11:00:00.000000000
+Checking a random time in chunk #532 (of 547)...
+Checking time: 2019-10-20T18:00:00.000000000
 Checking variable: RAINRATE
 
-17/30
-Checking time: 1981-01-01T13:00:00.000000000
+Checking a random time in chunk #531 (of 547)...
+Checking time: 2019-10-09T13:00:00.000000000
 Checking variable: RAINRATE
 
-18/30
-Checking time: 1980-01-27T07:00:00.000000000
+Checking a random time in chunk #530 (of 547)...
+Checking time: 2019-09-05T21:00:00.000000000
 Checking variable: RAINRATE
 
-19/30
-Checking time: 1980-07-31T15:00:00.000000000
+Checking a random time in chunk #529 (of 547)...
+Checking time: 2019-08-14T15:00:00.000000000
 Checking variable: RAINRATE
 
-20/30
-Checking time: 1981-03-27T08:00:00.000000000
+Checking a random time in chunk #528 (of 547)...
+Checking time: 2019-07-20T13:00:00.000000000
 Checking variable: RAINRATE
 
-21/30
-Checking time: 1979-02-28T01:00:00.000000000
+Checking a random time in chunk #527 (of 547)...
+Checking time: 2019-06-22T10:00:00.000000000
 Checking variable: RAINRATE
 
-22/30
-Checking time: 1979-06-20T06:00:00.000000000
+Checking a random time in chunk #526 (of 547)...
+Checking time: 2019-05-04T15:00:00.000000000
 Checking variable: RAINRATE
 
-23/30
-Checking time: 1980-01-28T09:00:00.000000000
+Checking a random time in chunk #525 (of 547)...
+Checking time: 2019-04-13T06:00:00.000000000
 Checking variable: RAINRATE
 
-24/30
-Checking time: 1979-09-12T12:00:00.000000000
+Checking a random time in chunk #524 (of 547)...
+Checking time: 2019-03-17T17:00:00.000000000
 Checking variable: RAINRATE
 
-25/30
-Checking time: 1979-05-19T01:00:00.000000000
+Checking a random time in chunk #523 (of 547)...
+Checking time: 2019-02-20T15:00:00.000000000
 Checking variable: RAINRATE
 
-26/30
-Checking time: 1980-10-29T03:00:00.000000000
+Checking a random time in chunk #522 (of 547)...
+Checking time: 2019-01-20T18:00:00.000000000
 Checking variable: RAINRATE
 
-27/30
-Checking time: 1979-08-11T08:00:00.000000000
+Checking a random time in chunk #521 (of 547)...
+Checking time: 2018-12-24T13:00:00.000000000
 Checking variable: RAINRATE
 
-28/30
-Checking time: 1980-07-10T15:00:00.000000000
+Checking a random time in chunk #520 (of 547)...
+Checking time: 2018-12-04T05:00:00.000000000
 Checking variable: RAINRATE
 
-29/30
-Checking time: 1979-06-15T10:00:00.000000000
+Checking a random time in chunk #519 (of 547)...
+Checking time: 2018-10-23T00:00:00.000000000
 Checking variable: RAINRATE
 
-30/30
-Checking time: 1980-09-02T18:00:00.000000000
+Checking a random time in chunk #518 (of 547)...
+Checking time: 2018-09-21T21:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #517 (of 547)...
+Checking time: 2018-09-09T09:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #516 (of 547)...
+Checking time: 2018-08-14T02:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #515 (of 547)...
+Checking time: 2018-07-07T11:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #514 (of 547)...
+Checking time: 2018-06-11T09:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #513 (of 547)...
+Checking time: 2018-05-09T15:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #512 (of 547)...
+Checking time: 2018-04-10T15:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #511 (of 547)...
+Checking time: 2018-03-10T12:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #510 (of 547)...
+Checking time: 2018-02-12T17:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #509 (of 547)...
+Checking time: 2018-02-04T12:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #508 (of 547)...
+Checking time: 2018-01-08T13:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #507 (of 547)...
+Checking time: 2017-11-27T06:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #506 (of 547)...
+Checking time: 2017-11-01T20:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #505 (of 547)...
+Checking time: 2017-10-09T01:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #504 (of 547)...
+Checking time: 2017-09-06T08:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #503 (of 547)...
+Checking time: 2017-08-13T07:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #502 (of 547)...
+Checking time: 2017-07-06T15:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #501 (of 547)...
+Checking time: 2017-06-27T16:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #500 (of 547)...
+Checking time: 2017-05-26T23:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #499 (of 547)...
+Checking time: 2017-04-27T14:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #498 (of 547)...
+Checking time: 2017-03-19T05:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #497 (of 547)...
+Checking time: 2017-02-18T04:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #496 (of 547)...
+Checking time: 2017-01-13T10:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #495 (of 547)...
+Checking time: 2016-12-25T22:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #494 (of 547)...
+Checking time: 2016-11-24T13:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #493 (of 547)...
+Checking time: 2016-10-30T05:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #492 (of 547)...
+Checking time: 2016-10-05T04:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #491 (of 547)...
+Checking time: 2016-08-29T10:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #490 (of 547)...
+Checking time: 2016-07-30T12:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #489 (of 547)...
+Checking time: 2016-07-16T11:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #488 (of 547)...
+Checking time: 2016-06-17T11:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #487 (of 547)...
+Checking time: 2016-05-11T01:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #486 (of 547)...
+Checking time: 2016-04-19T20:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #485 (of 547)...
+Checking time: 2016-03-29T17:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #484 (of 547)...
+Checking time: 2016-02-12T03:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #483 (of 547)...
+Checking time: 2016-01-18T22:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #482 (of 547)...
+Checking time: 2015-12-22T21:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #481 (of 547)...
+Checking time: 2015-12-08T14:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #480 (of 547)...
+Checking time: 2015-10-24T22:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #479 (of 547)...
+Checking time: 2015-10-03T17:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #478 (of 547)...
+Checking time: 2015-08-30T10:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #477 (of 547)...
+Checking time: 2015-08-16T18:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #476 (of 547)...
+Checking time: 2015-07-09T05:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #475 (of 547)...
+Checking time: 2015-06-23T07:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #474 (of 547)...
+Checking time: 2015-05-14T16:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #473 (of 547)...
+Checking time: 2015-04-24T22:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #472 (of 547)...
+Checking time: 2015-03-25T04:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #471 (of 547)...
+Checking time: 2015-02-18T04:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #470 (of 547)...
+Checking time: 2015-01-31T10:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #469 (of 547)...
+Checking time: 2015-01-02T14:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #468 (of 547)...
+Checking time: 2014-12-11T18:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #467 (of 547)...
+Checking time: 2014-10-28T10:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #466 (of 547)...
+Checking time: 2014-10-05T17:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #465 (of 547)...
+Checking time: 2014-09-11T00:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #464 (of 547)...
+Checking time: 2014-08-13T16:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #463 (of 547)...
+Checking time: 2014-07-12T21:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #462 (of 547)...
+Checking time: 2014-07-01T01:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #461 (of 547)...
+Checking time: 2014-05-09T10:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #460 (of 547)...
+Checking time: 2014-04-15T12:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #459 (of 547)...
+Checking time: 2014-03-29T01:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #458 (of 547)...
+Checking time: 2014-02-21T19:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #457 (of 547)...
+Checking time: 2014-01-24T17:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #456 (of 547)...
+Checking time: 2014-01-09T12:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #455 (of 547)...
+Checking time: 2013-12-02T07:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #454 (of 547)...
+Checking time: 2013-10-28T23:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #453 (of 547)...
+Checking time: 2013-10-06T00:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #452 (of 547)...
+Checking time: 2013-09-17T23:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #451 (of 547)...
+Checking time: 2013-08-03T12:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #450 (of 547)...
+Checking time: 2013-07-13T19:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #449 (of 547)...
+Checking time: 2013-06-12T11:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #448 (of 547)...
+Checking time: 2013-05-23T16:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #447 (of 547)...
+Checking time: 2013-04-18T05:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #446 (of 547)...
+Checking time: 2013-04-10T22:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #445 (of 547)...
+Checking time: 2013-02-21T18:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #444 (of 547)...
+Checking time: 2013-01-26T21:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #443 (of 547)...
+Checking time: 2013-01-15T09:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #442 (of 547)...
+Checking time: 2012-12-07T16:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #441 (of 547)...
+Checking time: 2012-10-28T14:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #440 (of 547)...
+Checking time: 2012-10-20T12:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #439 (of 547)...
+Checking time: 2012-09-06T18:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #438 (of 547)...
+Checking time: 2012-08-03T03:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #437 (of 547)...
+Checking time: 2012-07-23T08:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #436 (of 547)...
+Checking time: 2012-06-15T21:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #435 (of 547)...
+Checking time: 2012-06-03T03:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #434 (of 547)...
+Checking time: 2012-04-16T02:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #433 (of 547)...
+Checking time: 2012-03-31T17:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #432 (of 547)...
+Checking time: 2012-02-20T13:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #431 (of 547)...
+Checking time: 2012-02-09T18:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #430 (of 547)...
+Checking time: 2011-12-26T00:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #429 (of 547)...
+Checking time: 2011-12-07T22:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #428 (of 547)...
+Checking time: 2011-11-05T16:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #427 (of 547)...
+Checking time: 2011-10-13T23:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #426 (of 547)...
+Checking time: 2011-09-18T19:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #425 (of 547)...
+Checking time: 2011-08-07T01:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #424 (of 547)...
+Checking time: 2011-07-19T02:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #423 (of 547)...
+Checking time: 2011-06-17T14:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #422 (of 547)...
+Checking time: 2011-05-29T02:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #421 (of 547)...
+Checking time: 2011-04-25T10:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #420 (of 547)...
+Checking time: 2011-03-31T04:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #419 (of 547)...
+Checking time: 2011-03-15T19:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #418 (of 547)...
+Checking time: 2011-01-23T07:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #417 (of 547)...
+Checking time: 2011-01-11T01:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #416 (of 547)...
+Checking time: 2010-12-22T06:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #415 (of 547)...
+Checking time: 2010-10-28T22:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #414 (of 547)...
+Checking time: 2010-10-08T01:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #413 (of 547)...
+Checking time: 2010-09-14T09:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #412 (of 547)...
+Checking time: 2010-08-18T12:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #411 (of 547)...
+Checking time: 2010-08-01T22:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #410 (of 547)...
+Checking time: 2010-07-03T05:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #409 (of 547)...
+Checking time: 2010-06-02T22:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #408 (of 547)...
+Checking time: 2010-04-29T22:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #407 (of 547)...
+Checking time: 2010-04-06T03:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #406 (of 547)...
+Checking time: 2010-03-05T22:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #405 (of 547)...
+Checking time: 2010-01-27T21:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #404 (of 547)...
+Checking time: 2010-01-11T21:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #403 (of 547)...
+Checking time: 2009-12-13T05:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #402 (of 547)...
+Checking time: 2009-11-06T08:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #401 (of 547)...
+Checking time: 2009-10-20T07:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #400 (of 547)...
+Checking time: 2009-09-27T11:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #399 (of 547)...
+Checking time: 2009-08-08T06:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #398 (of 547)...
+Checking time: 2009-07-23T10:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #397 (of 547)...
+Checking time: 2009-07-06T06:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #396 (of 547)...
+Checking time: 2009-05-18T11:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #395 (of 547)...
+Checking time: 2009-05-01T19:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #394 (of 547)...
+Checking time: 2009-03-30T16:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #393 (of 547)...
+Checking time: 2009-02-27T01:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #392 (of 547)...
+Checking time: 2009-02-17T07:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #391 (of 547)...
+Checking time: 2008-12-25T17:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #390 (of 547)...
+Checking time: 2008-12-22T01:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #389 (of 547)...
+Checking time: 2008-11-21T06:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #388 (of 547)...
+Checking time: 2008-10-17T03:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #387 (of 547)...
+Checking time: 2008-09-09T00:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #386 (of 547)...
+Checking time: 2008-08-24T13:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #385 (of 547)...
+Checking time: 2008-08-01T17:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #384 (of 547)...
+Checking time: 2008-07-02T07:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #383 (of 547)...
+Checking time: 2008-06-05T18:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #382 (of 547)...
+Checking time: 2008-05-02T18:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #381 (of 547)...
+Checking time: 2008-03-24T07:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #380 (of 547)...
+Checking time: 2008-03-01T04:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #379 (of 547)...
+Checking time: 2008-02-07T02:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #378 (of 547)...
+Checking time: 2008-01-09T07:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #377 (of 547)...
+Checking time: 2007-12-18T07:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #376 (of 547)...
+Checking time: 2007-11-23T01:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #375 (of 547)...
+Checking time: 2007-10-29T14:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #374 (of 547)...
+Checking time: 2007-10-01T04:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #373 (of 547)...
+Checking time: 2007-08-29T15:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #372 (of 547)...
+Checking time: 2007-07-21T21:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #371 (of 547)...
+Checking time: 2007-07-01T15:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #370 (of 547)...
+Checking time: 2007-06-05T18:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #369 (of 547)...
+Checking time: 2007-05-08T18:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #368 (of 547)...
+Checking time: 2007-04-01T05:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #367 (of 547)...
+Checking time: 2007-03-21T09:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #366 (of 547)...
+Checking time: 2007-02-08T21:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #365 (of 547)...
+Checking time: 2007-01-03T07:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #364 (of 547)...
+Checking time: 2006-12-17T10:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #363 (of 547)...
+Checking time: 2006-11-20T04:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #362 (of 547)...
+Checking time: 2006-10-15T19:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #361 (of 547)...
+Checking time: 2006-09-15T01:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #360 (of 547)...
+Checking time: 2006-09-05T07:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #359 (of 547)...
+Checking time: 2006-07-18T12:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #358 (of 547)...
+Checking time: 2006-06-29T06:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #357 (of 547)...
+Checking time: 2006-05-29T04:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #356 (of 547)...
+Checking time: 2006-04-26T22:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #355 (of 547)...
+Checking time: 2006-03-25T21:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #354 (of 547)...
+Checking time: 2006-02-23T12:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #353 (of 547)...
+Checking time: 2006-01-28T22:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #352 (of 547)...
+Checking time: 2006-01-09T06:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #351 (of 547)...
+Checking time: 2005-12-27T03:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #350 (of 547)...
+Checking time: 2005-11-17T00:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #349 (of 547)...
+Checking time: 2005-10-08T16:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #348 (of 547)...
+Checking time: 2005-10-02T06:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #347 (of 547)...
+Checking time: 2005-08-12T23:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #346 (of 547)...
+Checking time: 2005-07-20T04:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #345 (of 547)...
+Checking time: 2005-06-18T07:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #344 (of 547)...
+Checking time: 2005-05-28T18:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #343 (of 547)...
+Checking time: 2005-04-22T22:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #342 (of 547)...
+Checking time: 2005-03-25T03:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #341 (of 547)...
+Checking time: 2005-03-03T12:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #340 (of 547)...
+Checking time: 2005-02-01T03:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #339 (of 547)...
+Checking time: 2005-01-13T11:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #338 (of 547)...
+Checking time: 2004-12-04T20:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #337 (of 547)...
+Checking time: 2004-11-15T16:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #336 (of 547)...
+Checking time: 2004-10-30T10:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #335 (of 547)...
+Checking time: 2004-09-29T06:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #334 (of 547)...
+Checking time: 2004-09-05T23:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #333 (of 547)...
+Checking time: 2004-07-20T01:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #332 (of 547)...
+Checking time: 2004-07-04T03:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #331 (of 547)...
+Checking time: 2004-05-24T17:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #330 (of 547)...
+Checking time: 2004-04-26T19:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #329 (of 547)...
+Checking time: 2004-04-19T04:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #328 (of 547)...
+Checking time: 2004-03-13T11:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #327 (of 547)...
+Checking time: 2004-02-05T00:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #326 (of 547)...
+Checking time: 2004-01-03T04:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #325 (of 547)...
+Checking time: 2003-12-29T22:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #324 (of 547)...
+Checking time: 2003-11-06T16:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #323 (of 547)...
+Checking time: 2003-10-19T00:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #322 (of 547)...
+Checking time: 2003-10-02T04:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #321 (of 547)...
+Checking time: 2003-08-21T18:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #320 (of 547)...
+Checking time: 2003-07-27T04:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #319 (of 547)...
+Checking time: 2003-07-15T12:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #318 (of 547)...
+Checking time: 2003-06-13T06:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #317 (of 547)...
+Checking time: 2003-05-02T04:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #316 (of 547)...
+Checking time: 2003-04-23T02:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #315 (of 547)...
+Checking time: 2003-03-15T11:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #314 (of 547)...
+Checking time: 2003-02-20T17:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #313 (of 547)...
+Checking time: 2003-01-18T17:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #312 (of 547)...
+Checking time: 2002-12-16T18:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #311 (of 547)...
+Checking time: 2002-11-27T03:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #310 (of 547)...
+Checking time: 2002-11-04T13:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #309 (of 547)...
+Checking time: 2002-09-26T18:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #308 (of 547)...
+Checking time: 2002-09-08T04:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #307 (of 547)...
+Checking time: 2002-07-27T10:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #306 (of 547)...
+Checking time: 2002-06-25T23:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #305 (of 547)...
+Checking time: 2002-06-09T23:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #304 (of 547)...
+Checking time: 2002-05-01T06:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #303 (of 547)...
+Checking time: 2002-04-19T00:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #302 (of 547)...
+Checking time: 2002-03-09T14:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #301 (of 547)...
+Checking time: 2002-02-26T09:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #300 (of 547)...
+Checking time: 2002-01-25T16:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #299 (of 547)...
+Checking time: 2001-12-14T09:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #298 (of 547)...
+Checking time: 2001-12-05T06:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #297 (of 547)...
+Checking time: 2001-10-24T11:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #296 (of 547)...
+Checking time: 2001-09-27T04:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #295 (of 547)...
+Checking time: 2001-09-06T17:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #294 (of 547)...
+Checking time: 2001-08-09T01:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #293 (of 547)...
+Checking time: 2001-07-06T21:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #292 (of 547)...
+Checking time: 2001-05-29T00:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #291 (of 547)...
+Checking time: 2001-05-20T15:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #290 (of 547)...
+Checking time: 2001-04-14T21:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #289 (of 547)...
+Checking time: 2001-03-16T09:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #288 (of 547)...
+Checking time: 2001-02-25T05:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #287 (of 547)...
+Checking time: 2001-01-24T01:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #286 (of 547)...
+Checking time: 2000-12-18T04:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #285 (of 547)...
+Checking time: 2000-11-10T14:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #284 (of 547)...
+Checking time: 2000-10-19T01:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #283 (of 547)...
+Checking time: 2000-10-07T12:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #282 (of 547)...
+Checking time: 2000-08-19T02:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #281 (of 547)...
+Checking time: 2000-08-12T13:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #280 (of 547)...
+Checking time: 2000-07-06T22:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #279 (of 547)...
+Checking time: 2000-06-08T14:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #278 (of 547)...
+Checking time: 2000-05-21T08:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #277 (of 547)...
+Checking time: 2000-04-22T02:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #276 (of 547)...
+Checking time: 2000-03-23T22:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #275 (of 547)...
+Checking time: 2000-02-06T23:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #274 (of 547)...
+Checking time: 2000-01-26T06:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #273 (of 547)...
+Checking time: 1999-12-24T14:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #272 (of 547)...
+Checking time: 1999-11-27T15:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #271 (of 547)...
+Checking time: 1999-10-25T15:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #270 (of 547)...
+Checking time: 1999-09-23T12:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #269 (of 547)...
+Checking time: 1999-08-19T07:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #268 (of 547)...
+Checking time: 1999-07-29T08:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #267 (of 547)...
+Checking time: 1999-07-17T00:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #266 (of 547)...
+Checking time: 1999-06-18T05:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #265 (of 547)...
+Checking time: 1999-05-09T17:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #264 (of 547)...
+Checking time: 1999-04-28T00:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #263 (of 547)...
+Checking time: 1999-03-27T05:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #262 (of 547)...
+Checking time: 1999-02-07T19:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #261 (of 547)...
+Checking time: 1999-01-09T17:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #260 (of 547)...
+Checking time: 1998-12-25T10:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #259 (of 547)...
+Checking time: 1998-11-17T07:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #258 (of 547)...
+Checking time: 1998-10-25T08:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #257 (of 547)...
+Checking time: 1998-09-24T12:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #256 (of 547)...
+Checking time: 1998-09-10T01:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #255 (of 547)...
+Checking time: 1998-07-29T00:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #254 (of 547)...
+Checking time: 1998-06-29T20:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #253 (of 547)...
+Checking time: 1998-06-11T12:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #252 (of 547)...
+Checking time: 1998-05-06T18:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #251 (of 547)...
+Checking time: 1998-04-11T03:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #250 (of 547)...
+Checking time: 1998-03-05T07:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #249 (of 547)...
+Checking time: 1998-02-09T15:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #248 (of 547)...
+Checking time: 1998-01-18T04:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #247 (of 547)...
+Checking time: 1998-01-01T10:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #246 (of 547)...
+Checking time: 1997-11-17T10:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #245 (of 547)...
+Checking time: 1997-11-11T04:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #244 (of 547)...
+Checking time: 1997-10-01T19:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #243 (of 547)...
+Checking time: 1997-09-15T01:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #242 (of 547)...
+Checking time: 1997-08-16T16:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #241 (of 547)...
+Checking time: 1997-07-12T11:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #240 (of 547)...
+Checking time: 1997-06-17T07:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #239 (of 547)...
+Checking time: 1997-05-09T03:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #238 (of 547)...
+Checking time: 1997-04-17T05:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #237 (of 547)...
+Checking time: 1997-03-19T17:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #236 (of 547)...
+Checking time: 1997-02-22T23:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #235 (of 547)...
+Checking time: 1997-01-20T08:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #234 (of 547)...
+Checking time: 1996-12-12T10:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #233 (of 547)...
+Checking time: 1996-11-19T09:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #232 (of 547)...
+Checking time: 1996-11-12T19:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #231 (of 547)...
+Checking time: 1996-09-27T02:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #230 (of 547)...
+Checking time: 1996-09-05T15:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #229 (of 547)...
+Checking time: 1996-07-30T00:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #228 (of 547)...
+Checking time: 1996-06-30T14:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #227 (of 547)...
+Checking time: 1996-06-02T18:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #226 (of 547)...
+Checking time: 1996-05-13T02:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #225 (of 547)...
+Checking time: 1996-04-05T03:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #224 (of 547)...
+Checking time: 1996-04-03T20:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #223 (of 547)...
+Checking time: 1996-03-02T11:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #222 (of 547)...
+Checking time: 1996-01-21T04:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #221 (of 547)...
+Checking time: 1995-12-21T20:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #220 (of 547)...
+Checking time: 1995-12-05T04:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #219 (of 547)...
+Checking time: 1995-11-05T06:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #218 (of 547)...
+Checking time: 1995-10-17T15:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #217 (of 547)...
+Checking time: 1995-09-08T08:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #216 (of 547)...
+Checking time: 1995-08-13T16:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #215 (of 547)...
+Checking time: 1995-07-16T23:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #214 (of 547)...
+Checking time: 1995-06-25T09:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #213 (of 547)...
+Checking time: 1995-05-08T02:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #212 (of 547)...
+Checking time: 1995-05-03T04:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #211 (of 547)...
+Checking time: 1995-03-09T00:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #210 (of 547)...
+Checking time: 1995-03-02T16:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #209 (of 547)...
+Checking time: 1995-01-19T01:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #208 (of 547)...
+Checking time: 1995-01-02T13:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #207 (of 547)...
+Checking time: 1994-11-25T20:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #206 (of 547)...
+Checking time: 1994-11-10T13:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #205 (of 547)...
+Checking time: 1994-10-15T12:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #204 (of 547)...
+Checking time: 1994-09-12T13:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #203 (of 547)...
+Checking time: 1994-08-09T14:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #202 (of 547)...
+Checking time: 1994-07-20T00:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #201 (of 547)...
+Checking time: 1994-06-14T12:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #200 (of 547)...
+Checking time: 1994-05-23T18:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #199 (of 547)...
+Checking time: 1994-04-09T15:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #198 (of 547)...
+Checking time: 1994-04-02T05:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #197 (of 547)...
+Checking time: 1994-02-22T07:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #196 (of 547)...
+Checking time: 1994-01-13T20:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #195 (of 547)...
+Checking time: 1993-12-28T19:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #194 (of 547)...
+Checking time: 1993-12-13T13:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #193 (of 547)...
+Checking time: 1993-11-17T08:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #192 (of 547)...
+Checking time: 1993-09-28T16:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #191 (of 547)...
+Checking time: 1993-08-30T21:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #190 (of 547)...
+Checking time: 1993-08-06T03:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #189 (of 547)...
+Checking time: 1993-07-28T08:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #188 (of 547)...
+Checking time: 1993-06-12T17:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #187 (of 547)...
+Checking time: 1993-05-14T08:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #186 (of 547)...
+Checking time: 1993-04-26T12:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #185 (of 547)...
+Checking time: 1993-04-04T11:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #184 (of 547)...
+Checking time: 1993-03-05T13:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #183 (of 547)...
+Checking time: 1993-02-09T23:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #182 (of 547)...
+Checking time: 1992-12-31T07:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #181 (of 547)...
+Checking time: 1992-12-13T10:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #180 (of 547)...
+Checking time: 1992-10-31T00:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #179 (of 547)...
+Checking time: 1992-10-18T02:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #178 (of 547)...
+Checking time: 1992-09-18T10:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #177 (of 547)...
+Checking time: 1992-08-03T01:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #176 (of 547)...
+Checking time: 1992-07-19T21:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #175 (of 547)...
+Checking time: 1992-06-04T16:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #174 (of 547)...
+Checking time: 1992-05-27T09:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #173 (of 547)...
+Checking time: 1992-04-12T20:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #172 (of 547)...
+Checking time: 1992-04-03T23:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #171 (of 547)...
+Checking time: 1992-02-21T17:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #170 (of 547)...
+Checking time: 1992-01-18T02:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #169 (of 547)...
+Checking time: 1991-12-21T17:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #168 (of 547)...
+Checking time: 1991-12-17T16:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #167 (of 547)...
+Checking time: 1991-10-24T07:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #166 (of 547)...
+Checking time: 1991-10-10T14:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #165 (of 547)...
+Checking time: 1991-09-06T07:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #164 (of 547)...
+Checking time: 1991-08-28T16:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #163 (of 547)...
+Checking time: 1991-07-31T21:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #162 (of 547)...
+Checking time: 1991-06-18T15:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #161 (of 547)...
+Checking time: 1991-05-13T21:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #160 (of 547)...
+Checking time: 1991-05-07T00:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #159 (of 547)...
+Checking time: 1991-04-06T15:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #158 (of 547)...
+Checking time: 1991-02-28T02:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #157 (of 547)...
+Checking time: 1991-02-09T05:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #156 (of 547)...
+Checking time: 1990-12-30T11:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #155 (of 547)...
+Checking time: 1990-12-08T22:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #154 (of 547)...
+Checking time: 1990-11-06T18:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #153 (of 547)...
+Checking time: 1990-10-05T16:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #152 (of 547)...
+Checking time: 1990-09-18T01:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #151 (of 547)...
+Checking time: 1990-08-29T01:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #150 (of 547)...
+Checking time: 1990-07-18T23:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #149 (of 547)...
+Checking time: 1990-06-26T22:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #148 (of 547)...
+Checking time: 1990-05-14T10:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #147 (of 547)...
+Checking time: 1990-04-24T21:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #146 (of 547)...
+Checking time: 1990-03-24T18:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #145 (of 547)...
+Checking time: 1990-03-13T18:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #144 (of 547)...
+Checking time: 1990-02-02T09:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #143 (of 547)...
+Checking time: 1989-12-24T01:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #142 (of 547)...
+Checking time: 1989-11-29T09:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #141 (of 547)...
+Checking time: 1989-11-09T00:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #140 (of 547)...
+Checking time: 1989-10-23T16:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #139 (of 547)...
+Checking time: 1989-09-07T18:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #138 (of 547)...
+Checking time: 1989-08-13T14:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #137 (of 547)...
+Checking time: 1989-07-27T16:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #136 (of 547)...
+Checking time: 1989-06-11T18:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #135 (of 547)...
+Checking time: 1989-06-05T22:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #134 (of 547)...
+Checking time: 1989-05-01T23:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #133 (of 547)...
+Checking time: 1989-03-22T08:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #132 (of 547)...
+Checking time: 1989-02-23T12:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #131 (of 547)...
+Checking time: 1989-01-23T03:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #130 (of 547)...
+Checking time: 1988-12-31T10:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #129 (of 547)...
+Checking time: 1988-12-14T01:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #128 (of 547)...
+Checking time: 1988-11-22T22:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #127 (of 547)...
+Checking time: 1988-10-09T11:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #126 (of 547)...
+Checking time: 1988-09-26T06:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #125 (of 547)...
+Checking time: 1988-08-20T17:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #124 (of 547)...
+Checking time: 1988-07-12T17:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #123 (of 547)...
+Checking time: 1988-06-13T05:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #122 (of 547)...
+Checking time: 1988-05-30T06:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #121 (of 547)...
+Checking time: 1988-04-22T19:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #120 (of 547)...
+Checking time: 1988-03-29T10:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #119 (of 547)...
+Checking time: 1988-02-21T01:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #118 (of 547)...
+Checking time: 1988-02-15T20:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #117 (of 547)...
+Checking time: 1988-01-04T16:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #116 (of 547)...
+Checking time: 1987-12-07T23:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #115 (of 547)...
+Checking time: 1987-11-21T06:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #114 (of 547)...
+Checking time: 1987-10-17T18:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #113 (of 547)...
+Checking time: 1987-09-14T21:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #112 (of 547)...
+Checking time: 1987-08-17T21:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #111 (of 547)...
+Checking time: 1987-07-13T19:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #110 (of 547)...
+Checking time: 1987-07-03T00:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #109 (of 547)...
+Checking time: 1987-05-22T02:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #108 (of 547)...
+Checking time: 1987-05-06T09:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #107 (of 547)...
+Checking time: 1987-04-01T02:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #106 (of 547)...
+Checking time: 1987-02-26T09:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #105 (of 547)...
+Checking time: 1987-02-09T04:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #104 (of 547)...
+Checking time: 1986-12-30T05:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #103 (of 547)...
+Checking time: 1986-12-13T12:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #102 (of 547)...
+Checking time: 1986-11-18T17:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #101 (of 547)...
+Checking time: 1986-10-23T11:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #100 (of 547)...
+Checking time: 1986-09-24T03:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #99 (of 547)...
+Checking time: 1986-08-27T08:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #98 (of 547)...
+Checking time: 1986-07-16T14:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #97 (of 547)...
+Checking time: 1986-07-08T10:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #96 (of 547)...
+Checking time: 1986-06-01T17:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #95 (of 547)...
+Checking time: 1986-05-05T07:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #94 (of 547)...
+Checking time: 1986-04-03T01:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #93 (of 547)...
+Checking time: 1986-03-19T04:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #92 (of 547)...
+Checking time: 1986-02-11T23:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #91 (of 547)...
+Checking time: 1985-12-29T21:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #90 (of 547)...
+Checking time: 1985-12-22T01:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #89 (of 547)...
+Checking time: 1985-11-02T16:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #88 (of 547)...
+Checking time: 1985-10-22T21:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #87 (of 547)...
+Checking time: 1985-09-18T08:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #86 (of 547)...
+Checking time: 1985-09-02T06:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #85 (of 547)...
+Checking time: 1985-07-11T02:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #84 (of 547)...
+Checking time: 1985-06-19T00:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #83 (of 547)...
+Checking time: 1985-06-08T22:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #82 (of 547)...
+Checking time: 1985-04-18T22:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #81 (of 547)...
+Checking time: 1985-04-09T07:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #80 (of 547)...
+Checking time: 1985-02-28T16:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #79 (of 547)...
+Checking time: 1985-02-16T20:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #78 (of 547)...
+Checking time: 1985-01-19T20:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #77 (of 547)...
+Checking time: 1984-12-19T17:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #76 (of 547)...
+Checking time: 1984-11-21T02:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #75 (of 547)...
+Checking time: 1984-10-08T03:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #74 (of 547)...
+Checking time: 1984-09-21T17:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #73 (of 547)...
+Checking time: 1984-09-01T06:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #72 (of 547)...
+Checking time: 1984-07-22T16:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #71 (of 547)...
+Checking time: 1984-06-22T00:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #70 (of 547)...
+Checking time: 1984-06-06T12:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #69 (of 547)...
+Checking time: 1984-04-20T12:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #68 (of 547)...
+Checking time: 1984-04-05T23:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #67 (of 547)...
+Checking time: 1984-03-02T13:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #66 (of 547)...
+Checking time: 1984-02-12T15:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #65 (of 547)...
+Checking time: 1984-01-14T23:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #64 (of 547)...
+Checking time: 1983-12-01T11:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #63 (of 547)...
+Checking time: 1983-11-24T05:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #62 (of 547)...
+Checking time: 1983-10-28T08:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #61 (of 547)...
+Checking time: 1983-09-25T22:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #60 (of 547)...
+Checking time: 1983-09-06T01:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #59 (of 547)...
+Checking time: 1983-07-26T12:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #58 (of 547)...
+Checking time: 1983-07-10T14:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #57 (of 547)...
+Checking time: 1983-06-04T05:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #56 (of 547)...
+Checking time: 1983-05-10T15:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #55 (of 547)...
+Checking time: 1983-04-08T10:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #54 (of 547)...
+Checking time: 1983-03-06T17:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #53 (of 547)...
+Checking time: 1983-02-08T03:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #52 (of 547)...
+Checking time: 1983-01-02T12:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #51 (of 547)...
+Checking time: 1982-12-14T05:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #50 (of 547)...
+Checking time: 1982-11-06T08:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #49 (of 547)...
+Checking time: 1982-10-24T22:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #48 (of 547)...
+Checking time: 1982-09-27T16:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #47 (of 547)...
+Checking time: 1982-08-24T21:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #46 (of 547)...
+Checking time: 1982-08-10T05:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #45 (of 547)...
+Checking time: 1982-07-01T14:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #44 (of 547)...
+Checking time: 1982-06-07T05:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #43 (of 547)...
+Checking time: 1982-04-26T02:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #42 (of 547)...
+Checking time: 1982-04-07T08:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #41 (of 547)...
+Checking time: 1982-03-17T16:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #40 (of 547)...
+Checking time: 1982-02-15T06:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #39 (of 547)...
+Checking time: 1982-01-16T21:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #38 (of 547)...
+Checking time: 1981-12-22T23:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #37 (of 547)...
+Checking time: 1981-11-12T13:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #36 (of 547)...
+Checking time: 1981-11-01T11:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #35 (of 547)...
+Checking time: 1981-10-03T08:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #34 (of 547)...
+Checking time: 1981-09-07T11:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #33 (of 547)...
+Checking time: 1981-07-17T03:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #32 (of 547)...
+Checking time: 1981-07-13T17:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #31 (of 547)...
+Checking time: 1981-06-14T00:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #30 (of 547)...
+Checking time: 1981-04-28T09:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #29 (of 547)...
+Checking time: 1981-04-03T04:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #28 (of 547)...
+Checking time: 1981-03-17T04:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #27 (of 547)...
+Checking time: 1981-02-09T00:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #26 (of 547)...
+Checking time: 1981-01-25T16:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #25 (of 547)...
+Checking time: 1980-12-24T07:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #24 (of 547)...
+Checking time: 1980-11-27T19:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #23 (of 547)...
+Checking time: 1980-10-28T01:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #22 (of 547)...
+Checking time: 1980-09-14T02:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #21 (of 547)...
+Checking time: 1980-08-26T17:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #20 (of 547)...
+Checking time: 1980-08-03T12:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #19 (of 547)...
+Checking time: 1980-07-09T11:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #18 (of 547)...
+Checking time: 1980-06-03T02:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #17 (of 547)...
+Checking time: 1980-05-19T05:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #16 (of 547)...
+Checking time: 1980-03-29T16:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #15 (of 547)...
+Checking time: 1980-03-18T15:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #14 (of 547)...
+Checking time: 1980-02-03T20:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #13 (of 547)...
+Checking time: 1980-01-07T03:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #12 (of 547)...
+Checking time: 1979-12-14T01:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #11 (of 547)...
+Checking time: 1979-12-04T07:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #10 (of 547)...
+Checking time: 1979-11-01T06:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #9 (of 547)...
+Checking time: 1979-10-10T00:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #8 (of 547)...
+Checking time: 1979-09-10T17:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #7 (of 547)...
+Checking time: 1979-08-10T16:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #6 (of 547)...
+Checking time: 1979-07-18T07:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #5 (of 547)...
+Checking time: 1979-06-08T17:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #4 (of 547)...
+Checking time: 1979-05-01T16:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #3 (of 547)...
+Checking time: 1979-03-29T23:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #2 (of 547)...
+Checking time: 1979-03-17T08:00:00.000000000
+Checking variable: RAINRATE
+
+Checking a random time in chunk #1 (of 547)...
+Checking time: 1979-02-21T04:00:00.000000000
 Checking variable: RAINRATE
