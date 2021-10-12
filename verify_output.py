@@ -1,4 +1,6 @@
-#!/usr/bin/env python3
+#!/glade/work/jamesmcc/python_envs/379zr/bin/ipython --pdb
+
+# #!/usr/bin/env python3
 import warnings
 
 with warnings.catch_warnings():
@@ -8,6 +10,7 @@ with warnings.catch_warnings():
     import pathlib
     import random
     import sys
+    import time
     import xarray as xr
 
 
@@ -22,14 +25,14 @@ type_pattern_dict = {
 
 
 
-def main(file_rechunked):
+def main(file_rechunked, start_chunk, end_chunk):
     pattern = type_pattern_dict[file_rechunked.name]
 
     orig_dir = pathlib.Path("/glade/scratch/zhangyx/WRF-Hydro/model.data.v2.1")
     if file_rechunked.name == 'precip.zarr':
         orig_dir = pathlib.Path(
             '/glade/scratch/jamesmcc/aorc_forcing_symlinks')
-    
+
     # Open the rechunked zarr output
     ds = xr.open_zarr(file_rechunked)
     print(f"Checking {file_rechunked.name} against its source files")
@@ -40,12 +43,26 @@ def main(file_rechunked):
     dv0 = ds[data_vars[0]]
     time_ind = dv0.dims.index('time')
     time_chunks = dv0.chunks[time_ind]
-    n_time_chunks = len(time_chunks)
 
     check_static_variables = True
 
-    for cc in list(reversed(range(n_time_chunks))):
-        print(f'\nChecking a random time in chunk #{cc+1} (of {n_time_chunks})...', flush=True)
+    if start_chunk is None or end_chunk is None:
+        n_time_chunks = len(time_chunks)
+        chunk_list = list(reversed(range(n_time_chunks)))
+    else:
+        n_time_chunks = end_chunk - start_chunk + 1
+        chunk_list = (
+            list(reversed(range(start_chunk, end_chunk + 1))))
+
+    for cc in chunk_list:
+        timer_start = time.perf_counter()
+        if start_chunk is None or end_chunk is None:
+            print(f'\nChecking a random time in chunk #{cc+1} (of {n_time_chunks})...', flush=True)
+        else:
+            print(
+                f'\nChecking a random time in chunk {cc} '
+                f'(in reversed(range({start_chunk}, {end_chunk} + 1)))',
+                flush=True)
 
         ind_chunk_first_time = sum(time_chunks[0:cc])
         n_samples = 1
@@ -63,6 +80,8 @@ def main(file_rechunked):
         if check_static_variables:
             print(f"\nCheck (non-time) static variables once")
             for vv in ds.variables:
+                if 'time' in ds[vv].dims:
+                    continue
                 if vv == "time":
                     continue
                 if file_rechunked.name == 'chrtout.zarr':
@@ -90,7 +109,7 @@ def main(file_rechunked):
             if vv == "time":
                 continue
             if "time" in ds[vv].dims:
-                print(f"Checking variable: {vv}")
+                print(f"Checking variable: {vv}", flush=True)
                 diffs = ds_random[vv].values - ds[vv].isel(time=rr).values
                 if np.isnan(diffs).any():
                     n_nans_diff = np.isnan(diffs).sum()
@@ -101,16 +120,26 @@ def main(file_rechunked):
                 else:
                     assert np.min(np.abs(diffs)) < 1e-8
 
+        timer_end = time.perf_counter()
+        print(f"Time for this file: {timer_end - timer_start:0.4f} seconds")        
+
 
 if __name__ == "__main__":
     args = sys.argv
     # print(args)
-    if len(args) != 2:
+    if len(args) != 2 and len(args) != 4:
         raise ValueError("verify_output.py takes a single arg for a valid file")
     file_rechunked = pathlib.Path(args[1])
+    if len(args) == 4:
+        start_chunk = int(args[2])
+        end_chunk = int(args[3])
+    else:
+        start_chunk = None
+        end_chunk = None
+        
     if not file_rechunked.exists():
         raise FileExistsError(f"File does not exist: {str(file_rechunked)}")
 
-    result = main(file_rechunked)
+    result = main(file_rechunked, start_chunk=start_chunk, end_chunk=end_chunk)
 
     sys.exit(result)

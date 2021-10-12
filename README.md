@@ -4,8 +4,9 @@ Authors: _James McCreight (NCAR), Ishita Srivastava (NCAR), and Rich Signell (US
 
 ## Overview
 The National Water Model (NWM) version 2.1 retrospective simulation spans 42-years (Feb 1979 - Dec 2020). The model
-domain is the continential US. Inputs are hourly and outputs are provided at hourly or 3-hourly resolution (more details
-provide below and in [this document](https://drive.google.com/file/d/1zUtBZ_SM7uHqNDHLdOwGvfasVFMHfH6a/view)).
+domain is the continential US. Inputs are hourly and outputs are provided at hourly or 3-hourly resolution. Additional details
+are provided below and in this
+[retrospective overview document](https://github.com/NCAR/rechunk_retro_nwm_v21/blob/main/ancillary/NWMv2.1_42YrRetrospective_OutputVarsFullPhysicsRun.pdf).
 
 The model writes separate files at each output time. Within those individual files the data are not chunked 
 in space. In the use case of opening a full timeseries at a single point or a sub-region, the user would be required to 
@@ -18,7 +19,7 @@ Examples of use cases are supplied, including re-rechunking.
 
 
 ## Data overview
-Six separate zarr stores have been created, corresponding closely to the model output files, and their time resolution is noted
+Six separate zarr stores have been created, corresponding closely to the model output files. The time resolution is noted for each product. 
 
 * lakeout: Output from the lake model (hourly, 5.5GB)
 * gwout: Output from the groundwater model (hourly, 1.7TB)
@@ -34,7 +35,7 @@ below and via accompanying notebooks.
 
 ## Data Access
 
-The data are currently pending delivery to AWS cloud as are further details here.
+*The data are currently pending delivery to AWS cloud as are further details here.*
 
 For those with access to NCAR computing resources, these can alternatively be found at the following paths:
 ```
