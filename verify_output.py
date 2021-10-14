@@ -1,18 +1,29 @@
-#!/glade/work/jamesmcc/python_envs/379zr/bin/ipython --pdb
-
-# #!/usr/bin/env python3
+#!/usr/bin/env python3
+###!/glade/work/jamesmcc/python_envs/379zr/bin/ipython --pdb
 import warnings
 
 with warnings.catch_warnings():
     warnings.simplefilter("ignore")
     import numpy as np
+    import os
     import pandas as pd
     import pathlib
     import random
+    import socket
     import sys
     import time
     import xarray as xr
 
+    import dask
+    from dask.distributed import Client, progress, LocalCluster, performance_report
+    from dask_jobqueue import PBSCluster
+
+# using dask speeds this up.    
+n_workers = 6
+n_cores = 1
+queue = "casper"
+cluster_mem_gb = 5
+wall_time = "09:00:00"
 
 type_pattern_dict = {
     "chrtout.zarr": "CHRTOUT_DOMAIN1.comp",
@@ -24,9 +35,37 @@ type_pattern_dict = {
 }
 
 
-
 def main(file_rechunked, start_chunk, end_chunk):
     pattern = type_pattern_dict[file_rechunked.name]
+
+    print("Set cluster")
+    cluster = PBSCluster(
+        cores=n_cores,
+        memory=f"{cluster_mem_gb}GB",
+        queue=queue,
+        project="NRAL0017",
+        walltime=wall_time,
+        death_timeout=75,
+    )
+    dask.config.set({"distributed.dashboard.link": "/{port}/status"})
+    print("Scale cluster")
+    cluster.adapt(maximum=n_workers, minimum=n_workers)
+    print(f"Set client")
+    client = Client(cluster)
+    # print(client)
+    dash_link = client.dashboard_link
+    port = dash_link.split("/")[1]
+    hostname = socket.gethostname()
+    user = os.environ["USER"]
+    print(f"Tunnel to compute node from local machine:")
+    print(f"ssh -NL {port}: {hostname}:{port}{user}@cheyenne.ucar.edu")
+    print(f"in local browser: ")
+    print(f"http://localhost:{port}/status")
+    # numcodecs.blosc.use_threads = False
+    # fraction of worker memory for each chunk (seems to be the max possible)
+    chunk_mem_factor = 0.9
+    # print(cluster.worker_spec[0]['options']['memory_limit'])
+    max_mem = f"{format(chunk_mem_factor * cluster_mem_gb / n_workers, '.2f')}GB"
 
     orig_dir = pathlib.Path("/glade/scratch/zhangyx/WRF-Hydro/model.data.v2.1")
     if file_rechunked.name == 'precip.zarr':

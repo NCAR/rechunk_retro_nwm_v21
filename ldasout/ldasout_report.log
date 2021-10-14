@@ -1,7 +1,7 @@
 
 -------------------------------------------------------
-Output file report: /glade/p/cisl/nwc/ishitas/zarr_new/ldasout/ldasout.zarr
-Total file size: 1.5T
+Output file report: /glade/p/datashare/ishitas/nwm_retro_v2.1/ldasout.zarr
+Total file size: 32T
 Dataset overviews:
 zarr ds.info:
 Name        : /
@@ -18,9 +18,9 @@ Arrays      : ACCET, ACSNOM, ALBEDO, ALBSND, ALBSNI, COSZ, EDIR, FIRA, FSA,
 
 xarray ds.info:
 <xarray.Dataset>
-Dimensions:   (time: 5856, y: 3840, x: 4608, vis_nir: 2, soil_layers_stag: 4)
+Dimensions:   (time: 122479, y: 3840, x: 4608, vis_nir: 2, soil_layers_stag: 4)
 Coordinates:
-  * time      (time) datetime64[ns] 1979-02-10 ... 1981-02-10T21:00:00
+  * time      (time) datetime64[ns] 1979-02-01T03:00:00 ... 2020-12-31T21:00:00
   * x         (x) float64 -2.303e+06 -2.302e+06 ... 2.303e+06 2.304e+06
   * y         (y) float64 -1.92e+06 -1.919e+06 ... 1.918e+06 1.919e+06
 Dimensions without coordinates: vis_nir, soil_layers_stag
@@ -39,16 +39,13 @@ Data variables: (12/20)
     TRAD      (time, y, x) float64 dask.array<chunksize=(224, 350, 350), meta=np.ndarray>
     UGDRNOFF  (time, y, x) float64 dask.array<chunksize=(224, 350, 350), meta=np.ndarray>
 Attributes:
-    Conventions:                CF-1.6
-    GDAL_DataType:              Generic
-    TITLE:                      OUTPUT FROM WRF-Hydro v5.2.0-beta2
-    code_version:               v5.2.0-beta2
-    model_configuration:        retrospective
-    model_initialization_time:  1981-01-01_00:00:00
-    model_output_type:          land
-    model_output_valid_time:    1981-02-07_00:00:00
-    model_total_valid_times:    720
-    proj4:                      +proj=lcc +units=m +a=6370000.0 +b=6370000.0 ...
+    Conventions:          CF-1.6
+    GDAL_DataType:        Generic
+    TITLE:                OUTPUT FROM WRF-Hydro v5.2.0-beta2
+    code_version:         v5.2.0-beta2
+    model_configuration:  retrospective
+    model_output_type:    land
+    proj4:                +proj=lcc +units=m +a=6370000.0 +b=6370000.0 +lat_1...
 
 -----------------------------------
 Variable comparison xarray and zarr
@@ -58,10 +55,10 @@ Variable comparison xarray and zarr
 ACCET
 
 xarray ds[ACCET]:
-<xarray.DataArray 'ACCET' (time: 5856, y: 3840, x: 4608)>
-dask.array<open_dataset-afd17e27c963b3958ae02942e669e0bbACCET, shape=(5856, 3840, 4608), dtype=float64, chunksize=(224, 350, 350), chunktype=numpy.ndarray>
+<xarray.DataArray 'ACCET' (time: 122479, y: 3840, x: 4608)>
+dask.array<open_dataset-cd44ccd02b6aee93a60e45fbd0a719b4ACCET, shape=(122479, 3840, 4608), dtype=float64, chunksize=(224, 350, 350), chunktype=numpy.ndarray>
 Coordinates:
-  * time     (time) datetime64[ns] 1979-02-10 ... 1981-02-10T21:00:00
+  * time     (time) datetime64[ns] 1979-02-01T03:00:00 ... 2020-12-31T21:00:00
   * x        (x) float64 -2.303e+06 -2.302e+06 ... 2.303e+06 2.304e+06
   * y        (y) float64 -1.92e+06 -1.919e+06 -1.918e+06 ... 1.918e+06 1.919e+06
 Attributes:
@@ -75,28 +72,29 @@ zarr dz[ACCET].info:
 Name               : /ACCET
 Type               : zarr.core.Array
 Data type          : int32
-Shape              : (5856, 3840, 4608)
+Shape              : (122479, 3840, 4608)
 Chunk shape        : (224, 350, 350)
 Order              : C
 Read-only          : False
 Compressor         : Blosc(cname='lz4', clevel=5, shuffle=SHUFFLE, blocksize=0)
 Store type         : zarr.storage.DirectoryStore
-No. bytes          : 414481121280 (386.0G)
-No. bytes stored   : 128628255729 (119.8G)
+No. bytes          : 8668926443520 (7.9T)
+No. bytes stored   : 2725019884145 (2.5T)
 Storage ratio      : 3.2
-Chunks initialized : 4158/4158
+Chunks initialized : 84238/84238
 
-Chunk size in MB: 104.67529296875
+Un-Compressed Chunk size in MB: 104.67529296875
+   Compressed Chunk size in MB: 32.711029052734375
 
 --------
 
 ACSNOM
 
 xarray ds[ACSNOM]:
-<xarray.DataArray 'ACSNOM' (time: 5856, y: 3840, x: 4608)>
-dask.array<open_dataset-afd17e27c963b3958ae02942e669e0bbACSNOM, shape=(5856, 3840, 4608), dtype=float64, chunksize=(224, 350, 350), chunktype=numpy.ndarray>
+<xarray.DataArray 'ACSNOM' (time: 122479, y: 3840, x: 4608)>
+dask.array<open_dataset-cd44ccd02b6aee93a60e45fbd0a719b4ACSNOM, shape=(122479, 3840, 4608), dtype=float64, chunksize=(224, 350, 350), chunktype=numpy.ndarray>
 Coordinates:
-  * time     (time) datetime64[ns] 1979-02-10 ... 1981-02-10T21:00:00
+  * time     (time) datetime64[ns] 1979-02-01T03:00:00 ... 2020-12-31T21:00:00
   * x        (x) float64 -2.303e+06 -2.302e+06 ... 2.303e+06 2.304e+06
   * y        (y) float64 -1.92e+06 -1.919e+06 -1.918e+06 ... 1.918e+06 1.919e+06
 Attributes:
@@ -110,28 +108,29 @@ zarr dz[ACSNOM].info:
 Name               : /ACSNOM
 Type               : zarr.core.Array
 Data type          : int32
-Shape              : (5856, 3840, 4608)
+Shape              : (122479, 3840, 4608)
 Chunk shape        : (224, 350, 350)
 Order              : C
 Read-only          : False
 Compressor         : Blosc(cname='lz4', clevel=5, shuffle=SHUFFLE, blocksize=0)
 Store type         : zarr.storage.DirectoryStore
-No. bytes          : 414481121280 (386.0G)
-No. bytes stored   : 64492579827 (60.1G)
-Storage ratio      : 6.4
-Chunks initialized : 4158/4158
+No. bytes          : 8668926443520 (7.9T)
+No. bytes stored   : 1380189660840 (1.3T)
+Storage ratio      : 6.3
+Chunks initialized : 84238/84238
 
-Chunk size in MB: 104.67529296875
+Un-Compressed Chunk size in MB: 104.67529296875
+   Compressed Chunk size in MB: 16.615125868055557
 
 --------
 
 ALBEDO
 
 xarray ds[ALBEDO]:
-<xarray.DataArray 'ALBEDO' (time: 5856, y: 3840, x: 4608)>
-dask.array<open_dataset-afd17e27c963b3958ae02942e669e0bbALBEDO, shape=(5856, 3840, 4608), dtype=float64, chunksize=(224, 350, 350), chunktype=numpy.ndarray>
+<xarray.DataArray 'ALBEDO' (time: 122479, y: 3840, x: 4608)>
+dask.array<open_dataset-cd44ccd02b6aee93a60e45fbd0a719b4ALBEDO, shape=(122479, 3840, 4608), dtype=float64, chunksize=(224, 350, 350), chunktype=numpy.ndarray>
 Coordinates:
-  * time     (time) datetime64[ns] 1979-02-10 ... 1981-02-10T21:00:00
+  * time     (time) datetime64[ns] 1979-02-01T03:00:00 ... 2020-12-31T21:00:00
   * x        (x) float64 -2.303e+06 -2.302e+06 ... 2.303e+06 2.304e+06
   * y        (y) float64 -1.92e+06 -1.919e+06 -1.918e+06 ... 1.918e+06 1.919e+06
 Attributes:
@@ -145,28 +144,29 @@ zarr dz[ALBEDO].info:
 Name               : /ALBEDO
 Type               : zarr.core.Array
 Data type          : int32
-Shape              : (5856, 3840, 4608)
+Shape              : (122479, 3840, 4608)
 Chunk shape        : (224, 350, 350)
 Order              : C
 Read-only          : False
 Compressor         : Blosc(cname='lz4', clevel=5, shuffle=SHUFFLE, blocksize=0)
 Store type         : zarr.storage.DirectoryStore
-No. bytes          : 414481121280 (386.0G)
-No. bytes stored   : 54224263760 (50.5G)
-Storage ratio      : 7.6
-Chunks initialized : 4158/4158
+No. bytes          : 8668926443520 (7.9T)
+No. bytes stored   : 1132259261161 (1.0T)
+Storage ratio      : 7.7
+Chunks initialized : 84238/84238
 
-Chunk size in MB: 104.67529296875
+Un-Compressed Chunk size in MB: 104.67529296875
+   Compressed Chunk size in MB: 13.594193892045455
 
 --------
 
 ALBSND
 
 xarray ds[ALBSND]:
-<xarray.DataArray 'ALBSND' (time: 5856, y: 3840, vis_nir: 2, x: 4608)>
-dask.array<open_dataset-afd17e27c963b3958ae02942e669e0bbALBSND, shape=(5856, 3840, 2, 4608), dtype=float64, chunksize=(224, 350, 1, 350), chunktype=numpy.ndarray>
+<xarray.DataArray 'ALBSND' (time: 122479, y: 3840, vis_nir: 2, x: 4608)>
+dask.array<open_dataset-cd44ccd02b6aee93a60e45fbd0a719b4ALBSND, shape=(122479, 3840, 2, 4608), dtype=float64, chunksize=(224, 350, 1, 350), chunktype=numpy.ndarray>
 Coordinates:
-  * time     (time) datetime64[ns] 1979-02-10 ... 1981-02-10T21:00:00
+  * time     (time) datetime64[ns] 1979-02-01T03:00:00 ... 2020-12-31T21:00:00
   * x        (x) float64 -2.303e+06 -2.302e+06 ... 2.303e+06 2.304e+06
   * y        (y) float64 -1.92e+06 -1.919e+06 -1.918e+06 ... 1.918e+06 1.919e+06
 Dimensions without coordinates: vis_nir
@@ -181,28 +181,29 @@ zarr dz[ALBSND].info:
 Name               : /ALBSND
 Type               : zarr.core.Array
 Data type          : int32
-Shape              : (5856, 3840, 2, 4608)
+Shape              : (122479, 3840, 2, 4608)
 Chunk shape        : (224, 350, 1, 350)
 Order              : C
 Read-only          : False
 Compressor         : Blosc(cname='lz4', clevel=5, shuffle=SHUFFLE, blocksize=0)
 Store type         : zarr.storage.DirectoryStore
-No. bytes          : 828962242560 (772.0G)
-No. bytes stored   : 44739541205 (41.7G)
-Storage ratio      : 18.5
-Chunks initialized : 8017/8316
+No. bytes          : 17337852887040 (15.8T)
+No. bytes stored   : 966205600702 (899.8G)
+Storage ratio      : 17.9
+Chunks initialized : 168476/168476
 
-Chunk size in MB: 104.67529296875
+Un-Compressed Chunk size in MB: 104.67529296875
+   Compressed Chunk size in MB: 5.847781730097766
 
 --------
 
 ALBSNI
 
 xarray ds[ALBSNI]:
-<xarray.DataArray 'ALBSNI' (time: 5856, y: 3840, vis_nir: 2, x: 4608)>
-dask.array<open_dataset-afd17e27c963b3958ae02942e669e0bbALBSNI, shape=(5856, 3840, 2, 4608), dtype=float64, chunksize=(224, 350, 1, 350), chunktype=numpy.ndarray>
+<xarray.DataArray 'ALBSNI' (time: 122479, y: 3840, vis_nir: 2, x: 4608)>
+dask.array<open_dataset-cd44ccd02b6aee93a60e45fbd0a719b4ALBSNI, shape=(122479, 3840, 2, 4608), dtype=float64, chunksize=(224, 350, 1, 350), chunktype=numpy.ndarray>
 Coordinates:
-  * time     (time) datetime64[ns] 1979-02-10 ... 1981-02-10T21:00:00
+  * time     (time) datetime64[ns] 1979-02-01T03:00:00 ... 2020-12-31T21:00:00
   * x        (x) float64 -2.303e+06 -2.302e+06 ... 2.303e+06 2.304e+06
   * y        (y) float64 -1.92e+06 -1.919e+06 -1.918e+06 ... 1.918e+06 1.919e+06
 Dimensions without coordinates: vis_nir
@@ -217,28 +218,29 @@ zarr dz[ALBSNI].info:
 Name               : /ALBSNI
 Type               : zarr.core.Array
 Data type          : int32
-Shape              : (5856, 3840, 2, 4608)
+Shape              : (122479, 3840, 2, 4608)
 Chunk shape        : (224, 350, 1, 350)
 Order              : C
 Read-only          : False
 Compressor         : Blosc(cname='lz4', clevel=5, shuffle=SHUFFLE, blocksize=0)
 Store type         : zarr.storage.DirectoryStore
-No. bytes          : 828962242560 (772.0G)
-No. bytes stored   : 44904271181 (41.8G)
-Storage ratio      : 18.5
-Chunks initialized : 8018/8316
+No. bytes          : 17337852887040 (15.8T)
+No. bytes stored   : 969398417612 (902.8G)
+Storage ratio      : 17.9
+Chunks initialized : 168476/168476
 
-Chunk size in MB: 104.67529296875
+Un-Compressed Chunk size in MB: 104.67529296875
+   Compressed Chunk size in MB: 5.847781730097766
 
 --------
 
 COSZ
 
 xarray ds[COSZ]:
-<xarray.DataArray 'COSZ' (time: 5856, y: 3840, x: 4608)>
-dask.array<open_dataset-afd17e27c963b3958ae02942e669e0bbCOSZ, shape=(5856, 3840, 4608), dtype=float64, chunksize=(224, 350, 350), chunktype=numpy.ndarray>
+<xarray.DataArray 'COSZ' (time: 122479, y: 3840, x: 4608)>
+dask.array<open_dataset-cd44ccd02b6aee93a60e45fbd0a719b4COSZ, shape=(122479, 3840, 4608), dtype=float64, chunksize=(224, 350, 350), chunktype=numpy.ndarray>
 Coordinates:
-  * time     (time) datetime64[ns] 1979-02-10 ... 1981-02-10T21:00:00
+  * time     (time) datetime64[ns] 1979-02-01T03:00:00 ... 2020-12-31T21:00:00
   * x        (x) float64 -2.303e+06 -2.302e+06 ... 2.303e+06 2.304e+06
   * y        (y) float64 -1.92e+06 -1.919e+06 -1.918e+06 ... 1.918e+06 1.919e+06
 Attributes:
@@ -252,28 +254,29 @@ zarr dz[COSZ].info:
 Name               : /COSZ
 Type               : zarr.core.Array
 Data type          : int32
-Shape              : (5856, 3840, 4608)
+Shape              : (122479, 3840, 4608)
 Chunk shape        : (224, 350, 350)
 Order              : C
 Read-only          : False
 Compressor         : Blosc(cname='lz4', clevel=5, shuffle=SHUFFLE, blocksize=0)
 Store type         : zarr.storage.DirectoryStore
-No. bytes          : 414481121280 (386.0G)
-No. bytes stored   : 21975703964 (20.5G)
+No. bytes          : 8668926443520 (7.9T)
+No. bytes stored   : 458561866986 (427.1G)
 Storage ratio      : 18.9
-Chunks initialized : 4156/4158
+Chunks initialized : 84238/84238
 
-Chunk size in MB: 104.67529296875
+Un-Compressed Chunk size in MB: 104.67529296875
+   Compressed Chunk size in MB: 5.538375289351852
 
 --------
 
 EDIR
 
 xarray ds[EDIR]:
-<xarray.DataArray 'EDIR' (time: 5856, y: 3840, x: 4608)>
-dask.array<open_dataset-afd17e27c963b3958ae02942e669e0bbEDIR, shape=(5856, 3840, 4608), dtype=float64, chunksize=(224, 350, 350), chunktype=numpy.ndarray>
+<xarray.DataArray 'EDIR' (time: 122479, y: 3840, x: 4608)>
+dask.array<open_dataset-cd44ccd02b6aee93a60e45fbd0a719b4EDIR, shape=(122479, 3840, 4608), dtype=float64, chunksize=(224, 350, 350), chunktype=numpy.ndarray>
 Coordinates:
-  * time     (time) datetime64[ns] 1979-02-10 ... 1981-02-10T21:00:00
+  * time     (time) datetime64[ns] 1979-02-01T03:00:00 ... 2020-12-31T21:00:00
   * x        (x) float64 -2.303e+06 -2.302e+06 ... 2.303e+06 2.304e+06
   * y        (y) float64 -1.92e+06 -1.919e+06 -1.918e+06 ... 1.918e+06 1.919e+06
 Attributes:
@@ -287,28 +290,29 @@ zarr dz[EDIR].info:
 Name               : /EDIR
 Type               : zarr.core.Array
 Data type          : int32
-Shape              : (5856, 3840, 4608)
+Shape              : (122479, 3840, 4608)
 Chunk shape        : (224, 350, 350)
 Order              : C
 Read-only          : False
 Compressor         : Blosc(cname='lz4', clevel=5, shuffle=SHUFFLE, blocksize=0)
 Store type         : zarr.storage.DirectoryStore
-No. bytes          : 414481121280 (386.0G)
-No. bytes stored   : 32992647192 (30.7G)
-Storage ratio      : 12.6
-Chunks initialized : 4158/4158
+No. bytes          : 8668926443520 (7.9T)
+No. bytes stored   : 704688889453 (656.3G)
+Storage ratio      : 12.3
+Chunks initialized : 84238/84238
 
-Chunk size in MB: 104.67529296875
+Un-Compressed Chunk size in MB: 104.67529296875
+   Compressed Chunk size in MB: 8.510186420223576
 
 --------
 
 FIRA
 
 xarray ds[FIRA]:
-<xarray.DataArray 'FIRA' (time: 5856, y: 3840, x: 4608)>
-dask.array<open_dataset-afd17e27c963b3958ae02942e669e0bbFIRA, shape=(5856, 3840, 4608), dtype=float64, chunksize=(224, 350, 350), chunktype=numpy.ndarray>
+<xarray.DataArray 'FIRA' (time: 122479, y: 3840, x: 4608)>
+dask.array<open_dataset-cd44ccd02b6aee93a60e45fbd0a719b4FIRA, shape=(122479, 3840, 4608), dtype=float64, chunksize=(224, 350, 350), chunktype=numpy.ndarray>
 Coordinates:
-  * time     (time) datetime64[ns] 1979-02-10 ... 1981-02-10T21:00:00
+  * time     (time) datetime64[ns] 1979-02-01T03:00:00 ... 2020-12-31T21:00:00
   * x        (x) float64 -2.303e+06 -2.302e+06 ... 2.303e+06 2.304e+06
   * y        (y) float64 -1.92e+06 -1.919e+06 -1.918e+06 ... 1.918e+06 1.919e+06
 Attributes:
@@ -322,28 +326,29 @@ zarr dz[FIRA].info:
 Name               : /FIRA
 Type               : zarr.core.Array
 Data type          : int32
-Shape              : (5856, 3840, 4608)
+Shape              : (122479, 3840, 4608)
 Chunk shape        : (224, 350, 350)
 Order              : C
 Read-only          : False
 Compressor         : Blosc(cname='lz4', clevel=5, shuffle=SHUFFLE, blocksize=0)
 Store type         : zarr.storage.DirectoryStore
-No. bytes          : 414481121280 (386.0G)
-No. bytes stored   : 95773045000 (89.2G)
+No. bytes          : 8668926443520 (7.9T)
+No. bytes stored   : 2021953966320 (1.8T)
 Storage ratio      : 4.3
-Chunks initialized : 4158/4158
+Chunks initialized : 84238/84238
 
-Chunk size in MB: 104.67529296875
+Un-Compressed Chunk size in MB: 104.67529296875
+   Compressed Chunk size in MB: 24.343091388081397
 
 --------
 
 FSA
 
 xarray ds[FSA]:
-<xarray.DataArray 'FSA' (time: 5856, y: 3840, x: 4608)>
-dask.array<open_dataset-afd17e27c963b3958ae02942e669e0bbFSA, shape=(5856, 3840, 4608), dtype=float64, chunksize=(224, 350, 350), chunktype=numpy.ndarray>
+<xarray.DataArray 'FSA' (time: 122479, y: 3840, x: 4608)>
+dask.array<open_dataset-cd44ccd02b6aee93a60e45fbd0a719b4FSA, shape=(122479, 3840, 4608), dtype=float64, chunksize=(224, 350, 350), chunktype=numpy.ndarray>
 Coordinates:
-  * time     (time) datetime64[ns] 1979-02-10 ... 1981-02-10T21:00:00
+  * time     (time) datetime64[ns] 1979-02-01T03:00:00 ... 2020-12-31T21:00:00
   * x        (x) float64 -2.303e+06 -2.302e+06 ... 2.303e+06 2.304e+06
   * y        (y) float64 -1.92e+06 -1.919e+06 -1.918e+06 ... 1.918e+06 1.919e+06
 Attributes:
@@ -357,28 +362,29 @@ zarr dz[FSA].info:
 Name               : /FSA
 Type               : zarr.core.Array
 Data type          : int32
-Shape              : (5856, 3840, 4608)
+Shape              : (122479, 3840, 4608)
 Chunk shape        : (224, 350, 350)
 Order              : C
 Read-only          : False
 Compressor         : Blosc(cname='lz4', clevel=5, shuffle=SHUFFLE, blocksize=0)
 Store type         : zarr.storage.DirectoryStore
-No. bytes          : 414481121280 (386.0G)
-No. bytes stored   : 58493022838 (54.5G)
-Storage ratio      : 7.1
-Chunks initialized : 4135/4158
+No. bytes          : 8668926443520 (7.9T)
+No. bytes stored   : 1237796902442 (1.1T)
+Storage ratio      : 7.0
+Chunks initialized : 84238/84238
 
-Chunk size in MB: 104.67529296875
+Un-Compressed Chunk size in MB: 104.67529296875
+   Compressed Chunk size in MB: 14.95361328125
 
 --------
 
 FSNO
 
 xarray ds[FSNO]:
-<xarray.DataArray 'FSNO' (time: 5856, y: 3840, x: 4608)>
-dask.array<open_dataset-afd17e27c963b3958ae02942e669e0bbFSNO, shape=(5856, 3840, 4608), dtype=float64, chunksize=(224, 350, 350), chunktype=numpy.ndarray>
+<xarray.DataArray 'FSNO' (time: 122479, y: 3840, x: 4608)>
+dask.array<open_dataset-cd44ccd02b6aee93a60e45fbd0a719b4FSNO, shape=(122479, 3840, 4608), dtype=float64, chunksize=(224, 350, 350), chunktype=numpy.ndarray>
 Coordinates:
-  * time     (time) datetime64[ns] 1979-02-10 ... 1981-02-10T21:00:00
+  * time     (time) datetime64[ns] 1979-02-01T03:00:00 ... 2020-12-31T21:00:00
   * x        (x) float64 -2.303e+06 -2.302e+06 ... 2.303e+06 2.304e+06
   * y        (y) float64 -1.92e+06 -1.919e+06 -1.918e+06 ... 1.918e+06 1.919e+06
 Attributes:
@@ -392,28 +398,29 @@ zarr dz[FSNO].info:
 Name               : /FSNO
 Type               : zarr.core.Array
 Data type          : int32
-Shape              : (5856, 3840, 4608)
+Shape              : (122479, 3840, 4608)
 Chunk shape        : (224, 350, 350)
 Order              : C
 Read-only          : False
 Compressor         : Blosc(cname='lz4', clevel=5, shuffle=SHUFFLE, blocksize=0)
 Store type         : zarr.storage.DirectoryStore
-No. bytes          : 414481121280 (386.0G)
-No. bytes stored   : 29937639331 (27.9G)
-Storage ratio      : 13.8
-Chunks initialized : 4136/4158
+No. bytes          : 8668926443520 (7.9T)
+No. bytes stored   : 623992216191 (581.1G)
+Storage ratio      : 13.9
+Chunks initialized : 84238/84238
 
-Chunk size in MB: 104.67529296875
+Un-Compressed Chunk size in MB: 104.67529296875
+   Compressed Chunk size in MB: 7.530596616456834
 
 --------
 
 HFX
 
 xarray ds[HFX]:
-<xarray.DataArray 'HFX' (time: 5856, y: 3840, x: 4608)>
-dask.array<open_dataset-afd17e27c963b3958ae02942e669e0bbHFX, shape=(5856, 3840, 4608), dtype=float64, chunksize=(224, 350, 350), chunktype=numpy.ndarray>
+<xarray.DataArray 'HFX' (time: 122479, y: 3840, x: 4608)>
+dask.array<open_dataset-cd44ccd02b6aee93a60e45fbd0a719b4HFX, shape=(122479, 3840, 4608), dtype=float64, chunksize=(224, 350, 350), chunktype=numpy.ndarray>
 Coordinates:
-  * time     (time) datetime64[ns] 1979-02-10 ... 1981-02-10T21:00:00
+  * time     (time) datetime64[ns] 1979-02-01T03:00:00 ... 2020-12-31T21:00:00
   * x        (x) float64 -2.303e+06 -2.302e+06 ... 2.303e+06 2.304e+06
   * y        (y) float64 -1.92e+06 -1.919e+06 -1.918e+06 ... 1.918e+06 1.919e+06
 Attributes:
@@ -427,28 +434,29 @@ zarr dz[HFX].info:
 Name               : /HFX
 Type               : zarr.core.Array
 Data type          : int32
-Shape              : (5856, 3840, 4608)
+Shape              : (122479, 3840, 4608)
 Chunk shape        : (224, 350, 350)
 Order              : C
 Read-only          : False
 Compressor         : Blosc(cname='lz4', clevel=5, shuffle=SHUFFLE, blocksize=0)
 Store type         : zarr.storage.DirectoryStore
-No. bytes          : 414481121280 (386.0G)
-No. bytes stored   : 106605205091 (99.3G)
-Storage ratio      : 3.9
-Chunks initialized : 4089/4158
+No. bytes          : 8668926443520 (7.9T)
+No. bytes stored   : 2303034979000 (2.1T)
+Storage ratio      : 3.8
+Chunks initialized : 84238/84238
 
-Chunk size in MB: 104.67529296875
+Un-Compressed Chunk size in MB: 104.67529296875
+   Compressed Chunk size in MB: 27.54612972861842
 
 --------
 
 LH
 
 xarray ds[LH]:
-<xarray.DataArray 'LH' (time: 5856, y: 3840, x: 4608)>
-dask.array<open_dataset-afd17e27c963b3958ae02942e669e0bbLH, shape=(5856, 3840, 4608), dtype=float64, chunksize=(224, 350, 350), chunktype=numpy.ndarray>
+<xarray.DataArray 'LH' (time: 122479, y: 3840, x: 4608)>
+dask.array<open_dataset-cd44ccd02b6aee93a60e45fbd0a719b4LH, shape=(122479, 3840, 4608), dtype=float64, chunksize=(224, 350, 350), chunktype=numpy.ndarray>
 Coordinates:
-  * time     (time) datetime64[ns] 1979-02-10 ... 1981-02-10T21:00:00
+  * time     (time) datetime64[ns] 1979-02-01T03:00:00 ... 2020-12-31T21:00:00
   * x        (x) float64 -2.303e+06 -2.302e+06 ... 2.303e+06 2.304e+06
   * y        (y) float64 -1.92e+06 -1.919e+06 -1.918e+06 ... 1.918e+06 1.919e+06
 Attributes:
@@ -462,28 +470,29 @@ zarr dz[LH].info:
 Name               : /LH
 Type               : zarr.core.Array
 Data type          : int32
-Shape              : (5856, 3840, 4608)
+Shape              : (122479, 3840, 4608)
 Chunk shape        : (224, 350, 350)
 Order              : C
 Read-only          : False
 Compressor         : Blosc(cname='lz4', clevel=5, shuffle=SHUFFLE, blocksize=0)
 Store type         : zarr.storage.DirectoryStore
-No. bytes          : 414481121280 (386.0G)
-No. bytes stored   : 100400534389 (93.5G)
-Storage ratio      : 4.1
-Chunks initialized : 4110/4158
+No. bytes          : 8668926443520 (7.9T)
+No. bytes stored   : 2152493795364 (2.0T)
+Storage ratio      : 4.0
+Chunks initialized : 84238/84238
 
-Chunk size in MB: 104.67529296875
+Un-Compressed Chunk size in MB: 104.67529296875
+   Compressed Chunk size in MB: 26.1688232421875
 
 --------
 
 QRAIN
 
 xarray ds[QRAIN]:
-<xarray.DataArray 'QRAIN' (time: 5856, y: 3840, x: 4608)>
-dask.array<open_dataset-afd17e27c963b3958ae02942e669e0bbQRAIN, shape=(5856, 3840, 4608), dtype=float64, chunksize=(224, 350, 350), chunktype=numpy.ndarray>
+<xarray.DataArray 'QRAIN' (time: 122479, y: 3840, x: 4608)>
+dask.array<open_dataset-cd44ccd02b6aee93a60e45fbd0a719b4QRAIN, shape=(122479, 3840, 4608), dtype=float64, chunksize=(224, 350, 350), chunktype=numpy.ndarray>
 Coordinates:
-  * time     (time) datetime64[ns] 1979-02-10 ... 1981-02-10T21:00:00
+  * time     (time) datetime64[ns] 1979-02-01T03:00:00 ... 2020-12-31T21:00:00
   * x        (x) float64 -2.303e+06 -2.302e+06 ... 2.303e+06 2.304e+06
   * y        (y) float64 -1.92e+06 -1.919e+06 -1.918e+06 ... 1.918e+06 1.919e+06
 Attributes:
@@ -497,28 +506,29 @@ zarr dz[QRAIN].info:
 Name               : /QRAIN
 Type               : zarr.core.Array
 Data type          : int32
-Shape              : (5856, 3840, 4608)
+Shape              : (122479, 3840, 4608)
 Chunk shape        : (224, 350, 350)
 Order              : C
 Read-only          : False
 Compressor         : Blosc(cname='lz4', clevel=5, shuffle=SHUFFLE, blocksize=0)
 Store type         : zarr.storage.DirectoryStore
-No. bytes          : 414481121280 (386.0G)
-No. bytes stored   : 23767011738 (22.1G)
-Storage ratio      : 17.4
-Chunks initialized : 4008/4158
+No. bytes          : 8668926443520 (7.9T)
+No. bytes stored   : 519762823710 (484.1G)
+Storage ratio      : 16.7
+Chunks initialized : 84238/84238
 
-Chunk size in MB: 104.67529296875
+Un-Compressed Chunk size in MB: 104.67529296875
+   Compressed Chunk size in MB: 6.26798161489521
 
 --------
 
 QSNOW
 
 xarray ds[QSNOW]:
-<xarray.DataArray 'QSNOW' (time: 5856, y: 3840, x: 4608)>
-dask.array<open_dataset-afd17e27c963b3958ae02942e669e0bbQSNOW, shape=(5856, 3840, 4608), dtype=float64, chunksize=(224, 350, 350), chunktype=numpy.ndarray>
+<xarray.DataArray 'QSNOW' (time: 122479, y: 3840, x: 4608)>
+dask.array<open_dataset-cd44ccd02b6aee93a60e45fbd0a719b4QSNOW, shape=(122479, 3840, 4608), dtype=float64, chunksize=(224, 350, 350), chunktype=numpy.ndarray>
 Coordinates:
-  * time     (time) datetime64[ns] 1979-02-10 ... 1981-02-10T21:00:00
+  * time     (time) datetime64[ns] 1979-02-01T03:00:00 ... 2020-12-31T21:00:00
   * x        (x) float64 -2.303e+06 -2.302e+06 ... 2.303e+06 2.304e+06
   * y        (y) float64 -1.92e+06 -1.919e+06 -1.918e+06 ... 1.918e+06 1.919e+06
 Attributes:
@@ -532,28 +542,29 @@ zarr dz[QSNOW].info:
 Name               : /QSNOW
 Type               : zarr.core.Array
 Data type          : int32
-Shape              : (5856, 3840, 4608)
+Shape              : (122479, 3840, 4608)
 Chunk shape        : (224, 350, 350)
 Order              : C
 Read-only          : False
 Compressor         : Blosc(cname='lz4', clevel=5, shuffle=SHUFFLE, blocksize=0)
 Store type         : zarr.storage.DirectoryStore
-No. bytes          : 414481121280 (386.0G)
-No. bytes stored   : 22133436028 (20.6G)
-Storage ratio      : 18.7
-Chunks initialized : 4004/4158
+No. bytes          : 8668926443520 (7.9T)
+No. bytes stored   : 482345485840 (449.2G)
+Storage ratio      : 18.0
+Chunks initialized : 84238/84238
 
-Chunk size in MB: 104.67529296875
+Un-Compressed Chunk size in MB: 104.67529296875
+   Compressed Chunk size in MB: 5.815294053819445
 
 --------
 
 SNEQV
 
 xarray ds[SNEQV]:
-<xarray.DataArray 'SNEQV' (time: 5856, y: 3840, x: 4608)>
-dask.array<open_dataset-afd17e27c963b3958ae02942e669e0bbSNEQV, shape=(5856, 3840, 4608), dtype=float64, chunksize=(224, 350, 350), chunktype=numpy.ndarray>
+<xarray.DataArray 'SNEQV' (time: 122479, y: 3840, x: 4608)>
+dask.array<open_dataset-cd44ccd02b6aee93a60e45fbd0a719b4SNEQV, shape=(122479, 3840, 4608), dtype=float64, chunksize=(224, 350, 350), chunktype=numpy.ndarray>
 Coordinates:
-  * time     (time) datetime64[ns] 1979-02-10 ... 1981-02-10T21:00:00
+  * time     (time) datetime64[ns] 1979-02-01T03:00:00 ... 2020-12-31T21:00:00
   * x        (x) float64 -2.303e+06 -2.302e+06 ... 2.303e+06 2.304e+06
   * y        (y) float64 -1.92e+06 -1.919e+06 -1.918e+06 ... 1.918e+06 1.919e+06
 Attributes:
@@ -567,28 +578,29 @@ zarr dz[SNEQV].info:
 Name               : /SNEQV
 Type               : zarr.core.Array
 Data type          : int32
-Shape              : (5856, 3840, 4608)
+Shape              : (122479, 3840, 4608)
 Chunk shape        : (224, 350, 350)
 Order              : C
 Read-only          : False
 Compressor         : Blosc(cname='lz4', clevel=5, shuffle=SHUFFLE, blocksize=0)
 Store type         : zarr.storage.DirectoryStore
-No. bytes          : 414481121280 (386.0G)
-No. bytes stored   : 36329514425 (33.8G)
-Storage ratio      : 11.4
-Chunks initialized : 4018/4158
+No. bytes          : 8668926443520 (7.9T)
+No. bytes stored   : 805741529618 (750.4G)
+Storage ratio      : 10.8
+Chunks initialized : 84238/84238
 
-Chunk size in MB: 104.67529296875
+Un-Compressed Chunk size in MB: 104.67529296875
+   Compressed Chunk size in MB: 9.69215675636574
 
 --------
 
 SNOWH
 
 xarray ds[SNOWH]:
-<xarray.DataArray 'SNOWH' (time: 5856, y: 3840, x: 4608)>
-dask.array<open_dataset-afd17e27c963b3958ae02942e669e0bbSNOWH, shape=(5856, 3840, 4608), dtype=float64, chunksize=(224, 350, 350), chunktype=numpy.ndarray>
+<xarray.DataArray 'SNOWH' (time: 122479, y: 3840, x: 4608)>
+dask.array<open_dataset-cd44ccd02b6aee93a60e45fbd0a719b4SNOWH, shape=(122479, 3840, 4608), dtype=float64, chunksize=(224, 350, 350), chunktype=numpy.ndarray>
 Coordinates:
-  * time     (time) datetime64[ns] 1979-02-10 ... 1981-02-10T21:00:00
+  * time     (time) datetime64[ns] 1979-02-01T03:00:00 ... 2020-12-31T21:00:00
   * x        (x) float64 -2.303e+06 -2.302e+06 ... 2.303e+06 2.304e+06
   * y        (y) float64 -1.92e+06 -1.919e+06 -1.918e+06 ... 1.918e+06 1.919e+06
 Attributes:
@@ -602,28 +614,29 @@ zarr dz[SNOWH].info:
 Name               : /SNOWH
 Type               : zarr.core.Array
 Data type          : int32
-Shape              : (5856, 3840, 4608)
+Shape              : (122479, 3840, 4608)
 Chunk shape        : (224, 350, 350)
 Order              : C
 Read-only          : False
 Compressor         : Blosc(cname='lz4', clevel=5, shuffle=SHUFFLE, blocksize=0)
 Store type         : zarr.storage.DirectoryStore
-No. bytes          : 414481121280 (386.0G)
-No. bytes stored   : 39989447691 (37.2G)
-Storage ratio      : 10.4
-Chunks initialized : 4005/4158
+No. bytes          : 8668926443520 (7.9T)
+No. bytes stored   : 890365906673 (829.2G)
+Storage ratio      : 9.7
+Chunks initialized : 84238/84238
 
-Chunk size in MB: 104.67529296875
+Un-Compressed Chunk size in MB: 104.67529296875
+   Compressed Chunk size in MB: 10.79126731636598
 
 --------
 
 SOIL_M
 
 xarray ds[SOIL_M]:
-<xarray.DataArray 'SOIL_M' (time: 5856, y: 3840, soil_layers_stag: 4, x: 4608)>
-dask.array<open_dataset-afd17e27c963b3958ae02942e669e0bbSOIL_M, shape=(5856, 3840, 4, 4608), dtype=float64, chunksize=(224, 350, 1, 350), chunktype=numpy.ndarray>
+<xarray.DataArray 'SOIL_M' (time: 122479, y: 3840, soil_layers_stag: 4, x: 4608)>
+dask.array<open_dataset-cd44ccd02b6aee93a60e45fbd0a719b4SOIL_M, shape=(122479, 3840, 4, 4608), dtype=float64, chunksize=(224, 350, 1, 350), chunktype=numpy.ndarray>
 Coordinates:
-  * time     (time) datetime64[ns] 1979-02-10 ... 1981-02-10T21:00:00
+  * time     (time) datetime64[ns] 1979-02-01T03:00:00 ... 2020-12-31T21:00:00
   * x        (x) float64 -2.303e+06 -2.302e+06 ... 2.303e+06 2.304e+06
   * y        (y) float64 -1.92e+06 -1.919e+06 -1.918e+06 ... 1.918e+06 1.919e+06
 Dimensions without coordinates: soil_layers_stag
@@ -638,28 +651,29 @@ zarr dz[SOIL_M].info:
 Name               : /SOIL_M
 Type               : zarr.core.Array
 Data type          : int32
-Shape              : (5856, 3840, 4, 4608)
+Shape              : (122479, 3840, 4, 4608)
 Chunk shape        : (224, 350, 1, 350)
 Order              : C
 Read-only          : False
 Compressor         : Blosc(cname='lz4', clevel=5, shuffle=SHUFFLE, blocksize=0)
 Store type         : zarr.storage.DirectoryStore
-No. bytes          : 1657924485120 (1.5T)
-No. bytes stored   : 245454312848 (228.6G)
-Storage ratio      : 6.8
-Chunks initialized : 16032/16632
+No. bytes          : 34675705774080 (31.5T)
+No. bytes stored   : 5359731712080 (4.9T)
+Storage ratio      : 6.5
+Chunks initialized : 336952/336952
 
-Chunk size in MB: 104.67529296875
+Un-Compressed Chunk size in MB: 104.67529296875
+   Compressed Chunk size in MB: 16.10389122596154
 
 --------
 
 SOIL_W
 
 xarray ds[SOIL_W]:
-<xarray.DataArray 'SOIL_W' (time: 5856, y: 3840, soil_layers_stag: 4, x: 4608)>
-dask.array<open_dataset-afd17e27c963b3958ae02942e669e0bbSOIL_W, shape=(5856, 3840, 4, 4608), dtype=float64, chunksize=(224, 350, 1, 350), chunktype=numpy.ndarray>
+<xarray.DataArray 'SOIL_W' (time: 122479, y: 3840, soil_layers_stag: 4, x: 4608)>
+dask.array<open_dataset-cd44ccd02b6aee93a60e45fbd0a719b4SOIL_W, shape=(122479, 3840, 4, 4608), dtype=float64, chunksize=(224, 350, 1, 350), chunktype=numpy.ndarray>
 Coordinates:
-  * time     (time) datetime64[ns] 1979-02-10 ... 1981-02-10T21:00:00
+  * time     (time) datetime64[ns] 1979-02-01T03:00:00 ... 2020-12-31T21:00:00
   * x        (x) float64 -2.303e+06 -2.302e+06 ... 2.303e+06 2.304e+06
   * y        (y) float64 -1.92e+06 -1.919e+06 -1.918e+06 ... 1.918e+06 1.919e+06
 Dimensions without coordinates: soil_layers_stag
@@ -674,28 +688,29 @@ zarr dz[SOIL_W].info:
 Name               : /SOIL_W
 Type               : zarr.core.Array
 Data type          : int32
-Shape              : (5856, 3840, 4, 4608)
+Shape              : (122479, 3840, 4, 4608)
 Chunk shape        : (224, 350, 1, 350)
 Order              : C
 Read-only          : False
 Compressor         : Blosc(cname='lz4', clevel=5, shuffle=SHUFFLE, blocksize=0)
 Store type         : zarr.storage.DirectoryStore
-No. bytes          : 1657924485120 (1.5T)
-No. bytes stored   : 248657525526 (231.6G)
-Storage ratio      : 6.7
-Chunks initialized : 16029/16632
+No. bytes          : 34675705774080 (31.5T)
+No. bytes stored   : 5439664029624 (4.9T)
+Storage ratio      : 6.4
+Chunks initialized : 336952/336952
 
-Chunk size in MB: 104.67529296875
+Un-Compressed Chunk size in MB: 104.67529296875
+   Compressed Chunk size in MB: 16.355514526367188
 
 --------
 
 TRAD
 
 xarray ds[TRAD]:
-<xarray.DataArray 'TRAD' (time: 5856, y: 3840, x: 4608)>
-dask.array<open_dataset-afd17e27c963b3958ae02942e669e0bbTRAD, shape=(5856, 3840, 4608), dtype=float64, chunksize=(224, 350, 350), chunktype=numpy.ndarray>
+<xarray.DataArray 'TRAD' (time: 122479, y: 3840, x: 4608)>
+dask.array<open_dataset-cd44ccd02b6aee93a60e45fbd0a719b4TRAD, shape=(122479, 3840, 4608), dtype=float64, chunksize=(224, 350, 350), chunktype=numpy.ndarray>
 Coordinates:
-  * time     (time) datetime64[ns] 1979-02-10 ... 1981-02-10T21:00:00
+  * time     (time) datetime64[ns] 1979-02-01T03:00:00 ... 2020-12-31T21:00:00
   * x        (x) float64 -2.303e+06 -2.302e+06 ... 2.303e+06 2.304e+06
   * y        (y) float64 -1.92e+06 -1.919e+06 -1.918e+06 ... 1.918e+06 1.919e+06
 Attributes:
@@ -709,28 +724,29 @@ zarr dz[TRAD].info:
 Name               : /TRAD
 Type               : zarr.core.Array
 Data type          : int32
-Shape              : (5856, 3840, 4608)
+Shape              : (122479, 3840, 4608)
 Chunk shape        : (224, 350, 350)
 Order              : C
 Read-only          : False
 Compressor         : Blosc(cname='lz4', clevel=5, shuffle=SHUFFLE, blocksize=0)
 Store type         : zarr.storage.DirectoryStore
-No. bytes          : 414481121280 (386.0G)
-No. bytes stored   : 80007019422 (74.5G)
-Storage ratio      : 5.2
-Chunks initialized : 4006/4158
+No. bytes          : 8668926443520 (7.9T)
+No. bytes stored   : 1761544444515 (1.6T)
+Storage ratio      : 4.9
+Chunks initialized : 84238/84238
 
-Chunk size in MB: 104.67529296875
+Un-Compressed Chunk size in MB: 104.67529296875
+   Compressed Chunk size in MB: 21.3623046875
 
 --------
 
 UGDRNOFF
 
 xarray ds[UGDRNOFF]:
-<xarray.DataArray 'UGDRNOFF' (time: 5856, y: 3840, x: 4608)>
-dask.array<open_dataset-afd17e27c963b3958ae02942e669e0bbUGDRNOFF, shape=(5856, 3840, 4608), dtype=float64, chunksize=(224, 350, 350), chunktype=numpy.ndarray>
+<xarray.DataArray 'UGDRNOFF' (time: 122479, y: 3840, x: 4608)>
+dask.array<open_dataset-cd44ccd02b6aee93a60e45fbd0a719b4UGDRNOFF, shape=(122479, 3840, 4608), dtype=float64, chunksize=(224, 350, 350), chunktype=numpy.ndarray>
 Coordinates:
-  * time     (time) datetime64[ns] 1979-02-10 ... 1981-02-10T21:00:00
+  * time     (time) datetime64[ns] 1979-02-01T03:00:00 ... 2020-12-31T21:00:00
   * x        (x) float64 -2.303e+06 -2.302e+06 ... 2.303e+06 2.304e+06
   * y        (y) float64 -1.92e+06 -1.919e+06 -1.918e+06 ... 1.918e+06 1.919e+06
 Attributes:
@@ -744,31 +760,32 @@ zarr dz[UGDRNOFF].info:
 Name               : /UGDRNOFF
 Type               : zarr.core.Array
 Data type          : int32
-Shape              : (5856, 3840, 4608)
+Shape              : (122479, 3840, 4608)
 Chunk shape        : (224, 350, 350)
 Order              : C
 Read-only          : False
 Compressor         : Blosc(cname='lz4', clevel=5, shuffle=SHUFFLE, blocksize=0)
 Store type         : zarr.storage.DirectoryStore
-No. bytes          : 414481121280 (386.0G)
-No. bytes stored   : 102752750068 (95.7G)
-Storage ratio      : 4.0
-Chunks initialized : 4005/4158
+No. bytes          : 8668926443520 (7.9T)
+No. bytes stored   : 2254663345826 (2.1T)
+Storage ratio      : 3.8
+Chunks initialized : 84238/84238
 
-Chunk size in MB: 104.67529296875
+Un-Compressed Chunk size in MB: 104.67529296875
+   Compressed Chunk size in MB: 27.54612972861842
 
 --------
 
 time
 
 xarray ds[time]:
-<xarray.DataArray 'time' (time: 5856)>
-array(['1979-02-10T00:00:00.000000000', '1979-02-10T03:00:00.000000000',
-       '1979-02-10T06:00:00.000000000', ..., '1981-02-10T15:00:00.000000000',
-       '1981-02-10T18:00:00.000000000', '1981-02-10T21:00:00.000000000'],
+<xarray.DataArray 'time' (time: 122479)>
+array(['1979-02-01T03:00:00.000000000', '1979-02-01T06:00:00.000000000',
+       '1979-02-01T09:00:00.000000000', ..., '2020-12-31T15:00:00.000000000',
+       '2020-12-31T18:00:00.000000000', '2020-12-31T21:00:00.000000000'],
       dtype='datetime64[ns]')
 Coordinates:
-  * time     (time) datetime64[ns] 1979-02-10 ... 1981-02-10T21:00:00
+  * time     (time) datetime64[ns] 1979-02-01T03:00:00 ... 2020-12-31T21:00:00
 Attributes:
     long_name:      valid output time
     standard_name:  time
@@ -779,18 +796,19 @@ zarr dz[time].info:
 Name               : /time
 Type               : zarr.core.Array
 Data type          : int64
-Shape              : (5856,)
+Shape              : (122479,)
 Chunk shape        : (224,)
 Order              : C
 Read-only          : False
 Compressor         : Blosc(cname='lz4', clevel=5, shuffle=SHUFFLE, blocksize=0)
 Store type         : zarr.storage.DirectoryStore
-No. bytes          : 46848 (45.8K)
-No. bytes stored   : 10243 (10.0K)
-Storage ratio      : 4.6
-Chunks initialized : 27/27
+No. bytes          : 979832 (956.9K)
+No. bytes stored   : 200366 (195.7K)
+Storage ratio      : 4.9
+Chunks initialized : 547/547
 
-Chunk size in MB: 0.001708984375
+Un-Compressed Chunk size in MB: 0.001708984375
+   Compressed Chunk size in MB: 0.0003487723214285714
 
 --------
 
@@ -824,7 +842,8 @@ No. bytes stored   : 6753 (6.6K)
 Storage ratio      : 5.5
 Chunks initialized : 1/1
 
-Chunk size in MB: 0.03515625
+Un-Compressed Chunk size in MB: 0.03515625
+   Compressed Chunk size in MB: 0.006392045454545455
 
 --------
 
@@ -858,4 +877,5 @@ No. bytes stored   : 5679 (5.5K)
 Storage ratio      : 5.4
 Chunks initialized : 1/1
 
-Chunk size in MB: 0.029296875
+Un-Compressed Chunk size in MB: 0.029296875
+   Compressed Chunk size in MB: 0.005425347222222222

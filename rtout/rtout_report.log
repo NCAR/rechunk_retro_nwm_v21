@@ -1,7 +1,7 @@
 
 -------------------------------------------------------
-Output file report: /glade/scratch/jamesmcc/retro_collect/rtout/rtout.zarr
-Total file size: 350G
+Output file report: /glade/p/datashare/jamesmcc/nwm_retro_v2.1/rtout.zarr
+Total file size: 6.9T
 Dataset overviews:
 zarr ds.info:
 Name        : /
@@ -16,9 +16,9 @@ Arrays      : crs, sfcheadsubrt, time, x, y, zwattablrt
 
 xarray ds.info:
 <xarray.Dataset>
-Dimensions:       (time: 6496, y: 15360, x: 18432)
+Dimensions:       (time: 122479, x: 18432, y: 15360)
 Coordinates:
-  * time          (time) datetime64[ns] 1979-02-01T03:00:00 ... 1981-04-23
+  * time          (time) datetime64[ns] 1979-02-01T03:00:00 ... 2020-12-31T21...
   * x             (x) float64 -2.304e+06 -2.304e+06 ... 2.304e+06 2.304e+06
   * y             (y) float64 -1.92e+06 -1.92e+06 ... 1.92e+06 1.92e+06
 Data variables:
@@ -26,16 +26,13 @@ Data variables:
     sfcheadsubrt  (time, y, x) float64 dask.array<chunksize=(224, 350, 350), meta=np.ndarray>
     zwattablrt    (time, y, x) float64 dask.array<chunksize=(224, 350, 350), meta=np.ndarray>
 Attributes:
-    Conventions:                CF-1.6
-    GDAL_DataType:              Generic
-    TITLE:                      OUTPUT FROM WRF-Hydro v5.2.0-beta2
-    code_version:               v5.2.0-beta2
-    model_configuration:        retrospective
-    model_initialization_time:  1981-01-01_00:00:00
-    model_output_type:          terrain_rt
-    model_output_valid_time:    1981-03-26_03:00:00
-    model_total_valid_times:    720
-    proj4:                      +proj=lcc +units=m +a=6370000.0 +b=6370000.0 ...
+    Conventions:          CF-1.6
+    GDAL_DataType:        Generic
+    TITLE:                OUTPUT FROM WRF-Hydro v5.2.0-beta2
+    code_version:         v5.2.0-beta2
+    model_configuration:  retrospective
+    model_output_type:    terrain_rt
+    proj4:                +proj=lcc +units=m +a=6370000.0 +b=6370000.0 +lat_1...
 
 -----------------------------------
 Variable comparison xarray and zarr
@@ -47,14 +44,18 @@ crs
 xarray ds[crs]:
 <xarray.DataArray 'crs' ()>
 array(b'', dtype='|S1')
-Attributes: (12/17)
+Attributes:
     GeoTransform:                   -2303999.17655 250.0 0 1919999.66329 0 -2...
     _CoordinateAxes:                y x
     _CoordinateTransformType:       Projection
     earth_radius:                   6370000.0
     esri_pe_string:                 PROJCS["Lambert_Conformal_Conic",GEOGCS["...
     false_easting:                  0.0
-    ...                             ...
+    false_northing:                 0.0
+    grid_mapping_name:              lambert_conformal_conic
+    inverse_flattening:             0.0
+    latitude_of_projection_origin:  40.0
+    long_name:                      CRS definition
     longitude_of_central_meridian:  -97.0
     longitude_of_prime_meridian:    0.0
     semi_major_axis:                6370000.0
@@ -77,17 +78,18 @@ No. bytes stored   : 1967 (1.9K)
 Storage ratio      : 0.0
 Chunks initialized : 3/1
 
-Chunk size in MB: 9.5367431640625e-07
+Un-Compressed Chunk size in MB: 9.5367431640625e-07
+   Compressed Chunk size in MB: inf
 
 --------
 
 sfcheadsubrt
 
 xarray ds[sfcheadsubrt]:
-<xarray.DataArray 'sfcheadsubrt' (time: 6496, y: 15360, x: 18432)>
-dask.array<open_dataset-f7a057b268bb359b2e1db2876a8c5c5csfcheadsubrt, shape=(6496, 15360, 18432), dtype=float64, chunksize=(224, 350, 350), chunktype=numpy.ndarray>
+<xarray.DataArray 'sfcheadsubrt' (time: 122479, y: 15360, x: 18432)>
+dask.array<xarray-sfcheadsubrt, shape=(122479, 15360, 18432), dtype=float64, chunksize=(224, 350, 350), chunktype=numpy.ndarray>
 Coordinates:
-  * time     (time) datetime64[ns] 1979-02-01T03:00:00 ... 1981-04-23
+  * time     (time) datetime64[ns] 1979-02-01T03:00:00 ... 2020-12-31T21:00:00
   * x        (x) float64 -2.304e+06 -2.304e+06 ... 2.304e+06 2.304e+06
   * y        (y) float64 -1.92e+06 -1.92e+06 -1.919e+06 ... 1.92e+06 1.92e+06
 Attributes:
@@ -95,37 +97,37 @@ Attributes:
     grid_mapping:    crs
     long_name:       surface head
     units:           mm
-    valid_range:     [0, 1000000]
 
 zarr dz[sfcheadsubrt].info:
 Name               : /sfcheadsubrt
 Type               : zarr.core.Array
 Data type          : int32
-Shape              : (6496, 15360, 18432)
+Shape              : (122479, 15360, 18432)
 Chunk shape        : (224, 350, 350)
 Order              : C
 Read-only          : False
 Compressor         : Blosc(cname='lz4', clevel=5, shuffle=SHUFFLE, blocksize=0)
 Store type         : zarr.storage.DirectoryStore
-No. bytes          : 7356473671680 (6.7T)
-No. bytes stored   : 74639530821 (69.5G)
-Storage ratio      : 98.6
-Chunks initialized : 67628/67628
+No. bytes          : 138702823096320 (126.1T)
+No. bytes stored   : 1454151670603 (1.3T)
+Storage ratio      : 95.4
+Chunks initialized : 1275604/1275604
 
-Chunk size in MB: 104.67529296875
+Un-Compressed Chunk size in MB: 104.67529296875
+   Compressed Chunk size in MB: 1.09722529317348
 
 --------
 
 time
 
 xarray ds[time]:
-<xarray.DataArray 'time' (time: 6496)>
+<xarray.DataArray 'time' (time: 122479)>
 array(['1979-02-01T03:00:00.000000000', '1979-02-01T06:00:00.000000000',
-       '1979-02-01T09:00:00.000000000', ..., '1981-04-22T18:00:00.000000000',
-       '1981-04-22T21:00:00.000000000', '1981-04-23T00:00:00.000000000'],
+       '1979-02-01T09:00:00.000000000', ..., '2020-12-31T15:00:00.000000000',
+       '2020-12-31T18:00:00.000000000', '2020-12-31T21:00:00.000000000'],
       dtype='datetime64[ns]')
 Coordinates:
-  * time     (time) datetime64[ns] 1979-02-01T03:00:00 ... 1981-04-23
+  * time     (time) datetime64[ns] 1979-02-01T03:00:00 ... 2020-12-31T21:00:00
 Attributes:
     long_name:      valid output time
     standard_name:  time
@@ -136,18 +138,19 @@ zarr dz[time].info:
 Name               : /time
 Type               : zarr.core.Array
 Data type          : int64
-Shape              : (6496,)
+Shape              : (122479,)
 Chunk shape        : (224,)
 Order              : C
 Read-only          : False
 Compressor         : Blosc(cname='lz4', clevel=5, shuffle=SHUFFLE, blocksize=0)
 Store type         : zarr.storage.DirectoryStore
-No. bytes          : 51968 (50.8K)
-No. bytes stored   : 11168 (10.9K)
-Storage ratio      : 4.7
-Chunks initialized : 29/29
+No. bytes          : 979832 (956.9K)
+No. bytes stored   : 200366 (195.7K)
+Storage ratio      : 4.9
+Chunks initialized : 547/547
 
-Chunk size in MB: 0.001708984375
+Un-Compressed Chunk size in MB: 0.001708984375
+   Compressed Chunk size in MB: 0.0003487723214285714
 
 --------
 
@@ -180,7 +183,8 @@ No. bytes stored   : 13386 (13.1K)
 Storage ratio      : 11.0
 Chunks initialized : 1/1
 
-Chunk size in MB: 0.140625
+Un-Compressed Chunk size in MB: 0.140625
+   Compressed Chunk size in MB: 0.01278409090909091
 
 --------
 
@@ -213,17 +217,18 @@ No. bytes stored   : 11299 (11.0K)
 Storage ratio      : 10.9
 Chunks initialized : 1/1
 
-Chunk size in MB: 0.1171875
+Un-Compressed Chunk size in MB: 0.1171875
+   Compressed Chunk size in MB: 0.010751146788990825
 
 --------
 
 zwattablrt
 
 xarray ds[zwattablrt]:
-<xarray.DataArray 'zwattablrt' (time: 6496, y: 15360, x: 18432)>
-dask.array<open_dataset-f7a057b268bb359b2e1db2876a8c5c5czwattablrt, shape=(6496, 15360, 18432), dtype=float64, chunksize=(224, 350, 350), chunktype=numpy.ndarray>
+<xarray.DataArray 'zwattablrt' (time: 122479, y: 15360, x: 18432)>
+dask.array<xarray-zwattablrt, shape=(122479, 15360, 18432), dtype=float64, chunksize=(224, 350, 350), chunktype=numpy.ndarray>
 Coordinates:
-  * time     (time) datetime64[ns] 1979-02-01T03:00:00 ... 1981-04-23
+  * time     (time) datetime64[ns] 1979-02-01T03:00:00 ... 2020-12-31T21:00:00
   * x        (x) float64 -2.304e+06 -2.304e+06 ... 2.304e+06 2.304e+06
   * y        (y) float64 -1.92e+06 -1.92e+06 -1.919e+06 ... 1.92e+06 1.92e+06
 Attributes:
@@ -231,21 +236,21 @@ Attributes:
     grid_mapping:    crs
     long_name:       depth to saturation, rounded to highest saturated layer
     units:           m
-    valid_range:     [0, 1000]
 
 zarr dz[zwattablrt].info:
 Name               : /zwattablrt
 Type               : zarr.core.Array
 Data type          : int32
-Shape              : (6496, 15360, 18432)
+Shape              : (122479, 15360, 18432)
 Chunk shape        : (224, 350, 350)
 Order              : C
 Read-only          : False
 Compressor         : Blosc(cname='lz4', clevel=5, shuffle=SHUFFLE, blocksize=0)
 Store type         : zarr.storage.DirectoryStore
-No. bytes          : 7356473671680 (6.7T)
-No. bytes stored   : 299462195307 (278.9G)
-Storage ratio      : 24.6
-Chunks initialized : 67628/67628
+No. bytes          : 138702823096320 (126.1T)
+No. bytes stored   : 6003738780303 (5.5T)
+Storage ratio      : 23.1
+Chunks initialized : 1275604/1275604
 
-Chunk size in MB: 104.67529296875
+Un-Compressed Chunk size in MB: 104.67529296875
+   Compressed Chunk size in MB: 4.531397964015151
