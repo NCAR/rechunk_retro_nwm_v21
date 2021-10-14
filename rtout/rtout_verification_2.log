@@ -1,0 +1,859 @@
+Set cluster
+Scale cluster
+Set client
+Tunnel to compute node from local machine:
+ssh -NL 8787: crhtc02:8787jamesmcc@cheyenne.ucar.edu
+in local browser: 
+http://localhost:8787/status
+Checking rtout.zarr against its source files
+<xarray.Dataset>
+Dimensions:       (time: 122479, y: 15360, x: 18432)
+Coordinates:
+  * time          (time) datetime64[ns] 1979-02-01T03:00:00 ... 2020-12-31T21...
+  * x             (x) float64 -2.304e+06 -2.304e+06 ... 2.304e+06 2.304e+06
+  * y             (y) float64 -1.92e+06 -1.92e+06 ... 1.92e+06 1.92e+06
+Data variables:
+    crs           |S1 ...
+    sfcheadsubrt  (time, y, x) float64 dask.array<chunksize=(224, 350, 350), meta=np.ndarray>
+    zwattablrt    (time, y, x) float64 dask.array<chunksize=(224, 350, 350), meta=np.ndarray>
+Attributes:
+    Conventions:          CF-1.6
+    GDAL_DataType:        Generic
+    TITLE:                OUTPUT FROM WRF-Hydro v5.2.0-beta2
+    code_version:         v5.2.0-beta2
+    model_configuration:  retrospective
+    model_output_type:    terrain_rt
+    proj4:                +proj=lcc +units=m +a=6370000.0 +b=6370000.0 +lat_1...
+
+Checking a random time in chunk 413 (in reversed(range(276, 413 + 1)))
+
+Check (non-time) static variables once
+Checking variable: crs
+Checking variable: x
+Checking variable: y
+Checking time: 2010-10-17T09:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 262.3645 seconds
+
+Checking a random time in chunk 412 (in reversed(range(276, 413 + 1)))
+Checking time: 2010-09-20T21:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 123.2129 seconds
+
+Checking a random time in chunk 411 (in reversed(range(276, 413 + 1)))
+Checking time: 2010-08-23T03:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 126.8998 seconds
+
+Checking a random time in chunk 410 (in reversed(range(276, 413 + 1)))
+Checking time: 2010-07-09T15:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 130.4011 seconds
+
+Checking a random time in chunk 409 (in reversed(range(276, 413 + 1)))
+Checking time: 2010-06-20T21:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 125.2992 seconds
+
+Checking a random time in chunk 408 (in reversed(range(276, 413 + 1)))
+Checking time: 2010-05-16T00:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 138.7835 seconds
+
+Checking a random time in chunk 407 (in reversed(range(276, 413 + 1)))
+Checking time: 2010-04-26T18:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 133.9460 seconds
+
+Checking a random time in chunk 406 (in reversed(range(276, 413 + 1)))
+Checking time: 2010-03-30T21:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 134.0329 seconds
+
+Checking a random time in chunk 405 (in reversed(range(276, 413 + 1)))
+Checking time: 2010-03-10T18:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 142.4297 seconds
+
+Checking a random time in chunk 404 (in reversed(range(276, 413 + 1)))
+Checking time: 2010-02-11T09:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 123.0214 seconds
+
+Checking a random time in chunk 403 (in reversed(range(276, 413 + 1)))
+Checking time: 2010-01-07T09:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 122.5072 seconds
+
+Checking a random time in chunk 402 (in reversed(range(276, 413 + 1)))
+Checking time: 2009-12-06T09:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 129.8771 seconds
+
+Checking a random time in chunk 401 (in reversed(range(276, 413 + 1)))
+Checking time: 2009-11-03T03:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 120.3097 seconds
+
+Checking a random time in chunk 400 (in reversed(range(276, 413 + 1)))
+Checking time: 2009-10-18T06:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 127.8077 seconds
+
+Checking a random time in chunk 399 (in reversed(range(276, 413 + 1)))
+Checking time: 2009-09-10T03:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 116.9516 seconds
+
+Checking a random time in chunk 398 (in reversed(range(276, 413 + 1)))
+Checking time: 2009-08-12T06:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 130.3885 seconds
+
+Checking a random time in chunk 397 (in reversed(range(276, 413 + 1)))
+Checking time: 2009-08-05T18:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 143.5764 seconds
+
+Checking a random time in chunk 396 (in reversed(range(276, 413 + 1)))
+Checking time: 2009-06-26T09:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 126.1663 seconds
+
+Checking a random time in chunk 395 (in reversed(range(276, 413 + 1)))
+Checking time: 2009-05-25T21:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 135.3095 seconds
+
+Checking a random time in chunk 394 (in reversed(range(276, 413 + 1)))
+Checking time: 2009-05-08T18:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 131.6681 seconds
+
+Checking a random time in chunk 393 (in reversed(range(276, 413 + 1)))
+Checking time: 2009-04-10T09:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 132.3742 seconds
+
+Checking a random time in chunk 392 (in reversed(range(276, 413 + 1)))
+Checking time: 2009-03-05T12:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 124.7096 seconds
+
+Checking a random time in chunk 391 (in reversed(range(276, 413 + 1)))
+Checking time: 2009-02-04T03:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 131.0763 seconds
+
+Checking a random time in chunk 390 (in reversed(range(276, 413 + 1)))
+Checking time: 2009-01-21T09:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 119.2596 seconds
+
+Checking a random time in chunk 389 (in reversed(range(276, 413 + 1)))
+Checking time: 2008-12-06T09:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 140.3738 seconds
+
+Checking a random time in chunk 388 (in reversed(range(276, 413 + 1)))
+Checking time: 2008-11-17T09:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 119.3574 seconds
+
+Checking a random time in chunk 387 (in reversed(range(276, 413 + 1)))
+Checking time: 2008-10-23T00:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 122.1689 seconds
+
+Checking a random time in chunk 386 (in reversed(range(276, 413 + 1)))
+Checking time: 2008-09-27T03:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 135.7973 seconds
+
+Checking a random time in chunk 385 (in reversed(range(276, 413 + 1)))
+Checking time: 2008-08-21T06:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 121.8138 seconds
+
+Checking a random time in chunk 384 (in reversed(range(276, 413 + 1)))
+Checking time: 2008-07-24T18:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 131.7026 seconds
+
+Checking a random time in chunk 383 (in reversed(range(276, 413 + 1)))
+Checking time: 2008-07-09T09:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 152.7601 seconds
+
+Checking a random time in chunk 382 (in reversed(range(276, 413 + 1)))
+Checking time: 2008-06-05T06:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 125.3670 seconds
+
+Checking a random time in chunk 381 (in reversed(range(276, 413 + 1)))
+Checking time: 2008-05-04T03:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 128.3255 seconds
+
+Checking a random time in chunk 380 (in reversed(range(276, 413 + 1)))
+Checking time: 2008-04-06T06:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 130.2343 seconds
+
+Checking a random time in chunk 379 (in reversed(range(276, 413 + 1)))
+Checking time: 2008-03-08T21:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 125.5811 seconds
+
+Checking a random time in chunk 378 (in reversed(range(276, 413 + 1)))
+Checking time: 2008-01-31T00:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 133.6908 seconds
+
+Checking a random time in chunk 377 (in reversed(range(276, 413 + 1)))
+Checking time: 2008-01-06T06:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 131.3160 seconds
+
+Checking a random time in chunk 376 (in reversed(range(276, 413 + 1)))
+Checking time: 2007-12-14T06:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 136.5055 seconds
+
+Checking a random time in chunk 375 (in reversed(range(276, 413 + 1)))
+Checking time: 2007-11-21T09:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 132.3427 seconds
+
+Checking a random time in chunk 374 (in reversed(range(276, 413 + 1)))
+Checking time: 2007-10-13T15:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 119.6885 seconds
+
+Checking a random time in chunk 373 (in reversed(range(276, 413 + 1)))
+Checking time: 2007-09-20T06:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 134.0027 seconds
+
+Checking a random time in chunk 372 (in reversed(range(276, 413 + 1)))
+Checking time: 2007-08-22T00:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 141.4673 seconds
+
+Checking a random time in chunk 371 (in reversed(range(276, 413 + 1)))
+Checking time: 2007-07-14T15:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 125.1064 seconds
+
+Checking a random time in chunk 370 (in reversed(range(276, 413 + 1)))
+Checking time: 2007-06-22T00:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 129.1030 seconds
+
+Checking a random time in chunk 369 (in reversed(range(276, 413 + 1)))
+Checking time: 2007-06-11T06:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 131.8063 seconds
+
+Checking a random time in chunk 368 (in reversed(range(276, 413 + 1)))
+Checking time: 2007-04-24T12:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 146.8987 seconds
+
+Checking a random time in chunk 367 (in reversed(range(276, 413 + 1)))
+Checking time: 2007-03-25T21:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 138.8764 seconds
+
+Checking a random time in chunk 366 (in reversed(range(276, 413 + 1)))
+Checking time: 2007-03-16T03:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 133.8243 seconds
+
+Checking a random time in chunk 365 (in reversed(range(276, 413 + 1)))
+Checking time: 2007-02-16T03:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 121.6300 seconds
+
+Checking a random time in chunk 364 (in reversed(range(276, 413 + 1)))
+Checking time: 2006-12-30T12:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 155.3164 seconds
+
+Checking a random time in chunk 363 (in reversed(range(276, 413 + 1)))
+Checking time: 2006-12-01T18:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 125.4899 seconds
+
+Checking a random time in chunk 362 (in reversed(range(276, 413 + 1)))
+Checking time: 2006-11-21T00:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 135.6255 seconds
+
+Checking a random time in chunk 361 (in reversed(range(276, 413 + 1)))
+Checking time: 2006-10-16T18:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 133.2463 seconds
+
+Checking a random time in chunk 360 (in reversed(range(276, 413 + 1)))
+Checking time: 2006-09-18T03:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 132.7936 seconds
+
+Checking a random time in chunk 359 (in reversed(range(276, 413 + 1)))
+Checking time: 2006-08-21T12:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 132.3317 seconds
+
+Checking a random time in chunk 358 (in reversed(range(276, 413 + 1)))
+Checking time: 2006-07-20T15:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 144.9257 seconds
+
+Checking a random time in chunk 357 (in reversed(range(276, 413 + 1)))
+Checking time: 2006-07-05T15:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 121.2221 seconds
+
+Checking a random time in chunk 356 (in reversed(range(276, 413 + 1)))
+Checking time: 2006-06-05T03:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 146.9853 seconds
+
+Checking a random time in chunk 355 (in reversed(range(276, 413 + 1)))
+Checking time: 2006-05-13T09:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 141.0287 seconds
+
+Checking a random time in chunk 354 (in reversed(range(276, 413 + 1)))
+Checking time: 2006-04-17T06:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 125.6216 seconds
+
+Checking a random time in chunk 353 (in reversed(range(276, 413 + 1)))
+Checking time: 2006-03-12T12:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 141.8206 seconds
+
+Checking a random time in chunk 352 (in reversed(range(276, 413 + 1)))
+Checking time: 2006-01-26T18:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 120.1974 seconds
+
+Checking a random time in chunk 351 (in reversed(range(276, 413 + 1)))
+Checking time: 2006-01-10T18:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 119.7937 seconds
+
+Checking a random time in chunk 350 (in reversed(range(276, 413 + 1)))
+Checking time: 2005-12-05T12:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 144.7807 seconds
+
+Checking a random time in chunk 349 (in reversed(range(276, 413 + 1)))
+Checking time: 2005-11-06T00:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 136.7299 seconds
+
+Checking a random time in chunk 348 (in reversed(range(276, 413 + 1)))
+Checking time: 2005-10-19T21:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 120.8683 seconds
+
+Checking a random time in chunk 347 (in reversed(range(276, 413 + 1)))
+Checking time: 2005-09-25T15:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 145.4541 seconds
+
+Checking a random time in chunk 346 (in reversed(range(276, 413 + 1)))
+Checking time: 2005-09-03T03:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 129.3619 seconds
+
+Checking a random time in chunk 345 (in reversed(range(276, 413 + 1)))
+Checking time: 2005-07-17T00:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 140.1001 seconds
+
+Checking a random time in chunk 344 (in reversed(range(276, 413 + 1)))
+Checking time: 2005-07-03T03:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 158.4522 seconds
+
+Checking a random time in chunk 343 (in reversed(range(276, 413 + 1)))
+Checking time: 2005-05-31T12:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 125.5039 seconds
+
+Checking a random time in chunk 342 (in reversed(range(276, 413 + 1)))
+Checking time: 2005-04-29T09:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 121.9764 seconds
+
+Checking a random time in chunk 341 (in reversed(range(276, 413 + 1)))
+Checking time: 2005-04-02T21:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 137.1033 seconds
+
+Checking a random time in chunk 340 (in reversed(range(276, 413 + 1)))
+Checking time: 2005-03-12T18:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 139.4753 seconds
+
+Checking a random time in chunk 339 (in reversed(range(276, 413 + 1)))
+Checking time: 2005-02-15T03:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 133.3389 seconds
+
+Checking a random time in chunk 338 (in reversed(range(276, 413 + 1)))
+Checking time: 2005-01-23T15:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 137.5869 seconds
+
+Checking a random time in chunk 337 (in reversed(range(276, 413 + 1)))
+Checking time: 2004-12-07T06:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 120.4069 seconds
+
+Checking a random time in chunk 336 (in reversed(range(276, 413 + 1)))
+Checking time: 2004-11-14T00:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 133.8360 seconds
+
+Checking a random time in chunk 335 (in reversed(range(276, 413 + 1)))
+Checking time: 2004-10-11T00:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 137.5070 seconds
+
+Checking a random time in chunk 334 (in reversed(range(276, 413 + 1)))
+Checking time: 2004-09-14T21:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 126.7028 seconds
+
+Checking a random time in chunk 333 (in reversed(range(276, 413 + 1)))
+Checking time: 2004-08-17T06:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 151.8569 seconds
+
+Checking a random time in chunk 332 (in reversed(range(276, 413 + 1)))
+Checking time: 2004-08-09T00:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 127.7440 seconds
+
+Checking a random time in chunk 331 (in reversed(range(276, 413 + 1)))
+Checking time: 2004-07-07T06:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 125.2397 seconds
+
+Checking a random time in chunk 330 (in reversed(range(276, 413 + 1)))
+Checking time: 2004-06-10T21:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 147.9946 seconds
+
+Checking a random time in chunk 329 (in reversed(range(276, 413 + 1)))
+Checking time: 2004-05-02T12:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 134.0060 seconds
+
+Checking a random time in chunk 328 (in reversed(range(276, 413 + 1)))
+Checking time: 2004-04-03T00:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 126.2022 seconds
+
+Checking a random time in chunk 327 (in reversed(range(276, 413 + 1)))
+Checking time: 2004-03-14T00:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 136.4003 seconds
+
+Checking a random time in chunk 326 (in reversed(range(276, 413 + 1)))
+Checking time: 2004-01-29T06:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 129.0399 seconds
+
+Checking a random time in chunk 325 (in reversed(range(276, 413 + 1)))
+Checking time: 2004-01-17T21:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 133.7492 seconds
+
+Checking a random time in chunk 324 (in reversed(range(276, 413 + 1)))
+Checking time: 2003-12-19T06:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 142.0922 seconds
+
+Checking a random time in chunk 323 (in reversed(range(276, 413 + 1)))
+Checking time: 2003-12-03T06:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 132.2208 seconds
+
+Checking a random time in chunk 322 (in reversed(range(276, 413 + 1)))
+Checking time: 2003-10-22T06:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 136.3422 seconds
+
+Checking a random time in chunk 321 (in reversed(range(276, 413 + 1)))
+Checking time: 2003-09-17T03:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 134.9187 seconds
+
+Checking a random time in chunk 320 (in reversed(range(276, 413 + 1)))
+Checking time: 2003-08-31T12:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 131.8527 seconds
+
+Checking a random time in chunk 319 (in reversed(range(276, 413 + 1)))
+Checking time: 2003-08-12T18:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 134.0857 seconds
+
+Checking a random time in chunk 318 (in reversed(range(276, 413 + 1)))
+Checking time: 2003-07-04T03:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 145.8674 seconds
+
+Checking a random time in chunk 317 (in reversed(range(276, 413 + 1)))
+Checking time: 2003-05-30T00:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 139.0520 seconds
+
+Checking a random time in chunk 316 (in reversed(range(276, 413 + 1)))
+Checking time: 2003-05-20T15:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 153.1525 seconds
+
+Checking a random time in chunk 315 (in reversed(range(276, 413 + 1)))
+Checking time: 2003-03-28T15:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 134.4421 seconds
+
+Checking a random time in chunk 314 (in reversed(range(276, 413 + 1)))
+Checking time: 2003-03-14T03:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 123.0866 seconds
+
+Checking a random time in chunk 313 (in reversed(range(276, 413 + 1)))
+Checking time: 2003-02-05T15:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 133.0072 seconds
+
+Checking a random time in chunk 312 (in reversed(range(276, 413 + 1)))
+Checking time: 2003-01-10T15:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 138.2373 seconds
+
+Checking a random time in chunk 311 (in reversed(range(276, 413 + 1)))
+Checking time: 2002-12-20T12:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 123.6127 seconds
+
+Checking a random time in chunk 310 (in reversed(range(276, 413 + 1)))
+Checking time: 2002-11-07T03:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 133.4701 seconds
+
+Checking a random time in chunk 309 (in reversed(range(276, 413 + 1)))
+Checking time: 2002-10-16T21:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 123.2718 seconds
+
+Checking a random time in chunk 308 (in reversed(range(276, 413 + 1)))
+Checking time: 2002-09-20T06:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 122.3209 seconds
+
+Checking a random time in chunk 307 (in reversed(range(276, 413 + 1)))
+Checking time: 2002-09-01T06:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 148.9795 seconds
+
+Checking a random time in chunk 306 (in reversed(range(276, 413 + 1)))
+Checking time: 2002-08-07T12:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 129.9687 seconds
+
+Checking a random time in chunk 305 (in reversed(range(276, 413 + 1)))
+Checking time: 2002-07-09T12:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 131.1463 seconds
+
+Checking a random time in chunk 304 (in reversed(range(276, 413 + 1)))
+Checking time: 2002-06-02T15:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 135.2657 seconds
+
+Checking a random time in chunk 303 (in reversed(range(276, 413 + 1)))
+Checking time: 2002-05-19T18:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 134.1235 seconds
+
+Checking a random time in chunk 302 (in reversed(range(276, 413 + 1)))
+Checking time: 2002-03-31T12:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 124.0666 seconds
+
+Checking a random time in chunk 301 (in reversed(range(276, 413 + 1)))
+Checking time: 2002-03-24T06:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 135.7187 seconds
+
+Checking a random time in chunk 300 (in reversed(range(276, 413 + 1)))
+Checking time: 2002-02-03T18:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 130.6123 seconds
+
+Checking a random time in chunk 299 (in reversed(range(276, 413 + 1)))
+Checking time: 2002-01-19T15:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 124.4361 seconds
+
+Checking a random time in chunk 298 (in reversed(range(276, 413 + 1)))
+Checking time: 2001-12-26T18:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 130.2249 seconds
+
+Checking a random time in chunk 297 (in reversed(range(276, 413 + 1)))
+Checking time: 2001-11-19T09:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 136.3662 seconds
+
+Checking a random time in chunk 296 (in reversed(range(276, 413 + 1)))
+Checking time: 2001-10-28T12:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 127.1458 seconds
+
+Checking a random time in chunk 295 (in reversed(range(276, 413 + 1)))
+Checking time: 2001-10-06T12:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 134.8712 seconds
+
+Checking a random time in chunk 294 (in reversed(range(276, 413 + 1)))
+Checking time: 2001-09-02T21:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 122.5014 seconds
+
+Checking a random time in chunk 293 (in reversed(range(276, 413 + 1)))
+Checking time: 2001-08-15T06:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 116.6751 seconds
+
+Checking a random time in chunk 292 (in reversed(range(276, 413 + 1)))
+Checking time: 2001-07-11T06:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 141.7767 seconds
+
+Checking a random time in chunk 291 (in reversed(range(276, 413 + 1)))
+Checking time: 2001-06-01T00:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 118.5149 seconds
+
+Checking a random time in chunk 290 (in reversed(range(276, 413 + 1)))
+Checking time: 2001-05-17T15:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 130.2231 seconds
+
+Checking a random time in chunk 289 (in reversed(range(276, 413 + 1)))
+Checking time: 2001-04-13T15:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 134.2028 seconds
+
+Checking a random time in chunk 288 (in reversed(range(276, 413 + 1)))
+Checking time: 2001-03-08T18:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 148.2644 seconds
+
+Checking a random time in chunk 287 (in reversed(range(276, 413 + 1)))
+Checking time: 2001-02-16T03:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 132.0523 seconds
+
+Checking a random time in chunk 286 (in reversed(range(276, 413 + 1)))
+Checking time: 2001-01-25T03:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 137.9164 seconds
+
+Checking a random time in chunk 285 (in reversed(range(276, 413 + 1)))
+Checking time: 2000-12-18T00:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 120.0717 seconds
+
+Checking a random time in chunk 284 (in reversed(range(276, 413 + 1)))
+Checking time: 2000-11-30T03:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 128.0892 seconds
+
+Checking a random time in chunk 283 (in reversed(range(276, 413 + 1)))
+Checking time: 2000-10-20T03:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 134.5051 seconds
+
+Checking a random time in chunk 282 (in reversed(range(276, 413 + 1)))
+Checking time: 2000-09-29T06:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 128.8987 seconds
+
+Checking a random time in chunk 281 (in reversed(range(276, 413 + 1)))
+Checking time: 2000-08-21T18:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 114.5137 seconds
+
+Checking a random time in chunk 280 (in reversed(range(276, 413 + 1)))
+Checking time: 2000-08-06T03:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 142.6395 seconds
+
+Checking a random time in chunk 279 (in reversed(range(276, 413 + 1)))
+Checking time: 2000-07-09T00:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 126.6521 seconds
+
+Checking a random time in chunk 278 (in reversed(range(276, 413 + 1)))
+Checking time: 2000-06-15T15:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 131.9709 seconds
+
+Checking a random time in chunk 277 (in reversed(range(276, 413 + 1)))
+Checking time: 2000-05-04T12:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 140.3264 seconds
+
+Checking a random time in chunk 276 (in reversed(range(276, 413 + 1)))
+Checking time: 2000-04-12T06:00:00.000000000
+Checking variable: sfcheadsubrt
+Checking variable: zwattablrt
+Time for this file: 121.1323 seconds
