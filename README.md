@@ -1,5 +1,5 @@
 # Rechunking National Water Model v2.1 retrospective simulations to more (cloud-)approachable chunks in Zarr format.
-Authors: _James McCreight (NCAR), Ishita Srivastava (NCAR), and Rich Signell (USGS)_
+Authors: _James McCreight (NCAR), Ishita Srivastava (NCAR), Rich Signell (USGS), and Yongxin Zhang (NCAR)_
 
 
 ## Overview
