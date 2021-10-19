@@ -35,7 +35,7 @@ below and via accompanying notebooks.
 
 ## Data Access
 
-*The data are currently pending delivery to AWS cloud as are further details here.*
+[Cloud on AWS](https://noaa-nwm-retrospective-2-1-zarr-pds.s3.amazonaws.com/index.html )
 
 For those with access to NCAR computing resources, these can alternatively be found at the following paths:
 ```
