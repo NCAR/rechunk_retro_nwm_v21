@@ -39,12 +39,12 @@ below and via accompanying notebooks.
 
 For those with access to NCAR computing resources, these can alternatively be found at the following paths:
 ```
-/glade/p/datashare/jamesmcc/nwm_retro_v2.1/lakeout.zarr
-/glade/p/datashare/ishitas/nwm_retro_v2.1/gwout.zarr
-/glade/p/datashare/ishitas/nwm_retro_v2.1/chrtout.zarr
-/glade/p/datashare/jamesmcc/nwm_retro_v2.1/precip.zarr
-/glade/p/datashare/ishitas/nwm_retro_v2.1/ldasout.zarr
-/glade/p/datashare/jamesmcc/nwm_retro_v2.1/rtout.zarr
+/glade/campaign/ncar/USGS_Water/NWMV21_retro_zarr/lakeout.zarr
+/glade/campaign/ncar/USGS_Water/NWMV21_retro_zarr/gwout.zarr
+/glade/campaign/ncar/USGS_Water/NWMV21_retro_zarr/chrtout.zarr
+/glade/campaign/ncar/USGS_Water/NWMV21_retro_zarr/precip.zarr
+/glade/campaign/ncar/USGS_Water/NWMV21_retro_zarr/ldasout.zarr
+/glade/campaign/ncar/USGS_Water/NWMV21_retro_zarr/rtout.zarr
 ```
 
 
