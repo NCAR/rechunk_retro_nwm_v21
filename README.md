@@ -35,10 +35,11 @@ below and via accompanying notebooks.
 
 ## Data Access
 
-[Cloud on AWS]
+### Cloud on AWS
 [Landing page](https://registry.opendata.aws/nwm-archive/)  
 [NWM v2.1 Zarr Bucket](https://noaa-nwm-retrospective-2-1-zarr-pds.s3.amazonaws.com/index.html)  
 
+### NCAR glade
 For those with access to NCAR computing resources, these can alternatively be found at the following paths:
 ```
 /glade/campaign/ncar/USGS_Water/NWMV21_retro_zarr/lakeout.zarr
