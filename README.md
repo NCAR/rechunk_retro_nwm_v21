@@ -35,7 +35,9 @@ below and via accompanying notebooks.
 
 ## Data Access
 
-[Cloud on AWS](https://noaa-nwm-retrospective-2-1-zarr-pds.s3.amazonaws.com/index.html )
+[Cloud on AWS]
+[Landing page](https://registry.opendata.aws/nwm-archive/)  
+[NWM v2.1 Zarr Bucket](https://noaa-nwm-retrospective-2-1-zarr-pds.s3.amazonaws.com/index.html)  
 
 For those with access to NCAR computing resources, these can alternatively be found at the following paths:
 ```
